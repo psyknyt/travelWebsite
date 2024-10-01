@@ -36,7 +36,7 @@ const Welcome = () => {
             />
 
             <div
-              className={`bg-black z-50  rounded-md bg-opacity-10 w-full absolute bottom-0  flex justify-center items-center text-white transition-all duration-700 delay-500 ease-in-out ${
+              className={`bg-black z-50  rounded-md bg-opacity-20 w-full absolute bottom-0  flex justify-center items-center text-white transition-all duration-700 delay-500 ease-in-out ${
                 activeFrame === 0
                   ? " h-full opacity-100"
                   : "h-0 opacity-0 text-transparent"
@@ -62,7 +62,7 @@ const Welcome = () => {
             />
 
             <div
-              className={`bg-black z-50  rounded-md bg-opacity-10 w-full absolute bottom-0  flex justify-center items-center text-white transition-all duration-700 delay-500 ease-in-out ${
+              className={`bg-black z-50  rounded-md bg-opacity-20 w-full absolute bottom-0  flex justify-center items-center text-white transition-all duration-700 delay-500 ease-in-out ${
                 activeFrame === 1
                   ? " h-full opacity-100"
                   : "h-0 opacity-0 text-transparent"
@@ -88,7 +88,7 @@ const Welcome = () => {
             />
 
             <div
-              className={`bg-black z-50  rounded-md bg-opacity-10 w-full absolute top-0 flex justify-center items-center text-white transition-all duration-700 delay-500 ease-in-out ${
+              className={`bg-black z-50  rounded-md bg-opacity-20 w-full absolute top-0 flex justify-center items-center text-white transition-all duration-700 delay-500 ease-in-out ${
                 activeFrame === 2
                   ? " h-full opacity-100 text-white"
                   : "h-0  opacity-0 text-transparent"
@@ -114,7 +114,7 @@ const Welcome = () => {
             />
 
             <div
-              className={`bg-black z-50  rounded-md bg-opacity-10 w-full absolute top-0  flex justify-center items-center text-white transition-all duration-700 delay-500 ease-in-out ${
+              className={`bg-black z-50  rounded-md bg-opacity-20 w-full absolute top-0  flex justify-center items-center text-white transition-all duration-700 delay-500 ease-in-out ${
                 activeFrame === 3
                   ? " h-full opacity-100"
                   : "h-0 opacity-0 text-transparent"
