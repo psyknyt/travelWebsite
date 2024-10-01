@@ -1,0 +1,35 @@
+.nav-wrapper {
+  @apply w-full h-16 flex justify-between items-center;
+}
+
+.nav-logo {
+  @apply flex justify-center items-center px-2 font-bold text-xl;
+}
+
+.menu-wrapper {
+  @apply w-full overflow-y-hidden absolute md:hidden top-16 md:top-auto left-0;
+}
+
+.menu {
+  @apply flex flex-col md:flex-row w-full overflow-y-hidden bg-[#EEE4B1] transition-all duration-500 md:transform-none md:delay-0 md:duration-0;
+}
+
+.menu .navdrop {
+  @apply md:h-full  text-[#0A1D56]  text-xl;
+}
+
+.navdrop-navlink {
+  @apply h-16 md:h-full  text-[#0A1D56]  text-xl justify-center items-center flex;
+}
+
+.navlink {
+  @apply h-16 md:h-full  text-[#0A1D56]  text-xl justify-center items-center flex;
+}
+
+.menu-wrapper-md {
+  @apply ml-auto hidden md:flex px-4 text-lg h-full;
+}
+
+.menu-wrapper-md .navlink {
+  @apply relative h-full;
+}
