@@ -33,6 +33,7 @@ const HeroSection = () => {
               data-aos="zoom-in-up"
               src={banner1}
               alt="Hero Section"
+              loading="lazy"
               className="w-full h-full m-auto object-contain md:object-cover object-center overflow-x-hidden  "
             />
           </SwiperSlide>
@@ -41,6 +42,7 @@ const HeroSection = () => {
               data-aos="zoom-in-up"
               src={banner2}
               alt="Hero Section"
+              loading="lazy"
               className="w-full h-full m-auto object-contain md:object-cover object-center overflow-x-hidden  transition-all duration-300 ease-in-out"
             />
           </SwiperSlide>
@@ -49,6 +51,7 @@ const HeroSection = () => {
               data-aos="zoom-in-up"
               src={banner3}
               alt="Hero Section"
+              loading="lazy"
               className="w-full h-full m-auto object-contain md:object-cover object-center overflow-x-hidden  transition-all duration-300 ease-in-out"
             />
           </SwiperSlide>

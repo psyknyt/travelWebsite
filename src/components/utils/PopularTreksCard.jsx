@@ -31,6 +31,7 @@ const PopularTrekCard = ({ item }) => {
             maxHeight: "210px",
             minHeight: "210px",
           }}
+          loading="lazy"
           className="object-cover transition-transform duration-500 hover:scale-110 overflow-hidden"
         />
       </div>

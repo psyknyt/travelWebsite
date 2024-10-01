@@ -29,6 +29,7 @@ const Welcome = () => {
           >
             <img
               src={bestSummerTreks}
+              loading="lazy"
               alt="img"
               className={`${
                 activeFrame === 0 ? "scale-105" : "scale-100"
@@ -56,6 +57,7 @@ const Welcome = () => {
             <img
               src={bestMonsoonTreks}
               alt="img"
+              loading="lazy"
               className={`${
                 activeFrame === 1 ? "scale-105" : "scale-100"
               } relative transition-all duration-700 delay-150 ease-in-out object-cover object-center`}
@@ -82,6 +84,7 @@ const Welcome = () => {
             <img
               src={bestAutumnTreks}
               alt="img"
+              loading="lazy"
               className={`${
                 activeFrame === 2 ? "scale-105" : "scale-100"
               } relative transition-all duration-700 delay-150 ease-in-out object-cover object-center`}
@@ -108,6 +111,7 @@ const Welcome = () => {
             <img
               src={bestWinterTreks}
               alt="img"
+              loading="lazy"
               className={`${
                 activeFrame === 3 ? "scale-105" : "scale-100"
               } relative transition-all duration-700 delay-150 ease-in-out object-cover object-center`}
