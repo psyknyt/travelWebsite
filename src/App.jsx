@@ -11,6 +11,8 @@ import HeroSection from "./components/HeroSection/HeroSection";
 import Welcome from "./components/Home/Welcome";
 import TrendingTreks from "./components/Home/TrendingTreks";
 import TestimonialSection from "./components/Home/Reviews";
+import SwiperCards from "./components/Home/SwiperCards";
+import FeaturedDestination from "./components/Home/FeaturedDestination";
 
 function App() {
   useEffect(() => {
@@ -20,13 +22,14 @@ function App() {
   }, []);
 
   let content = (
-    <>
+    <div className="flex flex-col">
       <HeroSection />
+      <FeaturedDestination />
       <Welcome />
       <TrendingTreks />
-      <TestimonialSection />
+      <SwiperCards />
       <Footer />
-    </>
+    </div>
   );
 
   return (

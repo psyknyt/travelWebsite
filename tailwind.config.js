@@ -10,6 +10,8 @@ export default {
         playfair: ['"Playfair Display"', "serif"],
         oswald: ['"Oswald", "sans-serif"'],
         fredoka: ['"Fredoka", "sans-serif"'],
+        montez: ['"Montez", "cursive"'],
+        inter: ["Inter", "sans - serif"],
       },
     },
   },

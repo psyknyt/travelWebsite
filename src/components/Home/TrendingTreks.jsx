@@ -6,6 +6,8 @@ import kedarkhantaTrek from "../../assets/Kedarkantha_Trek_thumb.jpg";
 import DeoriaTalChoptaTrek from "../../assets/Deoria_Tal_Chopta_Chandrashila_Trek_thumb.jpg";
 import HarKiDunTrek from "../../assets/Har_Ki_Dun_Trek_thumb.jpg";
 
+import bgLineImage from "../../assets/background/line-pattern2.png";
+
 const TrendingTreks = () => {
   const treks = [
     {
@@ -41,7 +43,13 @@ const TrendingTreks = () => {
     " Plan Your Winter Trek with The Crazy Mountaineers for a Memorable Experience";
 
   return (
-    <div>
+    <div
+      style={{
+        backgroundImage: `url(${bgLineImage})`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+      }}
+    >
       <div className="text-3xl font-oswald font-semibold tracking-wider text-center flex justify-center items-center py-2 my-5">
         Trending Treks
       </div>

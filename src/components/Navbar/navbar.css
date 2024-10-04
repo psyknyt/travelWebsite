@@ -11,11 +11,11 @@
 }
 
 .menu {
-  @apply flex flex-col md:flex-row w-full overflow-y-hidden bg-[#EEE4B1] transition-all duration-500 md:transform-none md:delay-0 md:duration-0;
+  @apply flex flex-col md:flex-row w-full overflow-y-hidden transition-all duration-500 md:transform-none md:delay-0 md:duration-0;
 }
 
 .menu .navdrop {
-  @apply md:h-full  text-[#0A1D56]  text-xl;
+  @apply md:h-full  text-[#0A1D56];
 }
 
 .navdrop-navlink {
@@ -23,7 +23,7 @@
 }
 
 .navlink {
-  @apply h-16 md:h-full  text-[#0A1D56]  text-xl justify-center items-center flex;
+  @apply h-16 md:h-full  text-[#0A1D56]   justify-center items-center flex;
 }
 
 .menu-wrapper-md {
