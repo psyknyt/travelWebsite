@@ -5,10 +5,18 @@ import { FaArrowRight } from "react-icons/fa";
 import { MdOutlineWifiCalling3 } from "react-icons/md";
 import { TbMail } from "react-icons/tb";
 import { TiLocationOutline } from "react-icons/ti";
+import bgLineImage from "../../assets/background/line-pattern2.png";
 
 export function Footer() {
   return (
-    <footer class="bg-white">
+    <footer
+      class="bg-white"
+      style={{
+        backgroundImage: `url(${bgLineImage})`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+      }}
+    >
       <div class="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
         <div class="md:flex md:justify-between">
           <div className="flex flex-col justify-between  items-center gap-5 my-2">

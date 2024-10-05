@@ -2,6 +2,21 @@ import React from "react";
 
 import bgLineImage from "../../assets/background/line-pattern2.png";
 
+import { Swiper, SwiperSlide } from "swiper/react";
+
+import "swiper/css";
+import "swiper/css/effect-coverflow";
+import "swiper/css/pagination";
+import "swiper/css/navigation";
+
+import {
+  Autoplay,
+  EffectCoverflow,
+  Pagination,
+  Navigation,
+} from "swiper/modules";
+import PopularLocation from "../utils/PopularLocation";
+
 const PopularTours = () => {
   return (
     <div
@@ -20,8 +35,103 @@ const PopularTours = () => {
           Most Popular Tours
         </div>
       </div>
-      <div className="my-5">
-        <div className="flex flex-col gap-2 py-4 h-[400px]"></div>
+      <div className="flex  justify-center items-center py-5">
+        <Swiper
+          spaceBetween={10}
+          modules={[Pagination, Autoplay]}
+          navigation={false}
+          autoplay={{
+            delay: 8000,
+            disableOnInteraction: false,
+          }}
+          loop={false}
+          id="commercial"
+          breakpoints={{
+            640: {
+              slidesPerView: 2,
+              spaceBetween: 10,
+            },
+            900: {
+              slidesPerView: 2,
+              spaceBetween: 10,
+            },
+            1024: {
+              slidesPerView: 3,
+              spaceBetween: 10,
+            },
+            1200: {
+              slidesPerView: 4,
+              spaceBetween: 10,
+            },
+          }}
+        >
+          <SwiperSlide
+            className="flex justify-center items-center z-10 my-10 mx-auto"
+            style={{ display: "flex", justifyContent: "center" }}
+          >
+            <PopularLocation />
+          </SwiperSlide>
+          <SwiperSlide
+            className="flex justify-center items-center z-10 my-10 mx-auto"
+            style={{ display: "flex", justifyContent: "center" }}
+          >
+            <PopularLocation />
+          </SwiperSlide>
+          <SwiperSlide
+            className="flex justify-center items-center z-10 my-10 mx-auto"
+            style={{ display: "flex", justifyContent: "center" }}
+          >
+            <PopularLocation />
+          </SwiperSlide>
+          <SwiperSlide
+            className="flex justify-center items-center z-10 my-10 mx-auto"
+            style={{ display: "flex", justifyContent: "center" }}
+          >
+            <PopularLocation />
+          </SwiperSlide>
+          <SwiperSlide
+            className="flex justify-center items-center z-10 my-10 mx-auto"
+            style={{ display: "flex", justifyContent: "center" }}
+          >
+            <PopularLocation />
+          </SwiperSlide>
+          <SwiperSlide
+            className="flex justify-center items-center z-10 my-10 mx-auto"
+            style={{ display: "flex", justifyContent: "center" }}
+          >
+            <PopularLocation />
+          </SwiperSlide>
+          <SwiperSlide
+            className="flex justify-center items-center z-10 my-10 mx-auto"
+            style={{ display: "flex", justifyContent: "center" }}
+          >
+            <PopularLocation />
+          </SwiperSlide>
+          <SwiperSlide
+            className="flex justify-center items-center z-10 my-10 mx-auto"
+            style={{ display: "flex", justifyContent: "center" }}
+          >
+            <PopularLocation />
+          </SwiperSlide>
+          <SwiperSlide
+            className="flex justify-center items-center z-10 my-10 mx-auto"
+            style={{ display: "flex", justifyContent: "center" }}
+          >
+            <PopularLocation />
+          </SwiperSlide>
+          <SwiperSlide
+            className="flex justify-center items-center z-10 my-10 mx-auto"
+            style={{ display: "flex", justifyContent: "center" }}
+          >
+            <PopularLocation />
+          </SwiperSlide>
+          <SwiperSlide
+            className="flex justify-center items-center z-10 my-10 mx-auto"
+            style={{ display: "flex", justifyContent: "center" }}
+          >
+            <PopularLocation />
+          </SwiperSlide>
+        </Swiper>
       </div>
     </div>
   );

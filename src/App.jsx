@@ -29,9 +29,7 @@ function App() {
     <div className="flex flex-col">
       <HeroSection />
       <FeaturedDestination />
-      {/* <PopularTours /> */}
-      {/* <Welcome /> */}
-      {/* <TrendingTreks /> */}
+      <PopularTours />
       <SwiperCards />
       <AnalyticData />
       <Footer />
