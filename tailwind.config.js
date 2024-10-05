@@ -11,7 +11,7 @@ export default {
         oswald: ['"Oswald", "sans-serif"'],
         fredoka: ['"Fredoka", "sans-serif"'],
         montez: ['"Montez", "cursive"'],
-        inter: ["Inter", "sans - serif"],
+        inter: ['"Inter", "sans-serif"'],
       },
     },
   },

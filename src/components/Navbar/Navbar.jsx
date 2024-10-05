@@ -7,6 +7,10 @@ import navBarLogo from "../../assets/cm-logo.png";
 import { IoClose } from "react-icons/io5";
 import Dropdown from "./Dropdown";
 import { CiUser } from "react-icons/ci";
+import { LuClock } from "react-icons/lu";
+import { IoLocationOutline } from "react-icons/io5";
+import { GoClock } from "react-icons/go";
+import { FaArrowRight } from "react-icons/fa";
 
 const navbarProps = {
   Logo: { type: "img", text: "LOGO GOES HERE !", img: "/vite.svg" },
@@ -93,32 +97,34 @@ export default function Nav() {
     setIsVisible(!isVisible);
   };
   return (
-    <div className="flex flex-col">
-      <div className="h-8 w-full bg-white flex justify-between  items-center text-center px-2 border-b-2 border-gray-200 text-xs cursor-pointer font-inter font-semibold">
+    <div className="flex flex-col font-inter text-[16px] font-normal leading-[26px]">
+      <div className="h-8 w-[90%] mx-auto bg-white flex justify-between  items-center text-center px-2 border-b-2 border-gray-200 cursor-pointer font-inter pl-5 text-[13px]  font-normal">
         <div className="hidden lg:flex gap-2">
-          <div className="hover:text-blue-500 transition-all duration-300 delay-150 ease-in-out">
-            address
+          <div className="hover:text-[#1CA8CB] transition-all duration-300 delay-150 ease-in-out flex justify-between items-center gap-2 font-inter tracking-wide">
+            <IoLocationOutline className="w-4 h-4 font-semibold" />
+            <div>Clock Tower, Dehardun</div>
           </div>
           <div className="text-gray-400">|</div>
-          <div className="hover:text-blue-500 transition-all duration-300 delay-150 ease-in-out">
-            opening time
+          <div className="hover:text-[#1CA8CB] transition-all duration-300 delay-150 ease-in-out flex justify-between items-center gap-2 tracking-wide">
+            <GoClock className="w-4 h-4 " />
+            <div>Sun to Friday: 8.00 am - 7.00 pm</div>
           </div>
         </div>
-        <div className="flex gap-2 tracking-wider justify-center items-center ml-auto mr-5 lg:ml-0 lg:mr-0">
-          <div className="hover:text-blue-500 transition-all duration-300 delay-150 ease-in-out">
+        <div className="flex gap-2 tracking-wider justify-center items-center w-[98%] md:w-fit mx-auto md:ml-auto md:mr-5 lg:ml-0 lg:mr-0">
+          <div className="hover:text-[#1CA8CB] transition-all duration-300 delay-150 ease-in-out">
             Ph no.
           </div>
           <div className="text-gray-400">|</div>
-          <div className="hover:text-blue-500 transition-all duration-300 delay-150 ease-in-out">
+          <div className="hover:text-[#1CA8CB] transition-all duration-300 delay-150 ease-in-out">
             FAQ
           </div>
           <div className="text-gray-400">|</div>
-          <div className="hover:text-blue-500 transition-all duration-300 delay-150 ease-in-out">
-            support
+          <div className="hover:text-[#1CA8CB] transition-all duration-300 delay-150 ease-in-out">
+            Support
           </div>
           <div className="text-gray-400">|</div>
-          <div className="flex flex-row justify-center items-center">
-            <div className="hover:text-blue-500 transition-all duration-300 delay-150 ease-in-out">
+          <div className="flex flex-row justify-center items-center hover:text-[#1CA8CB]">
+            <div className="transition-all duration-300 delay-150 ease-in-out">
               Sign in/Register
             </div>
             <CiUser className="flex items-center justify-center w-4 h-4" />
@@ -126,16 +132,16 @@ export default function Nav() {
         </div>
       </div>
       <div
-        className="z-50 font-fredoka font-normal text-sm nav-wrapper w-full h-[75px] flex justify-between items-center py-2 bg-gray-50"
+        className="z-50 font-fredoka font-normal text-sm nav-wrapper w-full h-[85px] flex justify-between items-center py-2 bg-white"
         onClick={() => setIsDropdownVisible(false)}
       >
-        <div className="nav-logo flex justify-center items-center px-2 font-bold text-xl ">
+        <div className="nav-logo flex justify-center items-center px-2 font-bold text-xs ">
           <Logo />
         </div>
         {/* for small devices DRAWER */}
         <div className="">
           <div
-            className={`menu-wrapper bg-gray-100 top-0 z-50 w-[70%] sm:w-[50%] fixed md:hidden  transition-all duration-700 delay-300 md:transform-none ${
+            className={`menu-wrapper bg-white top-0 z-50 w-[70%] sm:w-[50%] fixed md:hidden  transition-all duration-700 delay-300 md:transform-none ${
               show ? "left-0 h-full" : "h-0 left-[-2000px]"
             } md:h-full md:bottom-auto `}
           >
@@ -149,13 +155,13 @@ export default function Nav() {
               </button>
             </div>
             <ul
-              className={`menu flex flex-col md:flex-row w-[80%] mx-auto transition-all duration-500 md:transform-none md:delay-0 md:duration-0 ${
+              className={`font-inter menu flex flex-col md:flex-row w-[80%] mx-auto transition-all duration-500 md:transform-none md:delay-0 md:duration-0 ${
                 show ? "h-screen " : "h-0 "
               } md:h-full md:space-x-4  md:pt-0 md:pl-auto text-left text-lg overflow-y-scroll`}
             >
               <li className="md:text-[#0A1D56] cursor-pointer pt-4 pb-1 transition-all duration-500 ease-in-out">
                 <div
-                  className="w-full flex justify-between items-center pb-1"
+                  className="w-full flex justify-between items-center pb-1 text-xs"
                   onClick={handleDropdown}
                 >
                   <div
@@ -189,7 +195,7 @@ export default function Nav() {
                   }`}
                   style={{ maxHeight: isVisible ? "400px" : "0" }}
                 >
-                  <ul className="bg-pink overflow-hidden w-full mx-auto">
+                  <ul className="bg-pink overflow-hidden w-full mx-auto text-xs">
                     <li className="justify-start items-center flex pt-4 pb-1">
                       Uttarakhand-treks
                     </li>
@@ -210,19 +216,19 @@ export default function Nav() {
                 </div>
               </li>
 
-              <li className="pt-4 pb-1 md:h-full  text-[#0A1D56]  justify-start items-center flex cursor-pointer">
+              <li className="pt-4 pb-1 md:h-full  text-[#0A1D56]  justify-start items-center flex cursor-pointer text-xs">
                 Home
               </li>
               <div className="w-full mx-auto border-[1px] h-0 bg-gray-400" />
-              <li className="pt-4 pb-1 md:h-full  text-[#0A1D56]  justify-start items-center flex cursor-pointer">
+              <li className="pt-4 pb-1 md:h-full  text-[#0A1D56]  justify-start items-center flex cursor-pointer text-xs">
                 About Us
               </li>
               <div className="w-full mx-auto border-[1px] h-0 bg-gray-400" />
-              <li className="pt-4 pb-1 md:h-full  text-[#0A1D56]  justify-start items-center flex cursor-pointer">
+              <li className="pt-4 pb-1 md:h-full  text-[#0A1D56]  justify-start items-center flex cursor-pointer text-xs">
                 Contact
               </li>
               <div className="w-full mx-auto border-[1px] h-0 bg-gray-400" />
-              <li className="pt-4 pb-1 md:h-full  text-[#0A1D56]  justify-start items-center flex cursor-pointer">
+              <li className="pt-4 pb-1 md:h-full  text-[#0A1D56]  justify-start items-center flex cursor-pointer text-xs">
                 Blogs
               </li>
               <div className="w-full mx-auto border-[1px] h-0 bg-gray-400" />
@@ -236,16 +242,16 @@ export default function Nav() {
           />
         </div>
         {/* for bigger screen */}
-        <div className="mx-auto hidden md:flex px-4 text-lg h-full">
-          <ul className="type-none flex  md:space-x-5 h-full mr-5">
-            <div className="group flex items-center navlink group relative h-full cursor-pointer">
-              <div className="absolute inset-x-0 bottom-[15px] border-b-2 border-transparent transition-colors duration-3000 group-hover:border-black"></div>
-              <p>Home</p>
+        <div className="mx-auto hidden md:flex px-4 text-md font-inter h-full tracking-wider">
+          <ul className="type-none flex  md:space-x-5 h-full mr-5 ">
+            <div className="group flex items-center navlink relative h-full cursor-pointer ">
+              <p className="group-hover:text-[#1CA8CB]">Home</p>
+              <div className="absolute inset-x-0 bottom-[15px] h-[1px] rounded-xl bg-black group-hover:bg-[#1CA8CB] transform scale-x-0 origin-left transition-transform duration-300 group-hover:scale-x-100"></div>
             </div>
 
-            <div className="group flex items-center navlink group relative h-full cursor-pointer">
-              <div className="absolute inset-x-0 bottom-[15px] border-b-2 border-transparent transition-colors duration-3000 group-hover:border-black"></div>
-              <p>About Us</p>
+            <div className="group flex items-center navlink relative h-full cursor-pointer">
+              <p className="group-hover:text-[#1CA8CB]">About Us</p>
+              <div className="absolute inset-x-0 bottom-[15px] h-[1px] rounded-xl bg-black group-hover:bg-[#1CA8CB] transform scale-x-0 origin-left transition-transform duration-300 group-hover:scale-x-100"></div>
             </div>
 
             <div
@@ -253,16 +259,22 @@ export default function Nav() {
               onMouseEnter={() => setIsDropdownVisible(true)}
               onMouseLeave={() => setIsDropdownVisible(false)}
             >
-              <div className="flex group items-center gap-1  h-full ">
-                <p className="">Treks</p>
-                <div className="absolute inset-x-0 bottom-[15px] border-b-2 border-transparent transition-colors duration-300 group-hover:border-black"></div>
+              <div className="flex group items-center gap-1 h-full ">
+                <p className="group-hover:text-[#1CA8CB]">Treks</p>
+
+                {/* Bottom border animation */}
+                <div className="absolute inset-x-0 bottom-[15px] h-[1px] rounded-xl bg-black group-hover:bg-[#1CA8CB] transform scale-x-0 origin-left transition-transform duration-300 group-hover:scale-x-100"></div>
+
+                {/* Rotating arrow icon */}
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
                   viewBox="0 0 24 24"
                   strokeWidth={1.5}
                   stroke="currentColor"
-                  className="w-3 h-3  group-hover:rotate-180 transition-transform duration-500 ease-in-out"
+                  className={`w-3 h-3 transition-transform duration-500 ease-in-out group-hover:hover:bg-[#1CA8CB] ${
+                    isDropDownVisible ? "rotate-180" : "rotate-0"
+                  }`}
                 >
                   <path
                     strokeLinecap="round"
@@ -271,40 +283,59 @@ export default function Nav() {
                   />
                 </svg>
 
+                {/* Dropdown menu */}
                 {isDropDownVisible && (
                   <div
-                    className="absolute top-full left-0 bg-white  shadow-md rounded  w-[200%] text-sm font-light tracking-wide z-50"
+                    className={`absolute  top-full left-[-50%] bg-white shadow-md rounded w-fit text-sm font-light tracking-wide transition-all duration-1000 delay-1000 ease-in-out transform ${
+                      isDropDownVisible
+                        ? "translate-y-0 opacity-100 z-[40]"
+                        : "-translate-y-4 opacity-0 z-[0]"
+                    }`}
+                    style={{
+                      transformOrigin: "top",
+                    }}
                     onMouseLeave={() => setIsDropdownVisible(false)}
                   >
                     <ul>
-                      <li className="p-2 hover:bg-gray-100">
+                      <li className="p-2 hover:bg-gray-100 text-nowrap hover:text-[#1CA8CB]">
                         Uttarakhand-treks
                       </li>
-                      <li className="p-2 hover:bg-gray-100">Himachal-treks</li>
-                      <li className="p-2 hover:bg-gray-100">
+                      <li className="p-2 hover:bg-gray-100 text-nowrap hover:text-[#1CA8CB]">
+                        Himachal-treks
+                      </li>
+                      <li className="p-2 hover:bg-gray-100 text-nowrap hover:text-[#1CA8CB]">
                         Jammu & Kashmir-treks
                       </li>
-                      <li className="p-2 hover:bg-gray-100">Leh-treks</li>
+                      <li className="p-2 hover:bg-gray-100 text-nowrap hover:text-[#1CA8CB]">
+                        Leh-treks
+                      </li>
                     </ul>
                   </div>
                 )}
               </div>
             </div>
 
-            <div className="group flex items-center navlink group relative h-full cursor-pointer">
-              <div className="absolute inset-x-0 bottom-[15px] border-b-2 border-transparent transition-colors duration-3000 group-hover:border-black"></div>
-              <p>Contact</p>
+            <div className="group flex items-center navlink relative h-full cursor-pointer">
+              <p className="group-hover:text-[#1CA8CB]">Contact</p>
+              <div className="absolute inset-x-0 bottom-[15px] h-[1px] rounded-xl bg-black group-hover:bg-[#1CA8CB] transform scale-x-0 origin-left transition-transform duration-300 group-hover:scale-x-100"></div>
             </div>
 
-            <div className="group flex items-center navlink group relative h-full cursor-pointer">
-              <div className="absolute inset-x-0 bottom-[15px] border-b-2 border-transparent transition-colors duration-3000 group-hover:border-black"></div>
-              <p>Blogs</p>
+            <div className="group flex items-center navlink relative h-full cursor-pointer">
+              <p className="group-hover:text-[#1CA8CB]">Blogs</p>
+              <div className="absolute inset-x-0 bottom-[15px] h-[1px] rounded-xl bg-black group-hover:bg-[#1CA8CB] transform scale-x-0 origin-left transition-transform duration-300 group-hover:scale-x-100"></div>
             </div>
           </ul>
         </div>
-        <div className="hidden md:flex bg-black text-white px-6 py-2 rounded-[32px] relative hover:bg-opacity-80 cursor-pointer mr-1">
-          Book Now
+        <div className="hidden md:flex bg-black text-white px-8 py-3 rounded-[32px] relative overflow-hidden hover:bg-opacity-80 cursor-pointer mr-1 z-40 group border-none">
+          <span className="relative z-10 flex items-center justify-center gap-2">
+            <div>Book Now</div>
+            <FaArrowRight />
+          </span>
+          <div className="absolute inset-0 bg-black border-transparent">
+            <div className="mask absolute inset-0 bg-[#1CA8CB] transition-all duration-500 transform translate-x-[-100%] group-hover:translate-x-0 border-transparent"></div>
+          </div>
         </div>
+
         <MenuToggleButton show={show} setShow={setShow} />
       </div>
     </div>

@@ -13,6 +13,7 @@ import TrendingTreks from "./components/Home/TrendingTreks";
 import TestimonialSection from "./components/Home/Reviews";
 import SwiperCards from "./components/Home/SwiperCards";
 import FeaturedDestination from "./components/Home/FeaturedDestination";
+import Navbar from "./components/Navbar/NewNavbar";
 
 function App() {
   useEffect(() => {
@@ -25,8 +26,8 @@ function App() {
     <div className="flex flex-col">
       <HeroSection />
       <FeaturedDestination />
-      <Welcome />
-      <TrendingTreks />
+      {/* <Welcome /> */}
+      {/* <TrendingTreks /> */}
       <SwiperCards />
       <Footer />
     </div>
