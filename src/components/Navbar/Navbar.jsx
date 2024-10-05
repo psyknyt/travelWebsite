@@ -154,7 +154,7 @@ export default function Nav() {
             <ul
               className={`font-inter menu flex flex-col md:flex-row w-[80%] mx-auto transition-all duration-500 md:transform-none md:delay-0 md:duration-0 ${
                 show ? "h-screen " : "h-0 "
-              } md:h-full md:space-x-4  md:pt-0 md:pl-auto text-left text-lg overflow-y-scroll`}
+              } md:h-full md:space-x-4  md:pt-0 md:pl-auto text-left text-lg`}
             >
               <li className="md:text-[#0A1D56] cursor-pointer pt-4 pb-1 transition-all duration-500 ease-in-out">
                 <div
