@@ -98,7 +98,7 @@ export default function Nav() {
   };
   return (
     <div className="flex flex-col font-inter text-[16px] font-normal leading-[26px]">
-      <div className="h-8 w-[90%] mx-auto bg-white flex justify-between  items-center text-center px-2 border-b-2 border-gray-200 cursor-pointer font-inter pl-5 text-[13px]  font-normal">
+      <div className="h-8 w-[90%] mx-auto bg-white flex justify-between  items-center text-center px-2 border-b-2 border-gray-200 cursor-pointer font-inter pl-5 text-[11px] sm:text-[13px]  font-normal">
         <div className="hidden lg:flex gap-2">
           <div className="hover:text-[#1CA8CB] transition-all duration-300 delay-150 ease-in-out flex justify-between items-center gap-2 font-inter tracking-wide">
             <IoLocationOutline className="w-4 h-4 font-semibold" />
