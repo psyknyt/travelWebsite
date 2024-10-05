@@ -15,6 +15,8 @@ import SwiperCards from "./components/Home/SwiperCards";
 import FeaturedDestination from "./components/Home/FeaturedDestination";
 import Navbar from "./components/Navbar/NewNavbar";
 import GlowingCircle from "./components/utils/GlowingCircles";
+import AnalyticData from "./components/Home/AnalyticData";
+import PopularTours from "./components/Home/PopularTours";
 
 function App() {
   useEffect(() => {
@@ -27,10 +29,11 @@ function App() {
     <div className="flex flex-col">
       <HeroSection />
       <FeaturedDestination />
+      {/* <PopularTours /> */}
       {/* <Welcome /> */}
       {/* <TrendingTreks /> */}
       <SwiperCards />
-      {/* <GlowingCircle /> */}
+      <AnalyticData />
       <Footer />
     </div>
   );

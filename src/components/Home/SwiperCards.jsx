@@ -18,7 +18,7 @@ import bgLineImage from "../../assets/background/line-pattern2.png";
 function SwiperCards() {
   return (
     <div
-      className="swiper-cards-container py-5"
+      className="swiper-cards-container pt-5"
       style={{
         backgroundImage: `url(${bgLineImage})`,
         backgroundSize: "cover",
