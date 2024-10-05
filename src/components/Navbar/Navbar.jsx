@@ -11,6 +11,7 @@ import { LuClock } from "react-icons/lu";
 import { IoLocationOutline } from "react-icons/io5";
 import { GoClock } from "react-icons/go";
 import { FaArrowRight } from "react-icons/fa";
+import logoBgMask from "../../assets/background/logo_bg_mask.png";
 
 const navbarProps = {
   Logo: { type: "img", text: "LOGO GOES HERE !", img: "/vite.svg" },
@@ -42,11 +43,7 @@ const Logo = () => {
       href="https://thecrazymountaineers.com/"
       className="logo wrapper min-w-16 max-w-48 flex items-center justify-center px-2"
     >
-      {navbarProps.Logo.type === "text" ? (
-        <span className="font-bold">{navbarProps.Logo.text}</span>
-      ) : (
-        <img src={navBarLogo} alt="logo" />
-      )}
+      <img src={navBarLogo} alt="logo" />
     </a>
   );
 };

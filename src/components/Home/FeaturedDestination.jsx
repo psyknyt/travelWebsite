@@ -54,7 +54,7 @@ const FeaturedDestination = () => {
         <div className="font-montez text-4xl leading-6 pt-4">
           Top Destinations
         </div>
-        <div className="pt-2 font-oswald text-2xl sm:text-3xl md:text-4xl font-semibold tracking-wide flex justify-center items-center text-nowrap">
+        <div className="pt-2 font-inter text-2xl sm:text-3xl md:text-4xl font-semibold tracking-wide flex justify-center items-center text-nowrap">
           Our Featured Destinations
         </div>
       </div>
@@ -89,7 +89,7 @@ const FeaturedDestination = () => {
         ))}
       </div>
       {/* For smaller screen */}
-      <div className="flex md:hidden flex-col md:flex-row gap-2 justify-center items-center w-[70%] mx-auto mt-5">
+      <div className="flex md:hidden flex-col md:flex-row gap-2 justify-center items-center w-[90%] sm:w-[80%] mx-auto mt-5">
         {destinationsData.map((el, index) => (
           <div
             className={`relative rounded-xl cursor-pointer transition-all duration-1000 ease-in-out ${

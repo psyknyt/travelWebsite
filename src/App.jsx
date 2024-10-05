@@ -14,6 +14,7 @@ import TestimonialSection from "./components/Home/Reviews";
 import SwiperCards from "./components/Home/SwiperCards";
 import FeaturedDestination from "./components/Home/FeaturedDestination";
 import Navbar from "./components/Navbar/NewNavbar";
+import GlowingCircle from "./components/utils/GlowingCircles";
 
 function App() {
   useEffect(() => {
@@ -29,6 +30,7 @@ function App() {
       {/* <Welcome /> */}
       {/* <TrendingTreks /> */}
       <SwiperCards />
+      {/* <GlowingCircle /> */}
       <Footer />
     </div>
   );
