@@ -145,7 +145,7 @@ export default function Nav() {
             <div className="relative flex justify-center items-center py-5 bg-blue-100">
               <Logo />
               <button
-                className="absolute top-1 right-1 flex items-center justify-center bg-black bg-opacity-80 text-white rounded-full h-5 w-5 text-xs z-40"
+                className="absolute top-1 right-1 flex items-center justify-center bg-black bg-opacity-80 text-white rounded-full h-5 w-5 text-[16px] z-40"
                 onClick={() => setShow(!show)}
               >
                 <IoClose />
@@ -154,11 +154,11 @@ export default function Nav() {
             <ul
               className={`font-inter menu flex flex-col md:flex-row w-[80%] mx-auto transition-all duration-500 md:transform-none md:delay-0 md:duration-0 ${
                 show ? "h-screen " : "h-0 "
-              } md:h-full md:space-x-4  md:pt-0 md:pl-auto text-left text-lg`}
+              } md:h-full md:space-x-4  md:pt-0 md:pl-auto text-left font-normal text-[16px]`}
             >
-              <li className="md:text-[#0A1D56] cursor-pointer pt-4 pb-1 transition-all duration-500 ease-in-out">
+              <li className="md:text-[#0A1D56] cursor-pointer pt-4 pb-1 transition-all duration-500 ease-in-out text-[16px]">
                 <div
-                  className="w-full flex justify-between items-center pb-1 text-xs"
+                  className="w-full flex justify-between items-center pb-1 "
                   onClick={handleDropdown}
                 >
                   <div
@@ -192,7 +192,7 @@ export default function Nav() {
                   }`}
                   style={{ maxHeight: isVisible ? "400px" : "0" }}
                 >
-                  <ul className="bg-pink overflow-hidden w-full mx-auto text-xs">
+                  <ul className="bg-pink overflow-hidden w-full mx-auto">
                     <li className="justify-start items-center flex pt-4 pb-1">
                       Uttarakhand-treks
                     </li>
@@ -213,19 +213,19 @@ export default function Nav() {
                 </div>
               </li>
 
-              <li className="pt-4 pb-1 md:h-full  text-[#0A1D56]  justify-start items-center flex cursor-pointer text-xs">
+              <li className="pt-4 pb-1 md:h-full  text-[#0A1D56]  justify-start items-center flex cursor-pointer">
                 Home
               </li>
               <div className="w-full mx-auto border-[1px] h-0 bg-gray-400" />
-              <li className="pt-4 pb-1 md:h-full  text-[#0A1D56]  justify-start items-center flex cursor-pointer text-xs">
+              <li className="pt-4 pb-1 md:h-full  text-[#0A1D56]  justify-start items-center flex cursor-pointer">
                 About Us
               </li>
               <div className="w-full mx-auto border-[1px] h-0 bg-gray-400" />
-              <li className="pt-4 pb-1 md:h-full  text-[#0A1D56]  justify-start items-center flex cursor-pointer text-xs">
+              <li className="pt-4 pb-1 md:h-full  text-[#0A1D56]  justify-start items-center flex cursor-pointer">
                 Contact
               </li>
               <div className="w-full mx-auto border-[1px] h-0 bg-gray-400" />
-              <li className="pt-4 pb-1 md:h-full  text-[#0A1D56]  justify-start items-center flex cursor-pointer text-xs">
+              <li className="pt-4 pb-1 md:h-full  text-[#0A1D56]  justify-start items-center flex cursor-pointer">
                 Blogs
               </li>
               <div className="w-full mx-auto border-[1px] h-0 bg-gray-400" />
@@ -239,7 +239,7 @@ export default function Nav() {
           />
         </div>
         {/* for bigger screen */}
-        <div className="mx-auto hidden md:flex px-4 text-md font-inter h-full tracking-wider">
+        <div className="mx-auto hidden md:flex px-4 text-[16px] font-normal font-inter h-full tracking-wider">
           <ul className="type-none flex  md:space-x-5 h-full mr-5 ">
             <div className="group flex items-center navlink relative h-full cursor-pointer ">
               <p className="group-hover:text-[#1CA8CB]">Home</p>

@@ -25,9 +25,14 @@ function SwiperCards() {
         backgroundPosition: "center",
       }}
     >
-      <h1 className="font-montez text-4xl leading-6 pt-4 flex justify-center items-center">
-        Flower Gallery
-      </h1>
+      <div className="flex flex-col items-center justify-center gap-2 py-4">
+        <div className="font-montez text-4xl leading-6 pt-4">
+          Top Destinations
+        </div>
+        <div className="pt-2 font-inter text-2xl sm:text-3xl md:text-4xl font-semibold tracking-wide flex justify-center items-center text-nowrap">
+          Popular Destinations
+        </div>
+      </div>
       <Swiper
         effect={"coverflow"}
         grabCursor={true}

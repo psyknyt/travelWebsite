@@ -59,7 +59,7 @@ const FeaturedDestination = () => {
         </div>
       </div>
       {/* For Bigger screens */}
-      <div className="hidden md:flex flex-col md:flex-row gap-2 justify-center items-center w-[90%] sm:w-[80%] mx-auto mt-5 ">
+      <div className="hidden md:flex flex-col md:flex-row gap-2 justify-center items-center w-[90%] mx-auto mt-5 ">
         {destinationsData.map((el, index) => (
           <div
             className={`md:h-[500px]  rounded-xl relative cursor-pointer ${
@@ -89,7 +89,7 @@ const FeaturedDestination = () => {
         ))}
       </div>
       {/* For smaller screen */}
-      <div className="flex md:hidden flex-col md:flex-row gap-2 justify-center items-center w-[90%] sm:w-[80%] mx-auto mt-5">
+      <div className="flex md:hidden flex-col md:flex-row gap-2 justify-center items-center w-[95%] sm:w-[90%] mx-auto mt-5">
         {destinationsData.map((el, index) => (
           <div
             className={`relative rounded-xl cursor-pointer transition-all duration-1000 ease-in-out ${
