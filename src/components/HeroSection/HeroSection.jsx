@@ -5,9 +5,8 @@ import { Autoplay, Navigation, Pagination } from "swiper/modules";
 
 import "swiper/css"; // Import Swiper styles\
 
-import banner1 from "../../assets/banner1.jpg";
-import banner2 from "../../assets/banner2.jpg";
-import banner3 from "../../assets/banner3.jpg";
+import banner1 from "../../assets/slide_01.png";
+import banner2 from "../../assets/slide_02.png";
 
 const HeroSection = () => {
   return (
@@ -18,9 +17,9 @@ const HeroSection = () => {
         <Swiper
           spaceBetween={30}
           loop={true}
-          pagination={{
-            clickable: true,
-          }}
+          // pagination={{
+          //   clickable: true,
+          // }}
           // navigation={true}
           modules={[Pagination, Autoplay, Navigation, Pagination]}
           autoplay={{
@@ -34,7 +33,7 @@ const HeroSection = () => {
               src={banner1}
               alt="Hero Section"
               loading="lazy"
-              className="w-full h-full m-auto object-contain md:object-cover object-center overflow-x-hidden  "
+              className="w-full h-full m-auto object-cover object-center overflow-x-hidden  "
             />
           </SwiperSlide>
           <SwiperSlide className="transition duration-300 ease-in-out">
@@ -43,16 +42,7 @@ const HeroSection = () => {
               src={banner2}
               alt="Hero Section"
               loading="lazy"
-              className="w-full h-full m-auto object-contain md:object-cover object-center overflow-x-hidden  transition-all duration-300 ease-in-out"
-            />
-          </SwiperSlide>
-          <SwiperSlide className="transition duration-300 ease-in-out">
-            <img
-              data-aos="zoom-in-up"
-              src={banner3}
-              alt="Hero Section"
-              loading="lazy"
-              className="w-full h-full m-auto object-contain md:object-cover object-center overflow-x-hidden  transition-all duration-300 ease-in-out"
+              className="w-full h-full m-auto object-cover object-center overflow-x-hidden  transition-all duration-300 ease-in-out"
             />
           </SwiperSlide>
         </Swiper>
