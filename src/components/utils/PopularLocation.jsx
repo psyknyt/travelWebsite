@@ -13,15 +13,14 @@ const PopularLocation = () => {
   // max-w-[400px] min-w-[200px] min-h-[500px]
   return (
     <div
-      className={`relative bg-black shadow-xl flex flex-col group rounded-lg`}
+      className={`relative bg-black shadow-xl flex flex-col group rounded-lg w-[95%]`}
       data-aos="fade-up"
     >
       <div className="img overflow-hidden rounded-t-lg">
         <img
           src={bgImage}
           alt="card image"
-          style={{ maxWidth: "350px", minWidth: "200px", maxHeight: "250px" }}
-          className="object-cover transition-transform duration-500 group-hover:scale-125"
+          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-125"
         />
       </div>
       <div className="h-[200px] flex flex-col px-4 py-2 bg-gray-100 ">

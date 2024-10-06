@@ -14,6 +14,7 @@ import bestAutumnTreks from "../../assets/best-autumn-treks.jpg";
 import spitiValley from "../../assets/Spiti_Valley_Road_Trip_thumb.jpg";
 
 import bgLineImage from "../../assets/background/line-pattern2.png";
+import { FaArrowRight } from "react-icons/fa";
 
 function SwiperCards() {
   return (
@@ -55,71 +56,231 @@ function SwiperCards() {
         className="swiper_container"
       >
         <SwiperSlide>
-          <img
-            src={bestAutumnTreks}
-            alt="slide_image"
-            loading="lazy"
-            className="object-cover object-center"
-          />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img
-            src={bestAutumnTreks}
-            alt="slide_image"
-            loading="lazy"
-            className="object-cover object-center"
-          />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img
-            src={bestAutumnTreks}
-            alt="slide_image"
-            loading="lazy"
-            className="object-cover object-center"
-          />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img
-            src={bestAutumnTreks}
-            alt="slide_image"
-            loading="lazy"
-            className="object-cover object-center"
-          />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img
-            src={bestAutumnTreks}
-            alt="slide_image"
-            loading="lazy"
-            className="object-cover object-center"
-          />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img
-            src={bestAutumnTreks}
-            alt="slide_image"
-            loading="lazy"
-            className="object-cover object-center"
-          />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img
-            src={bestAutumnTreks}
-            alt="slide_image"
-            loading="lazy"
-            className="object-cover object-center"
-          />
-        </SwiperSlide>
-
-        {/* <div className="slider-controler">
-          <div className="swiper-button-prev slider-arrow">
-            <ion-icon name="arrow-back-outline"></ion-icon>
+          <div className="relative overflow-hidden">
+            <img
+              src={bestAutumnTreks}
+              alt="slide_image"
+              loading="lazy"
+              className="object-cover object-center"
+            />
+            <div className="absolute bottom-0 pb-0 md:pb-[2rem] w-full  flex flex-col justify-center md:flex-row md:justify-between items-center text-white h-fit overflow-hidden rounded-[2rem] bg-black bg-opacity-10 py-10 gap-2">
+              <div className="flex flex-col justify-between px-1 font-fredoka tracking-wider z-20">
+                <div className="text-xl md:text-[24px] font-semi flex justify-center md:justify-start items-center">
+                  Location
+                </div>
+                <div className="text-xs md:text-[16px] font-semi flex justify-center md:justify-start items-center">
+                  12 Listings
+                </div>
+              </div>
+              <div className="flex bg-transparent border-white border-[2px] text-white group-hover:text-black px-4 py-2 md:px-8 md:py-3 rounded-[32px] relative overflow-hidden hover:bg-opacity-80 cursor-pointer mr-1 z-40  group mb-2 ">
+                <span className="relative z-10 flex items-center justify-center gap-2">
+                  <div className="text-nowrap group-hover:text-black font-normal">
+                    View All
+                  </div>
+                  <FaArrowRight className="text-nowrap group-hover:text-black" />
+                </span>
+                <div className="absolute inset-0 bg-transparent border-transparent text-white group-hover:text-black overflow-hidden">
+                  <div className="mask absolute inset-0 bg-white transition-all duration-500 transform translate-x-[-100%] group-hover:translate-x-0 border-transparent"></div>
+                </div>
+              </div>
+            </div>
           </div>
-          <div className="swiper-button-next slider-arrow">
-            <ion-icon name="arrow-forward-outline"></ion-icon>
+        </SwiperSlide>
+        <SwiperSlide>
+          <div className="relative overflow-hidden">
+            <img
+              src={bestAutumnTreks}
+              alt="slide_image"
+              loading="lazy"
+              className="object-cover object-center"
+            />
+            <div className="absolute bottom-0 pb-0 md:pb-[2rem] w-full  flex flex-col justify-center md:flex-row md:justify-between items-center text-white h-fit overflow-hidden rounded-[2rem] bg-black bg-opacity-10 py-10 gap-2">
+              <div className="flex flex-col justify-between px-1 font-fredoka tracking-wider z-20">
+                <div className="text-xl md:text-[24px] font-semi flex justify-center md:justify-start items-center">
+                  Location
+                </div>
+                <div className="text-xs md:text-[16px] font-semi flex justify-center md:justify-start items-center">
+                  12 Listings
+                </div>
+              </div>
+              <div className="flex bg-transparent border-white border-[2px] text-white group-hover:text-black px-4 py-2 md:px-8 md:py-3 rounded-[32px] relative overflow-hidden hover:bg-opacity-80 cursor-pointer mr-1 z-40  group mb-2 ">
+                <span className="relative z-10 flex items-center justify-center gap-2">
+                  <div className="text-nowrap group-hover:text-black font-normal">
+                    View All
+                  </div>
+                  <FaArrowRight className="text-nowrap group-hover:text-black" />
+                </span>
+                <div className="absolute inset-0 bg-transparent border-transparent text-white group-hover:text-black overflow-hidden">
+                  <div className="mask absolute inset-0 bg-white transition-all duration-500 transform translate-x-[-100%] group-hover:translate-x-0 border-transparent"></div>
+                </div>
+              </div>
+            </div>
           </div>
-          <div className="swiper-pagination"></div>
-        </div> */}
+        </SwiperSlide>
+        <SwiperSlide>
+          <div className="relative overflow-hidden">
+            <img
+              src={bestAutumnTreks}
+              alt="slide_image"
+              loading="lazy"
+              className="object-cover object-center"
+            />
+            <div className="absolute bottom-0 pb-0 md:pb-[2rem] w-full  flex flex-col justify-center md:flex-row md:justify-between items-center text-white h-fit overflow-hidden rounded-[2rem] bg-black bg-opacity-10 py-10 gap-2">
+              <div className="flex flex-col justify-between px-1 font-fredoka tracking-wider z-20">
+                <div className="text-xl md:text-[24px] font-semi flex justify-center md:justify-start items-center">
+                  Location
+                </div>
+                <div className="text-xs md:text-[16px] font-semi flex justify-center md:justify-start items-center">
+                  12 Listings
+                </div>
+              </div>
+              <div className="flex bg-transparent border-white border-[2px] text-white group-hover:text-black px-4 py-2 md:px-8 md:py-3 rounded-[32px] relative overflow-hidden hover:bg-opacity-80 cursor-pointer mr-1 z-40  group mb-2 ">
+                <span className="relative z-10 flex items-center justify-center gap-2">
+                  <div className="text-nowrap group-hover:text-black font-normal">
+                    View All
+                  </div>
+                  <FaArrowRight className="text-nowrap group-hover:text-black" />
+                </span>
+                <div className="absolute inset-0 bg-transparent border-transparent text-white group-hover:text-black overflow-hidden">
+                  <div className="mask absolute inset-0 bg-white transition-all duration-500 transform translate-x-[-100%] group-hover:translate-x-0 border-transparent"></div>
+                </div>
+              </div>
+              {/* <div className="hidden md:flex bg-black text-white px-8 py-3 rounded-[32px] relative overflow-hidden hover:bg-opacity-80 cursor-pointer mr-1 z-40 group border-none">
+                <span className="relative z-10 flex items-center justify-center gap-2">
+                  <div>View All</div>
+                  <FaArrowRight />
+                </span>
+                <div className="absolute inset-0 bg-black border-transparent">
+                  <div className="mask absolute inset-0 bg-[#1CA8CB] transition-all duration-500 transform translate-x-[-100%] group-hover:translate-x-0 border-transparent"></div>
+                </div>
+              </div> */}
+            </div>
+          </div>
+        </SwiperSlide>
+        <SwiperSlide>
+          <div className="relative overflow-hidden">
+            <img
+              src={bestAutumnTreks}
+              alt="slide_image"
+              loading="lazy"
+              className="object-cover object-center"
+            />
+            <div className="absolute bottom-0 pb-0 md:pb-[2rem] w-full  flex flex-col justify-center md:flex-row md:justify-between items-center text-white h-fit overflow-hidden rounded-[2rem] bg-black bg-opacity-10 py-10 gap-2">
+              <div className="flex flex-col justify-between px-1 font-fredoka tracking-wider z-20">
+                <div className="text-xl md:text-[24px] font-semi flex justify-center md:justify-start items-center">
+                  Location
+                </div>
+                <div className="text-xs md:text-[16px] font-semi flex justify-center md:justify-start items-center">
+                  12 Listings
+                </div>
+              </div>
+              <div className="flex bg-transparent border-white border-[2px] text-white group-hover:text-black px-4 py-2 md:px-8 md:py-3 rounded-[32px] relative overflow-hidden hover:bg-opacity-80 cursor-pointer mr-1 z-40  group mb-2 ">
+                <span className="relative z-10 flex items-center justify-center gap-2">
+                  <div className="text-nowrap group-hover:text-black font-normal">
+                    View All
+                  </div>
+                  <FaArrowRight className="text-nowrap group-hover:text-black" />
+                </span>
+                <div className="absolute inset-0 bg-transparent border-transparent text-white group-hover:text-black overflow-hidden">
+                  <div className="mask absolute inset-0 bg-white transition-all duration-500 transform translate-x-[-100%] group-hover:translate-x-0 border-transparent"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </SwiperSlide>
+        <SwiperSlide>
+          <div className="relative overflow-hidden">
+            <img
+              src={bestAutumnTreks}
+              alt="slide_image"
+              loading="lazy"
+              className="object-cover object-center"
+            />
+            <div className="absolute bottom-0 pb-0 md:pb-[2rem] w-full  flex flex-col justify-center md:flex-row md:justify-between items-center text-white h-fit overflow-hidden rounded-[2rem] bg-black bg-opacity-10 py-10 gap-2">
+              <div className="flex flex-col justify-between px-1 font-fredoka tracking-wider z-20">
+                <div className="text-xl md:text-[24px] font-semi flex justify-center md:justify-start items-center">
+                  Location
+                </div>
+                <div className="text-xs md:text-[16px] font-semi flex justify-center md:justify-start items-center">
+                  12 Listings
+                </div>
+              </div>
+              <div className="flex bg-transparent border-white border-[2px] text-white group-hover:text-black px-4 py-2 md:px-8 md:py-3 rounded-[32px] relative overflow-hidden hover:bg-opacity-80 cursor-pointer mr-1 z-40  group mb-2 ">
+                <span className="relative z-10 flex items-center justify-center gap-2">
+                  <div className="text-nowrap group-hover:text-black font-normal">
+                    View All
+                  </div>
+                  <FaArrowRight className="text-nowrap group-hover:text-black" />
+                </span>
+                <div className="absolute inset-0 bg-transparent border-transparent text-white group-hover:text-black overflow-hidden">
+                  <div className="mask absolute inset-0 bg-white transition-all duration-500 transform translate-x-[-100%] group-hover:translate-x-0 border-transparent"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </SwiperSlide>
+        <SwiperSlide>
+          <div className="relative overflow-hidden">
+            <img
+              src={bestAutumnTreks}
+              alt="slide_image"
+              loading="lazy"
+              className="object-cover object-center"
+            />
+            <div className="absolute bottom-0 pb-0 md:pb-[2rem] w-full  flex flex-col justify-center md:flex-row md:justify-between items-center text-white h-fit overflow-hidden rounded-[2rem] bg-black bg-opacity-10 py-10 gap-2">
+              <div className="flex flex-col justify-between px-1 font-fredoka tracking-wider z-20">
+                <div className="text-xl md:text-[24px] font-semi flex justify-center md:justify-start items-center">
+                  Location
+                </div>
+                <div className="text-xs md:text-[16px] font-semi flex justify-center md:justify-start items-center">
+                  12 Listings
+                </div>
+              </div>
+              <div className="flex bg-transparent border-white border-[2px] text-white group-hover:text-black px-4 py-2 md:px-8 md:py-3 rounded-[32px] relative overflow-hidden hover:bg-opacity-80 cursor-pointer mr-1 z-40  group mb-2 ">
+                <span className="relative z-10 flex items-center justify-center gap-2">
+                  <div className="text-nowrap group-hover:text-black font-normal">
+                    View All
+                  </div>
+                  <FaArrowRight className="text-nowrap group-hover:text-black" />
+                </span>
+                <div className="absolute inset-0 bg-transparent border-transparent text-white group-hover:text-black overflow-hidden">
+                  <div className="mask absolute inset-0 bg-white transition-all duration-500 transform translate-x-[-100%] group-hover:translate-x-0 border-transparent"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </SwiperSlide>
+        <SwiperSlide>
+          <div className="relative overflow-hidden">
+            <img
+              src={bestAutumnTreks}
+              alt="slide_image"
+              loading="lazy"
+              className="object-cover object-center"
+            />
+            <div className="absolute bottom-0 pb-0 md:pb-[2rem] w-full  flex flex-col justify-center md:flex-row md:justify-between items-center text-white h-fit overflow-hidden rounded-[2rem] bg-black bg-opacity-10 py-10 gap-2">
+              <div className="flex flex-col justify-between px-1 font-fredoka tracking-wider z-20">
+                <div className="text-xl md:text-[24px] font-semi flex justify-center md:justify-start items-center">
+                  Location
+                </div>
+                <div className="text-xs md:text-[16px] font-semi flex justify-center md:justify-start items-center">
+                  12 Listings
+                </div>
+              </div>
+              <div className="flex bg-transparent border-white border-[2px] text-white group-hover:text-black px-4 py-2 md:px-8 md:py-3 rounded-[32px] relative overflow-hidden hover:bg-opacity-80 cursor-pointer mr-1 z-40  group mb-2 ">
+                <span className="relative z-10 flex items-center justify-center gap-2">
+                  <div className="text-nowrap group-hover:text-black font-normal">
+                    View All
+                  </div>
+                  <FaArrowRight className="text-nowrap group-hover:text-black" />
+                </span>
+                <div className="absolute inset-0 bg-transparent border-transparent text-white group-hover:text-black overflow-hidden">
+                  <div className="mask absolute inset-0 bg-white transition-all duration-500 transform translate-x-[-100%] group-hover:translate-x-0 border-transparent"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </SwiperSlide>
       </Swiper>
     </div>
   );
