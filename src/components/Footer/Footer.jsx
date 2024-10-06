@@ -15,22 +15,15 @@ import { FaWhatsapp } from "react-icons/fa";
 
 export function Footer() {
   return (
-    <footer
-      class="bg-white"
-      style={{
-        backgroundImage: `url(${bgLineImage})`,
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-      }}
-    >
+    <footer class="bg-black bg-opacity-90 text-white">
       <div class="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
         <div class="md:flex md:justify-between gap-3 lg:gap-6 flex-col lg:flex-row">
-          <div className="flex flex-col sm:flex-row  text-xs font-inter tracking-wider justify-between w-[70%] lg:w-[50%] mx-auto mt-10 gap-5">
-            <div className="flex flex-col justify-between  items-center gap-5 my-2">
+          <div className="flex flex-col sm:flex-row  text-xs font-inter tracking-wider justify-between w-full lg:w-[50%] mx-auto mt-10 gap-5">
+            <div className="flex flex-col justify-start md:justify-between  items-start gap-5 my-2">
               <div class="mb-6 md:mb-0">
                 <a
                   href="https://www.thecrazymountaineers.com/"
-                  class="flex items-center"
+                  class="flex items-start justify-start md:justify-center mr-auto md:mr-0"
                 >
                   <img src={footerLogo} class="h-15 me-3" alt="FlowBite Logo" />
                   {/* <span class="self-center text-2xl font-semibold whitespace-nowrap">
@@ -38,41 +31,41 @@ export function Footer() {
               </span> */}
                 </a>
               </div>
-              <div class="flex mt-4 sm:justify-center sm:mt-0 gap-2">
+              <div class="flex mt-4 justify-start md:justify-center sm:mt-0 gap-2">
                 <div className="mb-4 flex justify-start items-center gap-2 group">
-                  <div className="p-2 bg-[#1CA8CB]  bg-opacity-40 group-hover:bg-opacity-60 flex justify-center items-center rounded-full group-hover:text-white transition-all duration-500 delay-150">
+                  <div className="p-2   bg-opacity-40 group-hover:bg-opacity-60 flex justify-center items-center rounded-full group-hover:text-white transition-all duration-500 delay-150">
                     <BiLogoFacebook className="w-4 h-4 group-hover:text-white transition-all duration-500 delay-150" />
                   </div>
                 </div>
                 <div className="mb-4 flex justify-start items-center gap-2 group">
-                  <div className="p-2 bg-[#1CA8CB]  bg-opacity-40 group-hover:bg-opacity-60 flex justify-center items-center rounded-full group-hover:text-white transition-all duration-500 delay-150">
+                  <div className="p-2   bg-opacity-40 group-hover:bg-opacity-60 flex justify-center items-center rounded-full group-hover:text-white transition-all duration-500 delay-150">
                     <FaTwitter className="w-4 h-4" />
                   </div>
                 </div>
                 <div className="mb-4 flex justify-start items-center gap-2 group">
-                  <div className="p-2 bg-[#1CA8CB]  bg-opacity-40 group-hover:bg-opacity-60 flex justify-center items-center rounded-full group-hover:text-white transition-all duration-500 delay-150">
+                  <div className="p-2   bg-opacity-40 group-hover:bg-opacity-60 flex justify-center items-center rounded-full group-hover:text-white transition-all duration-500 delay-150">
                     <FaLinkedinIn className="w-4 h-4" />
                   </div>
                 </div>
                 <div className="mb-4 flex justify-start items-center gap-2 group">
-                  <div className="p-2 bg-[#1CA8CB]  bg-opacity-40 group-hover:bg-opacity-60 flex justify-center items-center rounded-full group-hover:text-white transition-all duration-500 delay-150">
+                  <div className="p-2   bg-opacity-40 group-hover:bg-opacity-60 flex justify-center items-center rounded-full group-hover:text-white transition-all duration-500 delay-150">
                     <FaWhatsapp className="w-4 h-4" />
                   </div>
                 </div>
                 <div className="mb-4 flex justify-start items-center gap-2 group">
-                  <div className="p-2 bg-[#1CA8CB]  bg-opacity-40 group-hover:bg-opacity-60 flex justify-center items-center rounded-full group-hover:text-white transition-all duration-500 delay-150">
+                  <div className="p-2   bg-opacity-40 group-hover:bg-opacity-60 flex justify-center items-center rounded-full group-hover:text-white transition-all duration-500 delay-150">
                     <FaInstagram className="w-4 h-4" />
                   </div>
                 </div>
               </div>
             </div>
-            <div className="flex justify-center items-center flex-col">
-              <h2 className="mb-6 text-lg font-semibold text-[#1CA8CB] uppercase">
+            <div className="flex justify-start md:justify-center items-start flex-col w-fit mr-[5.5rem] lg:mr-0 text-nowrap">
+              <h2 className="mb-6 text-[16px]   font-normal uppercase p-2">
                 Quick Links
               </h2>
-              <ul className="text-[#1CA8CB] font-medium">
+              <ul className=" font-light text-[14px]">
                 <li className="mb-4 flex justify-start items-center gap-2">
-                  <div className="p-2 bg-[#1CA8CB]  bg-opacity-30 flex justify-center items-center rounded-full">
+                  <div className="p-2   bg-opacity-30 flex justify-center items-center rounded-full">
                     <FaArrowRight />
                   </div>
                   <a href="#" className="hover:underline">
@@ -80,7 +73,7 @@ export function Footer() {
                   </a>
                 </li>
                 <li className="mb-4 flex justify-start items-center gap-2">
-                  <div className="p-2 bg-[#1CA8CB]  bg-opacity-30 flex justify-center items-center rounded-full">
+                  <div className="p-2   bg-opacity-30 flex justify-center items-center rounded-full">
                     <FaArrowRight />
                   </div>
                   <a href="#" className="hover:underline">
@@ -88,7 +81,7 @@ export function Footer() {
                   </a>
                 </li>
                 <li className="mb-4 flex justify-start items-center gap-2">
-                  <div className="p-2 bg-[#1CA8CB]  bg-opacity-30 flex justify-center items-center rounded-full">
+                  <div className="p-2   bg-opacity-30 flex justify-center items-center rounded-full">
                     <FaArrowRight />
                   </div>
                   <a href="#" className="hover:underline">
@@ -96,7 +89,7 @@ export function Footer() {
                   </a>
                 </li>
                 <li className="mb-4 flex justify-start items-center gap-2">
-                  <div className="p-2 bg-[#1CA8CB]  bg-opacity-30 flex justify-center items-center rounded-full">
+                  <div className="p-2   bg-opacity-30 flex justify-center items-center rounded-full">
                     <FaArrowRight />
                   </div>
                   <a href="#" className="hover:underline">
@@ -104,7 +97,7 @@ export function Footer() {
                   </a>
                 </li>
                 <li className="mb-4 flex justify-start items-center gap-2">
-                  <div className="p-2 bg-[#1CA8CB]  bg-opacity-30 flex justify-center items-center rounded-full">
+                  <div className="p-2   bg-opacity-30 flex justify-center items-center rounded-full">
                     <FaArrowRight />
                   </div>
                   <a href="#" className="hover:underline">
@@ -114,14 +107,14 @@ export function Footer() {
               </ul>
             </div>
           </div>
-          <div className="flex flex-col sm:flex-row gap-8 sm:gap-6 text-xs font-inter tracking-wider justify-between w-[70%] lg:w-[50%] mx-auto mt-10">
-            <div className="flex justify-center items-center sm:justify-start flex-col ">
-              <h2 className="mb-6 text-lg font-semibold text-[#1CA8CB] uppercase">
+          <div className="flex flex-col sm:flex-row gap-8 sm:gap-6  font-inter tracking-wider justify-between items-start w-full lg:w-[50%] mx-auto mt-10">
+            <div className="flex justify-start md:justify-center items-start  flex-col ">
+              <h2 className="mb-6 text-[16px] font-normal  uppercase p-2">
                 Address
               </h2>
-              <ul className="text-gray-500 font-medium ">
-                <li className="mb-4 flex justify-start items-center gap-2">
-                  <div className="p-2 bg-[#1CA8CB]  bg-opacity-30 flex justify-center items-center rounded-full">
+              <ul className=" font-light text-[14px]">
+                <li className="mb-4 flex justify-start items-center gap-2 ">
+                  <div className="p-2   bg-opacity-30 flex justify-center items-center rounded-full bg-black">
                     <MdOutlineWifiCalling3 />
                   </div>
                   <a href="#" className="hover:underline">
@@ -129,7 +122,7 @@ export function Footer() {
                   </a>
                 </li>
                 <li className="mb-4 flex justify-start items-center gap-2">
-                  <div className="p-2 bg-[#1CA8CB]  bg-opacity-30 flex justify-center items-center rounded-full">
+                  <div className="p-2   bg-opacity-30 flex justify-center items-center rounded-full">
                     <TbMail />
                   </div>
                   <a href="#" className="hover:underline">
@@ -137,7 +130,7 @@ export function Footer() {
                   </a>
                 </li>
                 <li className="mb-4 flex justify-start items-center gap-2">
-                  <div className="p-2 bg-[#1CA8CB]  bg-opacity-30 flex justify-center items-center rounded-full">
+                  <div className="p-2   bg-opacity-30 flex justify-center items-center rounded-full">
                     <TiLocationOutline />
                   </div>
                   <a href="#" className="hover:underline">
@@ -146,8 +139,8 @@ export function Footer() {
                 </li>
               </ul>
             </div>
-            <div className="flex justify-center items-center sm:justify-start flex-col">
-              <h2 className="mb-6 text-lg font-semibold text-[#1CA8CB] uppercase">
+            <div className="flex justify-start md:justify-center items-start  flex-col">
+              <h2 className="mb-6 text-[16px] font-normal  uppercase p-2">
                 Instagram
               </h2>
               <div className="flex flex-col gap-2">
@@ -222,7 +215,7 @@ export function Footer() {
           //   backgroundPosition: "center",
           // }}
         >
-          <span class="text-sm text-gray-500 sm:text-center ">
+          <span class="text-sm text-white sm:text-center ">
             © 2023{" "}
             <a
               href="https://www.thecrazymountaineers.com/"

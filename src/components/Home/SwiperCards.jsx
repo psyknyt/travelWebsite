@@ -56,7 +56,7 @@ function SwiperCards() {
         className="swiper_container"
       >
         <SwiperSlide>
-          <div className="relative overflow-hidden">
+          <div className="relative overflow-hidden px-2">
             <img
               src={bestAutumnTreks}
               alt="slide_image"
