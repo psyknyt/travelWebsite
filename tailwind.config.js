@@ -13,6 +13,9 @@ export default {
         montez: ['"Montez", "cursive"'],
         inter: ['"Inter", "sans-serif"'],
       },
+      colors: {
+        blueisGray: "#1CA8CB",
+      },
     },
   },
   plugins: [],

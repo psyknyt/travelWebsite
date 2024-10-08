@@ -28,7 +28,7 @@ const AnalyticData = () => {
 
   return (
     <div
-      className="flex flex-col justify-center items-center overflow-hidden py-4 md:py-10 h-fit bg-white my-[5rem]" // Add flex properties for layout
+      className="flex flex-col justify-center items-center overflow-hidden  md:py-10 h-fit bg-white py-[5rem] " // Add flex properties for layout
     >
       <div className="grid grid-cols-1 md:grid-cols-2 md:gap-x-[5rem] xl:grid-flow-col xl:gap-[10px] my-5">
         {/* Use grid-cols-2 to create 2 columns */}

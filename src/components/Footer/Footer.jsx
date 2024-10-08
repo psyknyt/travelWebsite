@@ -15,7 +15,7 @@ import { FaWhatsapp } from "react-icons/fa";
 
 export function Footer() {
   return (
-    <footer class="bg-black bg-opacity-90 text-white">
+    <footer class="bg-black bg-opacity-90 text-white overflow-hidden">
       <div class="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
         <div class="md:flex md:justify-between gap-3 lg:gap-6 flex-col lg:flex-row">
           <div className="flex flex-col sm:flex-row  text-xs font-inter tracking-wider justify-between w-full lg:w-[50%] mx-auto mt-10 gap-5">

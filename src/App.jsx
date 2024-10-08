@@ -17,6 +17,7 @@ import Navbar from "./components/Navbar/NewNavbar";
 import GlowingCircle from "./components/utils/GlowingCircles";
 import AnalyticData from "./components/Home/AnalyticData";
 import PopularTours from "./components/Home/PopularTours";
+import ContactUs from "./components/ContactUs/ContactUs";
 
 function App() {
   useEffect(() => {
@@ -32,7 +33,6 @@ function App() {
       <PopularTours />
       <SwiperCards />
       <AnalyticData />
-      <Footer />
     </div>
   );
 
@@ -41,7 +41,9 @@ function App() {
       <Nav />
       <Routes>
         <Route path="/" element={content} />
+        <Route path="/contact" element={<ContactUs />} />
       </Routes>
+      <Footer />
     </div>
   );
 }

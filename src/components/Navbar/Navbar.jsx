@@ -12,6 +12,7 @@ import { IoLocationOutline } from "react-icons/io5";
 import { GoClock } from "react-icons/go";
 import { FaArrowRight } from "react-icons/fa";
 import logoBgMask from "../../assets/background/logo_bg_mask.png";
+import { useNavigate } from "react-router-dom";
 
 const navbarProps = {
   Logo: { type: "img", text: "LOGO GOES HERE !", img: "/vite.svg" },
@@ -85,6 +86,7 @@ export default function Nav() {
   const [hover, setHover] = React.useState(false);
   const [isVisible, setIsVisible] = useState(false); // isvisible right now working for Treks only small screen to make it work for more items just change the isVisible to other names like isVisibleTreks and same for others where you want to do it...
   const [isDropDownVisible, setIsDropdownVisible] = useState(false);
+  const navigate = useNavigate();
 
   const toggleDropown = () => {
     console.log("mouse-event");
@@ -129,7 +131,7 @@ export default function Nav() {
         </div>
       </div>
       <div
-        className="z-50 font-fredoka font-normal text-sm nav-wrapper w-full h-[85px] flex justify-between items-center py-2 bg-white"
+        className="z-50 font-fredoka font-normal text-sm nav-wrapper w-[95%] mx-auto h-[85px] flex justify-between items-center py-2 bg-white"
         onClick={() => setIsDropdownVisible(false)}
       >
         <div className="nav-logo flex justify-center items-center px-2 font-bold text-xs ">
@@ -213,7 +215,10 @@ export default function Nav() {
                 </div>
               </li>
 
-              <li className="pt-4 pb-1 md:h-full  text-[#0A1D56]  justify-start items-center flex cursor-pointer">
+              <li
+                className="pt-4 pb-1 md:h-full  text-[#0A1D56]  justify-start items-center flex cursor-pointer"
+                onClick={() => navigate("/")}
+              >
                 Home
               </li>
               <div className="w-full mx-auto border-[1px] h-0 bg-gray-400" />
@@ -221,7 +226,10 @@ export default function Nav() {
                 About Us
               </li>
               <div className="w-full mx-auto border-[1px] h-0 bg-gray-400" />
-              <li className="pt-4 pb-1 md:h-full  text-[#0A1D56]  justify-start items-center flex cursor-pointer">
+              <li
+                className="pt-4 pb-1 md:h-full  text-[#0A1D56]  justify-start items-center flex cursor-pointer"
+                onClick={() => navigate("/contact")}
+              >
                 Contact
               </li>
               <div className="w-full mx-auto border-[1px] h-0 bg-gray-400" />
@@ -241,7 +249,10 @@ export default function Nav() {
         {/* for bigger screen */}
         <div className="mx-auto hidden md:flex px-4 text-[16px] font-normal font-inter h-full tracking-wider">
           <ul className="type-none flex  md:space-x-5 h-full mr-5 ">
-            <div className="group flex items-center navlink relative h-full cursor-pointer ">
+            <div
+              className="group flex items-center navlink relative h-full cursor-pointer"
+              onClick={() => navigate("/")}
+            >
               <p className="group-hover:text-[#1CA8CB]">Home</p>
               <div className="absolute inset-x-0 bottom-[15px] h-[1px] rounded-xl bg-black group-hover:bg-[#1CA8CB] transform scale-x-0 origin-left transition-transform duration-300 group-hover:scale-x-100"></div>
             </div>
@@ -312,7 +323,10 @@ export default function Nav() {
               </div>
             </div>
 
-            <div className="group flex items-center navlink relative h-full cursor-pointer">
+            <div
+              className="group flex items-center navlink relative h-full cursor-pointer"
+              onClick={() => navigate("/contact")}
+            >
               <p className="group-hover:text-[#1CA8CB]">Contact</p>
               <div className="absolute inset-x-0 bottom-[15px] h-[1px] rounded-xl bg-black group-hover:bg-[#1CA8CB] transform scale-x-0 origin-left transition-transform duration-300 group-hover:scale-x-100"></div>
             </div>
