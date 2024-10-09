@@ -222,7 +222,10 @@ export default function Nav() {
                 Home
               </li>
               <div className="w-full mx-auto border-[1px] h-0 bg-gray-400" />
-              <li className="pt-4 pb-1 md:h-full  text-[#0A1D56]  justify-start items-center flex cursor-pointer">
+              <li
+                className="pt-4 pb-1 md:h-full  text-[#0A1D56]  justify-start items-center flex cursor-pointer"
+                onClick={() => navigate("/aboutus")}
+              >
                 About Us
               </li>
               <div className="w-full mx-auto border-[1px] h-0 bg-gray-400" />
@@ -235,6 +238,14 @@ export default function Nav() {
               <div className="w-full mx-auto border-[1px] h-0 bg-gray-400" />
               <li className="pt-4 pb-1 md:h-full  text-[#0A1D56]  justify-start items-center flex cursor-pointer">
                 Blogs
+              </li>
+              <div className="w-full mx-auto border-[1px] h-0 bg-gray-400" />
+              <li className="pt-4 pb-1 md:h-full  text-[#0A1D56]  justify-start items-center flex cursor-pointer">
+                Gallery
+              </li>
+              <div className="w-full mx-auto border-[1px] h-0 bg-gray-400" />
+              <li className="pt-4 pb-1 md:h-full  text-[#0A1D56]  justify-start items-center flex cursor-pointer">
+                Tours
               </li>
               <div className="w-full mx-auto border-[1px] h-0 bg-gray-400" />
             </ul>
@@ -257,7 +268,10 @@ export default function Nav() {
               <div className="absolute inset-x-0 bottom-[15px] h-[1px] rounded-xl bg-black group-hover:bg-[#1CA8CB] transform scale-x-0 origin-left transition-transform duration-300 group-hover:scale-x-100"></div>
             </div>
 
-            <div className="group flex items-center navlink relative h-full cursor-pointer">
+            <div
+              className="group flex items-center navlink relative h-full cursor-pointer"
+              onClick={() => navigate("/aboutus")}
+            >
               <p className="group-hover:text-[#1CA8CB]">About Us</p>
               <div className="absolute inset-x-0 bottom-[15px] h-[1px] rounded-xl bg-black group-hover:bg-[#1CA8CB] transform scale-x-0 origin-left transition-transform duration-300 group-hover:scale-x-100"></div>
             </div>
@@ -333,6 +347,15 @@ export default function Nav() {
 
             <div className="group flex items-center navlink relative h-full cursor-pointer">
               <p className="group-hover:text-[#1CA8CB]">Blogs</p>
+              <div className="absolute inset-x-0 bottom-[15px] h-[1px] rounded-xl bg-black group-hover:bg-[#1CA8CB] transform scale-x-0 origin-left transition-transform duration-300 group-hover:scale-x-100"></div>
+            </div>
+
+            <div className="group flex items-center navlink relative h-full cursor-pointer">
+              <p className="group-hover:text-[#1CA8CB]">Gallery</p>
+              <div className="absolute inset-x-0 bottom-[15px] h-[1px] rounded-xl bg-black group-hover:bg-[#1CA8CB] transform scale-x-0 origin-left transition-transform duration-300 group-hover:scale-x-100"></div>
+            </div>
+            <div className="group flex items-center navlink relative h-full cursor-pointer">
+              <p className="group-hover:text-[#1CA8CB]">Tours</p>
               <div className="absolute inset-x-0 bottom-[15px] h-[1px] rounded-xl bg-black group-hover:bg-[#1CA8CB] transform scale-x-0 origin-left transition-transform duration-300 group-hover:scale-x-100"></div>
             </div>
           </ul>

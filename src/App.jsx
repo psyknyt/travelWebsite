@@ -7,7 +7,7 @@ import "aos/dist/aos.css";
 
 import Nav from "./components/Navbar/Navbar";
 import { Footer } from "./components/Footer/Footer";
-import HeroSection from "./components/HeroSection/HeroSection";
+import HeroSection from "./components/Home/HeroSection";
 import Welcome from "./components/Home/Welcome";
 import TrendingTreks from "./components/Home/TrendingTreks";
 import TestimonialSection from "./components/Home/Reviews";
@@ -19,6 +19,8 @@ import AnalyticData from "./components/Home/AnalyticData";
 import PopularTours from "./components/Home/PopularTours";
 import ContactUs from "./components/ContactUs/ContactUs";
 
+import AboutUs from "./components/About-us/AboutUs";
+
 function App() {
   useEffect(() => {
     AOS.init({
@@ -26,7 +28,7 @@ function App() {
     });
   }, []);
 
-  let content = (
+  let homeContent = (
     <div className="flex flex-col">
       <HeroSection />
       <FeaturedDestination />
@@ -40,8 +42,9 @@ function App() {
     <div className="w-full">
       <Nav />
       <Routes>
-        <Route path="/" element={content} />
+        <Route path="/" element={homeContent} />
         <Route path="/contact" element={<ContactUs />} />
+        <Route path="/aboutus" element={<AboutUs />} />
       </Routes>
       <Footer />
     </div>
