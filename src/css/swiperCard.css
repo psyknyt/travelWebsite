@@ -1,5 +1,5 @@
 .swiper-cards-container .container {
-  max-width: 124rem;
+  max-width: 90%;
   margin: 0 auto;
 }
 
@@ -10,7 +10,7 @@
 }
 
 .swiper-cards-container .swiper_container {
-  width: 100%;
+  width: 90%;
   height: 40rem;
   padding: 2rem 0;
   position: relative;
@@ -25,14 +25,12 @@
 }
 
 .swiper-cards-container .swiper-slide-active {
-  /* Remove the blur effect from the active slide */
   filter: blur(0);
   transform: scale(1.1); /* Slightly scale up the active slide for emphasis */
 }
 
 .swiper-cards-container .swiper-slide-prev,
 .swiper-cards-container .swiper-slide-next {
-  /* Optionally, reduce the blur for adjacent slides */
   filter: blur(2px);
 }
 

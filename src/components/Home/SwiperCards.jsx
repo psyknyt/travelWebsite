@@ -63,7 +63,7 @@ function SwiperCards() {
               loading="lazy"
               className="object-cover object-center"
             />
-            <div className="absolute bottom-0 pb-0 md:pb-[2rem] w-full  flex flex-col justify-center md:flex-row md:justify-between items-center text-white h-fit overflow-hidden rounded-[2rem] bg-black bg-opacity-10 py-10 gap-2">
+            <div className="absolute px-2 bottom-0 pb-0 md:pb-[2rem] w-full  flex flex-col justify-center md:flex-row md:justify-between items-center text-white h-fit overflow-hidden rounded-[2rem] bg-black bg-opacity-10 py-10 gap-2">
               <div className="flex flex-col justify-between px-1 font-fredoka tracking-wider z-20">
                 <div className="text-xl md:text-[24px] font-semi flex justify-center md:justify-start items-center">
                   Location

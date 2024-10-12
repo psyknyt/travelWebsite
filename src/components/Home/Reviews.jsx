@@ -3,27 +3,28 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Navigation, Pagination } from "swiper/modules";
 
 import "swiper/css"; // Import Swiper styles
-// import "../../node_modules/swiper/css/navigation"; // Import Swiper navigation styles
-// import "../../node_modules/swiper/css/pagination"; // Import Swiper pagination styles
+import "swiper/css/pagination";
+import "swiper/css/navigation";
 
 import banner1 from "../../assets/banner1.jpg";
 import googleLogo from "../../assets/google.png";
 import travellerImg from "../../assets/traveller4.jpg";
+import bgLineImage from "../../assets/background/line-pattern2.png";
 
 const TestimonialCard = () => {
   return (
     // <div className="flex justify-center items-center h-screen bg-slate-500 text-center ">
     <div
-      className="w-[80%] sm:w-[400px] h-[280px] mx-auto bg-slate-100 rounded-md overflow-hidden flex flex-col justify-between pb-5 relative"
+      className="w-[80%] md:w-[400px] hover:scale-105 transition-all duration-300 delay-100 ease-in-out  h-[280px] mx-auto bg-slate-100 rounded-md overflow-hidden flex flex-col justify-between pb-5 relative"
       style={{
         boxShadow:
           "rgba(0, 0, 0, 0.2) 0px 4px 6px, rgba(0, 0, 0, 0.2) 0px 1px 28px",
       }}
     >
-      <div className="h-1/5 flex justify-start items-center gap-3 mt-4 py-5 px-4">
+      <div className="h-1/5 flex justify-start items-center gap-3 mt-4 py-5 px-4 ">
         <img
           src={travellerImg}
-          className="max-w-14 h-14 rounded-full object-cover object-center"
+          className="w-14 h-14 rounded-full object-cover object-center"
         />
         <div className="flex flex-col text-sm font-semibold">
           <div>Name:</div>
@@ -56,13 +57,27 @@ const TestimonialCard = () => {
 
 const TestimonialSection = () => {
   return (
-    <div className="bg-slate-500 pb-20 h-[80vh]">
-      <div className="text-center bg-slate-600 text-white py-10 text-xl font-bold">
-        Testimonials
+    <div
+      className="pb-20 h-[80vh]"
+      style={{
+        backgroundImage: `url(${bgLineImage})`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+      }}
+    >
+      <div className="flex flex-col items-center justify-center gap-2 py-4">
+        <div className="font-montez text-4xl leading-6 pt-4 text-center">
+          Testimonial
+        </div>
+        <div className="pt-2 font-inter text-2xl sm:text-3xl md:text-4xl text-center font-semibold tracking-wide flex justify-center items-center text-nowrap">
+          What client say about us
+        </div>
       </div>
-      <div className="flex  justify-center items-center py-5">
+      <div
+        className="flex w-full  justify-center items-center py-5"
+        id="reviews"
+      >
         <Swiper
-          spaceBetween={10}
           modules={[Pagination, Autoplay]}
           // pagination={{
           //   clickable: true,
@@ -70,7 +85,7 @@ const TestimonialSection = () => {
           // TODO stopped navigation
           navigation={false}
           autoplay={{
-            delay: 4000,
+            delay: 5000,
             disableOnInteraction: false,
           }}
           loop={true}
@@ -81,26 +96,27 @@ const TestimonialSection = () => {
               slidesPerView: 1,
               spaceBetween: 10,
             },
-            900: {
+            768: {
               slidesPerView: 2,
               spaceBetween: 10,
             },
             1024: {
-              slidesPerView: 2,
+              slidesPerView: 3,
               spaceBetween: 10,
             },
           }}
+          className="w-full"
         >
-          <SwiperSlide className="z-10 m-3 my-10 mx-auto">
+          <SwiperSlide className="z-10 m-3 my-10 mx-auto ">
             <TestimonialCard />
           </SwiperSlide>
           <SwiperSlide className="m-3 my-10 mx-auto">
             <TestimonialCard />
           </SwiperSlide>
-          <SwiperSlide className="m-3 my-10 mx-auto">
+          <SwiperSlide className="m-3 my-10 bgmx-auto">
             <TestimonialCard />
           </SwiperSlide>
-          <SwiperSlide className="m-3 my-10 mx-auto">
+          <SwiperSlide className="m-3 my-10  mx-auto ">
             <TestimonialCard />
           </SwiperSlide>
         </Swiper>

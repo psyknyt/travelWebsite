@@ -18,8 +18,11 @@ import GlowingCircle from "./components/utils/GlowingCircles";
 import AnalyticData from "./components/Home/AnalyticData";
 import PopularTours from "./components/Home/PopularTours";
 import ContactUs from "./components/ContactUs/ContactUs";
-
 import AboutUs from "./components/About-us/AboutUs";
+import Gallery from "./components/Home/Gallery";
+import LetsGoTogether from "./components/Home/LetsGoTogether";
+
+import "animate.css";
 
 function App() {
   useEffect(() => {
@@ -34,7 +37,10 @@ function App() {
       <FeaturedDestination />
       <PopularTours />
       <SwiperCards />
+      <LetsGoTogether />
       <AnalyticData />
+      <Gallery />
+      <TestimonialSection />
     </div>
   );
 
