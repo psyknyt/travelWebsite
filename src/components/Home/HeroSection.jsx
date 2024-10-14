@@ -24,7 +24,7 @@ const HeroSection = () => {
           // navigation={true}
           modules={[Pagination, Autoplay, Navigation, Pagination]}
           autoplay={{
-            delay: 500000,
+            delay: 3000,
           }}
           className="h-[80vh]"
         >
