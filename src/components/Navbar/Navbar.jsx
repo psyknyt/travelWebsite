@@ -136,7 +136,7 @@ export default function Nav() {
         </div>
       </div>
       <div
-        className="z-50 font-fredoka font-normal text-sm nav-wrapper w-full mx-auto h-[85px] flex justify-between items-center py-2 bg-[#FBD149]"
+        className="z-50 font-fredoka font-normal text-sm nav-wrapper w-[90%] mx-auto h-[85px] flex justify-between items-center py-2 bg-[#FBD149]"
         onClick={() => setIsDropdownVisible(false)}
       >
         <div className="nav-logo flex justify-center items-center px-2 font-bold text-xs ">
