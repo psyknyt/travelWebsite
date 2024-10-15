@@ -129,3 +129,41 @@
 form .form-select {
   appearance: none;
 }
+
+.swiper-rotate-container {
+  width: 100%;
+  margin: auto;
+}
+
+.swiper-rotate-container .swiper-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+  transition: transform 0.5s ease, opacity 0.5s ease;
+  transform-origin: center center;
+  opacity: 0.2;
+}
+
+.swiper-rotate-container .swiper-slide-active {
+  transform: rotate(0deg);
+  opacity: 1;
+}
+
+.swiper-rotate-container .swiper-slide-prev,
+.swiper-rotate-container .swiper-slide-next {
+  transform: rotate(-10deg);
+  opacity: 0.8;
+}
+
+.swiper-rotate-container .swiper-slide-prev-prev,
+.swiper-rotate-container .swiper-slide-next-next {
+  transform: rotate(-20deg);
+  opacity: 0.2;
+}
+
+.swiper-rotate-container .slide-content {
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+}

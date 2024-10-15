@@ -15,6 +15,12 @@ export default {
       },
       colors: {
         blueisGray: "#1CA8CB",
+        smokeColor: "#E9F6F9",
+        titleColor: "#113D48",
+        lemonYellow: "#FBD149",
+      },
+      screens: {
+        xs: "400px",
       },
     },
   },

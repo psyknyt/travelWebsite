@@ -21,6 +21,8 @@ import ContactUs from "./components/ContactUs/ContactUs";
 import AboutUs from "./components/About-us/AboutUs";
 import Gallery from "./components/Home/Gallery";
 import LetsGoTogether from "./components/Home/LetsGoTogether";
+import RotatingSwiper from "./components/Home/RotatingSwiper";
+import WhyUs from "./components/Home/WhyUs";
 
 import "animate.css";
 
@@ -35,17 +37,19 @@ function App() {
     <div className="flex flex-col">
       <HeroSection />
       <FeaturedDestination />
+      <RotatingSwiper />
       <PopularTours />
       <SwiperCards />
       <LetsGoTogether />
       <AnalyticData />
+      <WhyUs />
       <Gallery />
       <TestimonialSection />
     </div>
   );
 
   return (
-    <div className="w-full">
+    <div className="w-full overflow-x-hidden">
       <Nav />
       <Routes>
         <Route path="/" element={homeContent} />

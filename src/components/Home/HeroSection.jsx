@@ -11,7 +11,7 @@ import { FaArrowRight } from "react-icons/fa";
 
 const HeroSection = () => {
   return (
-    <div className="relative">
+    <div className="relative z-20">
       {/* TODO Added an mask */}
       <div className="relative top-0 left-0 h-max lg:col-span-2">
         {/* <div className="absolute inset-0 bg-black opacity-50"></div> */}
@@ -24,7 +24,7 @@ const HeroSection = () => {
           // navigation={true}
           modules={[Pagination, Autoplay, Navigation, Pagination]}
           autoplay={{
-            delay: 3000,
+            delay: 5000,
           }}
           className="h-[80vh]"
         >

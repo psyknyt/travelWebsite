@@ -94,13 +94,13 @@ const TestimonialSection = () => {
           breakpoints={{
             640: {
               slidesPerView: 1,
-              spaceBetween: 10,
+              spaceBetween: 5,
             },
             768: {
               slidesPerView: 2,
               spaceBetween: 10,
             },
-            1024: {
+            1280: {
               slidesPerView: 3,
               spaceBetween: 10,
             },
