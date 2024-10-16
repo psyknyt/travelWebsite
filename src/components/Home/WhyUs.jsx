@@ -18,7 +18,7 @@ const WhyUs = () => {
           </div>
           <div className="flex flex-col justify-start items-start w-full md:w-[90%] lg:max-w-[500px] mx-0 lg:mx-4 mt-4 gap-4 leading-snug">
             <div className="flex flex-col justify-center items-center xs:flex-row xs:justify-between xs:items-start gap-4">
-              <div className="bg-blueisGray w-[80px] h-[80px] bg-opacity-20 group hover:bg-opacity-30 px-5 py-5 rounded-xl flex justify-center items-center transform transition-transform duration-500 group-hover:scale-x-[-1]">
+              <div className="bg-lemonYellow w-[80px] h-[80px] group px-5 py-5 rounded-xl flex justify-center items-center transform transition-transform duration-500 group-hover:scale-x-[-1]">
                 <img
                   src={routeSvg}
                   alt="route img"
@@ -34,7 +34,7 @@ const WhyUs = () => {
               </div>
             </div>
             <div className="flex flex-col justify-center items-center xs:flex-row xs:justify-between xs:items-start gap-4">
-              <div className="bg-blueisGray w-[80px] h-[80px] bg-opacity-20 group hover:bg-opacity-30 px-5 py-5 rounded-xl flex justify-center items-center transform transition-transform duration-500 group-hover:scale-x-[-1]">
+              <div className="bg-lemonYellow w-[80px] h-[80px] group px-5 py-5 rounded-xl flex justify-center items-center transform transition-transform duration-500 group-hover:scale-x-[-1]">
                 <img
                   src={safetySvg}
                   alt="route img"
@@ -52,7 +52,7 @@ const WhyUs = () => {
               </div>
             </div>
             <div className="flex flex-col justify-center items-center xs:flex-row s xs:justify-between xs:items-start gap-4">
-              <div className="bg-blueisGray w-[80px] h-[80px] bg-opacity-20 group hover:bg-opacity-30 px-5 py-5 rounded-xl flex justify-center items-center transform transition-transform duration-500 group-hover:scale-x-[-1]">
+              <div className="bg-lemonYellow w-[80px] h-[80px] group px-5 py-5 rounded-xl flex justify-center items-center transform transition-transform duration-500 group-hover:scale-x-[-1]">
                 <img
                   src={professionalSvg}
                   alt="route img"

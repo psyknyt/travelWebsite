@@ -23,6 +23,8 @@ import Gallery from "./components/Home/Gallery";
 import LetsGoTogether from "./components/Home/LetsGoTogether";
 import RotatingSwiper from "./components/Home/RotatingSwiper";
 import WhyUs from "./components/Home/WhyUs";
+import TopSpot from "./components/Home/TopSpot";
+import BookForm from "./components/utils/BookForm";
 
 import "animate.css";
 
@@ -36,15 +38,17 @@ function App() {
   let homeContent = (
     <div className="flex flex-col">
       <HeroSection />
-      <FeaturedDestination />
-      <RotatingSwiper />
+      {/* <FeaturedDestination /> */}
+      {/* <RotatingSwiper /> */}
       <PopularTours />
-      <SwiperCards />
-      <LetsGoTogether />
-      <AnalyticData />
+      {/* <SwiperCards /> */}
+      {/* <LetsGoTogether /> */}
+      <TopSpot />
       <WhyUs />
       <Gallery />
+      <AnalyticData />
       <TestimonialSection />
+      <BookForm />
     </div>
   );
 

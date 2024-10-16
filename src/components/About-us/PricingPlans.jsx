@@ -67,7 +67,7 @@ const PricingPlans = () => {
       <div className="flex flex-col md:flex-row gap-5 w-full xl:w-[1400px] mt-5">
         <div className="flex flex-col justify-start items-center py-5 w-[90%] sm:w-[400px] mx-auto md:w-1/3 xl:w-[400px] bg-smokeColor hover:bg-titleColor hover:text-white transition-all duration-500 delay-150 ease-in-out rounded-xl overflow-hidden group">
           <div className="flex justify-start items-center py-5  w-full  px-4 gap-5 border-b-[1px] border-white">
-            <div className="bg-blueisGray bg-opacity-20 group hover:bg-opacity-30 px-5 py-5 rounded-full flex justify-center items-center transform transition-transform duration-500 group-hover:scale-x-[-1]">
+            <div className="bg-lemonYellow group px-5 py-5 rounded-full flex justify-center items-center transform transition-transform duration-500 group-hover:scale-x-[-1]">
               <img
                 src={safetySvg}
                 alt="route img"
@@ -88,7 +88,7 @@ const PricingPlans = () => {
           <div className="flex flex-col w-[90%] mx-auto py-5 ml-[10%] gap-4">
             <div className="flex justify-start items-center gap-5">
               <div>
-                <img src={checkImage} className="w-5 h-5 " />
+                <img src={checkImage} className="w-5 h-5" />
               </div>
               <div>Upto 2 menbers</div>
             </div>
@@ -135,7 +135,7 @@ const PricingPlans = () => {
         </div>
         <div className="flex flex-col justify-start items-center py-5 w-[90%] sm:w-[400px] mx-auto md:w-1/3 xl:w-[400px] bg-smokeColor hover:bg-titleColor hover:text-white transition-all duration-500 delay-150 ease-in-out rounded-xl overflow-hidden group">
           <div className="flex justify-start items-center py-5  w-full  px-4 gap-5 border-b-[1px] border-white">
-            <div className="bg-blueisGray bg-opacity-20 group hover:bg-opacity-30 px-5 py-5 rounded-full flex justify-center items-center transform transition-transform duration-500 group-hover:scale-x-[-1]">
+            <div className="bg-lemonYellow group px-5 py-5 rounded-full flex justify-center items-center transform transition-transform duration-500 group-hover:scale-x-[-1]">
               <img
                 src={safetySvg}
                 alt="route img"
@@ -203,7 +203,7 @@ const PricingPlans = () => {
         </div>
         <div className="flex flex-col justify-start items-center py-5 w-[90%] sm:w-[400px] mx-auto md:w-1/3 xl:w-[400px] bg-smokeColor hover:bg-titleColor hover:text-white transition-all duration-500 delay-150 ease-in-out rounded-xl overflow-hidden group">
           <div className="flex justify-start items-center py-5  w-full  px-4 gap-5 border-b-[1px] border-white">
-            <div className="bg-blueisGray bg-opacity-20 group hover:bg-opacity-30 px-5 py-5 rounded-full flex justify-center items-center transform transition-transform duration-500 group-hover:scale-x-[-1]">
+            <div className="bg-lemonYellow group px-5 py-5 rounded-full flex justify-center items-center transform transition-transform duration-500 group-hover:scale-x-[-1]">
               <img
                 src={safetySvg}
                 alt="route img"

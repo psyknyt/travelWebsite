@@ -66,67 +66,67 @@ const PopularTours = () => {
           }}
         >
           <SwiperSlide
-            className="flex justify-center items-center z-10 my-10 mx-auto"
+            className="flex justify-center items-center z-10 my-10 mx-auto hover:-translate-y-2 transition-all duration-500 delay-100 ease-in-out"
             style={{ display: "flex", justifyContent: "center" }}
           >
             <PopularLocation />
           </SwiperSlide>
           <SwiperSlide
-            className="flex justify-center items-center z-10 my-10 mx-auto"
+            className="flex justify-center items-center z-10 my-10 mx-auto hover:-translate-y-2 transition-all duration-500 delay-100 ease-in-out"
             style={{ display: "flex", justifyContent: "center" }}
           >
             <PopularLocation />
           </SwiperSlide>
           <SwiperSlide
-            className="flex justify-center items-center z-10 my-10 mx-auto"
+            className="flex justify-center items-center z-10 my-10 mx-auto hover:-translate-y-2 transition-all duration-500 delay-100 ease-in-out"
             style={{ display: "flex", justifyContent: "center" }}
           >
             <PopularLocation />
           </SwiperSlide>
           <SwiperSlide
-            className="flex justify-center items-center z-10 my-10 mx-auto"
+            className="flex justify-center items-center z-10 my-10 mx-auto hover:-translate-y-2 transition-all duration-500 delay-100 ease-in-out"
             style={{ display: "flex", justifyContent: "center" }}
           >
             <PopularLocation />
           </SwiperSlide>
           <SwiperSlide
-            className="flex justify-center items-center z-10 my-10 mx-auto"
+            className="flex justify-center items-center z-10 my-10 mx-auto hover:-translate-y-2 transition-all duration-500 delay-100 ease-in-out"
             style={{ display: "flex", justifyContent: "center" }}
           >
             <PopularLocation />
           </SwiperSlide>
           <SwiperSlide
-            className="flex justify-center items-center z-10 my-10 mx-auto"
+            className="flex justify-center items-center z-10 my-10 mx-auto hover:-translate-y-2 transition-all duration-500 delay-100 ease-in-out"
             style={{ display: "flex", justifyContent: "center" }}
           >
             <PopularLocation />
           </SwiperSlide>
           <SwiperSlide
-            className="flex justify-center items-center z-10 my-10 mx-auto"
+            className="flex justify-center items-center z-10 my-10 mx-auto hover:-translate-y-2 transition-all duration-500 delay-100 ease-in-out"
             style={{ display: "flex", justifyContent: "center" }}
           >
             <PopularLocation />
           </SwiperSlide>
           <SwiperSlide
-            className="flex justify-center items-center z-10 my-10 mx-auto"
+            className="flex justify-center items-center z-10 my-10 mx-auto hover:-translate-y-2 transition-all duration-500 delay-100 ease-in-out"
             style={{ display: "flex", justifyContent: "center" }}
           >
             <PopularLocation />
           </SwiperSlide>
           <SwiperSlide
-            className="flex justify-center items-center z-10 my-10 mx-auto"
+            className="flex justify-center items-center z-10 my-10 mx-auto hover:-translate-y-2 transition-all duration-500 delay-100 ease-in-out"
             style={{ display: "flex", justifyContent: "center" }}
           >
             <PopularLocation />
           </SwiperSlide>
           <SwiperSlide
-            className="flex justify-center items-center z-10 my-10 mx-auto"
+            className="flex justify-center items-center z-10 my-10 mx-auto hover:-translate-y-2 transition-all duration-500 delay-100 ease-in-out"
             style={{ display: "flex", justifyContent: "center" }}
           >
             <PopularLocation />
           </SwiperSlide>
           <SwiperSlide
-            className="flex justify-center items-center z-10 my-10 mx-auto"
+            className="flex justify-center items-center z-10 my-10 mx-auto hover:-translate-y-2 transition-all duration-500 delay-100 ease-in-out"
             style={{ display: "flex", justifyContent: "center" }}
           >
             <PopularLocation />

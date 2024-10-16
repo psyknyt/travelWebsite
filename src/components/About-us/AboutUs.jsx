@@ -48,7 +48,7 @@ const WelcomeSection = () => {
             </p>
             <div className="flex flex-col justify-start items-start w-full md:w-[90%] lg:max-w-[500px] mx-4 mt-4 gap-4">
               <div className="flex justify-between items-start gap-4">
-                <div className="bg-blueisGray bg-opacity-20 group hover:bg-opacity-30 px-5 py-5 rounded-full flex justify-center items-center transform transition-transform duration-500 group-hover:scale-x-[-1]">
+                <div className="bg-lemonYellow group px-5 py-5 rounded-full flex justify-center items-center transform transition-transform duration-500 group-hover:scale-x-[-1]">
                   <img
                     src={routeSvg}
                     alt="route img"
@@ -66,7 +66,7 @@ const WelcomeSection = () => {
                 </div>
               </div>
               <div className="flex justify-between items-start gap-4">
-                <div className="bg-blueisGray bg-opacity-20 group hover:bg-opacity-30 px-5 py-5 rounded-full flex justify-center items-center transform transition-transform duration-500 group-hover:scale-x-[-1]">
+                <div className="bg-lemonYellow group px-5 py-5 rounded-full flex justify-center items-center transform transition-transform duration-500 group-hover:scale-x-[-1]">
                   <img
                     src={safetySvg}
                     alt="route img"
@@ -84,7 +84,7 @@ const WelcomeSection = () => {
                 </div>
               </div>
               <div className="flex justify-between items-start gap-4">
-                <div className="bg-blueisGray bg-opacity-20 group hover:bg-opacity-30 px-5 py-5 rounded-full flex justify-center items-center transform transition-transform duration-500 group-hover:scale-x-[-1]">
+                <div className="bg-lemonYellow group  px-5 py-5 rounded-full flex justify-center items-center transform transition-transform duration-500 group-hover:scale-x-[-1]">
                   <img
                     src={professionalSvg}
                     alt="route img"
@@ -109,7 +109,7 @@ const WelcomeSection = () => {
                   <FaArrowRight className="w-4 h-4 group-hover:scale-110 transition-all duration-500  ease-in-out" />
                 </span>
                 <div className="absolute inset-0 bg-black border-transparent">
-                  <div className="mask absolute inset-0 bg-[#1CA8CB] transition-all duration-500 transform translate-x-[-100%] group-hover:translate-x-0 border-transparent"></div>
+                  <div className="mask absolute inset-0 bg-lemonYellow transition-all duration-500 transform translate-x-[-100%] group-hover:translate-x-0 border-transparent"></div>
                 </div>
               </div>
             </div>

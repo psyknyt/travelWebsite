@@ -80,7 +80,7 @@ const FeaturedDestination = () => {
             <div
               className={`w-[30%] absolute left-0 right-0 bottom-[10%] font-inter font-bold tracking-wider text-md text-white px-4 ${
                 activeIndex === index ? "md:rotate-0" : "md:-rotate-90 "
-              } z-40 flex justify-start text-nowrap transition-transform duration-500 delay-700 ease-in-out`}
+              } z-40 flex justify-start text-nowrap  transition-transform duration-500 delay-700 ease-in-out`}
             >
               <div> {el.location}</div>
             </div>

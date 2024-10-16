@@ -49,12 +49,12 @@ const HeroSection = () => {
                     Our Featured Destinations
                   </div>
                   <div className="flex flex-col md:flex-row gap-2 animate__animated animate__fadeInUp animate__delay-2s">
-                    <div className="flex bg-[#1CA8CB] text-white px-8 py-4 rounded-[32px] relative overflow-hidden hover:bg-opacity-80 cursor-pointer mr-1 z-40 group border-none  transition-all duration-500 delay-500 ease-in-out">
+                    <div className="flex bg-lemonYellow text-white px-8 py-4 rounded-[32px] relative overflow-hidden hover:bg-opacity-80 cursor-pointer mr-1 z-40 group border-none  transition-all duration-500 delay-500 ease-in-out">
                       <span className="relative z-10 flex items-center justify-center gap-2">
                         <div>Explore Tours</div>
                         <FaArrowRight />
                       </span>
-                      <div className="absolute inset-0 bg-[#1CA8CB] border-transparent">
+                      <div className="absolute inset-0 bg-lemonYellow group-hover:bg-transparent  border-transparent">
                         <div className="mask absolute inset-0 bg-black  transition-all duration-700 delay-300 ease-in-out transform translate-x-[-100%] group-hover:translate-x-0 border-transparent"></div>
                       </div>
                     </div>
@@ -93,12 +93,12 @@ const HeroSection = () => {
                     Our Featured Destinations
                   </div>
                   <div className="flex flex-col md:flex-row gap-2 animate__animated animate__fadeInUp animate__delay-2s">
-                    <div className="flex bg-[#1CA8CB] text-white px-8 py-4 rounded-[32px] relative overflow-hidden hover:bg-opacity-80 cursor-pointer mr-1 z-40 group border-none  transition-all duration-500 delay-500 ease-in-out">
+                    <div className="flex bg-lemonYellow text-white px-8 py-4 rounded-[32px] relative overflow-hidden hover:bg-opacity-80 cursor-pointer mr-1 z-40 group border-none  transition-all duration-500 delay-500 ease-in-out">
                       <span className="relative z-10 flex items-center justify-center gap-2">
                         <div>Explore Tours</div>
                         <FaArrowRight />
                       </span>
-                      <div className="absolute inset-0 bg-[#1CA8CB] border-transparent">
+                      <div className="absolute inset-0 bg-lemonYellow group-hover:bg-transparent  border-transparent">
                         <div className="mask absolute inset-0 bg-black  transition-all duration-700 delay-300 ease-in-out transform translate-x-[-100%] group-hover:translate-x-0 border-transparent"></div>
                       </div>
                     </div>

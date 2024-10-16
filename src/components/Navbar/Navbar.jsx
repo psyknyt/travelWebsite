@@ -265,7 +265,22 @@ export default function Nav() {
           </div>
           {/* for bigger screen */}
           <div className="mx-auto hidden md:flex px-4 text-[16px] font-normal font-inter h-full tracking-wider">
-            <ul className="type-none flex  md:space-x-5 h-full mr-5 ">
+            <ul className="type-none flex  md:space-x-5 h-full mr-5 gap-[0.1rem] lg:gap-4">
+              <div
+                className="group flex items-center navlink relative h-full cursor-pointer"
+                onClick={() => navigate("/")}
+              >
+                <p className="group-hover:text-white">Home</p>
+                <div className="absolute inset-x-0 bottom-[15px] h-[1px] rounded-xl bg-black group-hover:bg-white transform scale-x-0 origin-left transition-transform duration-300 group-hover:scale-x-100"></div>
+              </div>
+
+              <div
+                className="group flex items-center navlink relative h-full cursor-pointer"
+                onClick={() => navigate("/aboutus")}
+              >
+                <p className="group-hover:text-white">About Us</p>
+                <div className="absolute inset-x-0 bottom-[15px] h-[1px] rounded-xl bg-black group-hover:bg-white transform scale-x-0 origin-left transition-transform duration-300 group-hover:scale-x-100"></div>
+              </div>
               <div
                 className="navlink relative h-full cursor-pointer"
                 onMouseEnter={() => setIsDropdownVisible(true)}
@@ -275,7 +290,7 @@ export default function Nav() {
                   <p className="group-hover:text-white">Treks</p>
 
                   {/* Bottom border animation */}
-                  <div className="absolute inset-x-0 bottom-[15px] h-[1px] rounded-xl bg-black group-hover:bg-[#1CA8CB] transform scale-x-0 origin-left transition-transform duration-300 group-hover:scale-x-100"></div>
+                  <div className="absolute inset-x-0 bottom-[15px] h-[1px] rounded-xl bg-black group-hover:bg-white transform scale-x-0 origin-left transition-transform duration-300 group-hover:scale-x-100"></div>
 
                   {/* Rotating arrow icon */}
                   <svg
@@ -284,7 +299,7 @@ export default function Nav() {
                     viewBox="0 0 24 24"
                     strokeWidth={1.5}
                     stroke="currentColor"
-                    className={`w-3 h-3 transition-transform duration-500 ease-in-out group-hover:hover:bg-[#1CA8CB] ${
+                    className={`w-3 h-3 transition-transform duration-500 ease-in-out group-hover:hover:bg-white ${
                       isDropDownVisible ? "rotate-180" : "rotate-0"
                     }`}
                   >
@@ -300,7 +315,7 @@ export default function Nav() {
                   <div
                     className={`absolute top-[100%] z-[40] bg-white  shadow-md rounded md:w-[80vw] lg:w-[850px] h-[450px] mx-auto text-sm font-light tracking-wide transition-all duration-1000 delay-0 ease-in-out transform ${
                       isDropDownVisible
-                        ? "translate-y-0 opacity-100 md:left-[-200%] xl:left-[-50%]"
+                        ? "translate-y-0 opacity-100 left-[-300%] xl:left-[-400%]"
                         : "-translate-y-4 opacity-100  left-[5000%]"
                     } flex flex-row justify-between items-start`}
                     style={{
@@ -357,42 +372,26 @@ export default function Nav() {
                   {/* )} */}
                 </div>
               </div>
-              <div
-                className="group flex items-center navlink relative h-full cursor-pointer"
-                onClick={() => navigate("/")}
-              >
-                <p className="group-hover:text-white">Home</p>
-                <div className="absolute inset-x-0 bottom-[15px] h-[1px] rounded-xl bg-black group-hover:bg-[#1CA8CB] transform scale-x-0 origin-left transition-transform duration-300 group-hover:scale-x-100"></div>
+
+              <div className="group flex items-center navlink relative h-full cursor-pointer">
+                <p className="group-hover:text-white">Blogs</p>
+                <div className="absolute inset-x-0 bottom-[15px] h-[1px] rounded-xl bg-black group-hover:bg-white transform scale-x-0 origin-left transition-transform duration-300 group-hover:scale-x-100"></div>
               </div>
 
-              <div
-                className="group flex items-center navlink relative h-full cursor-pointer"
-                onClick={() => navigate("/aboutus")}
-              >
-                <p className="group-hover:text-white">About Us</p>
-                <div className="absolute inset-x-0 bottom-[15px] h-[1px] rounded-xl bg-black group-hover:bg-[#1CA8CB] transform scale-x-0 origin-left transition-transform duration-300 group-hover:scale-x-100"></div>
+              <div className="group flex items-center navlink relative h-full cursor-pointer">
+                <p className="group-hover:text-white">Gallery</p>
+                <div className="absolute inset-x-0 bottom-[15px] h-[1px] rounded-xl bg-black group-hover:bg-white transform scale-x-0 origin-left transition-transform duration-300 group-hover:scale-x-100"></div>
               </div>
-
               <div
                 className="group flex items-center navlink relative h-full cursor-pointer"
                 onClick={() => navigate("/contact")}
               >
                 <p className="group-hover:text-white">Contact</p>
-                <div className="absolute inset-x-0 bottom-[15px] h-[1px] rounded-xl bg-black group-hover:bg-[#1CA8CB] transform scale-x-0 origin-left transition-transform duration-300 group-hover:scale-x-100"></div>
-              </div>
-
-              <div className="group flex items-center navlink relative h-full cursor-pointer">
-                <p className="group-hover:text-white">Blogs</p>
-                <div className="absolute inset-x-0 bottom-[15px] h-[1px] rounded-xl bg-black group-hover:bg-[#1CA8CB] transform scale-x-0 origin-left transition-transform duration-300 group-hover:scale-x-100"></div>
-              </div>
-
-              <div className="group flex items-center navlink relative h-full cursor-pointer">
-                <p className="group-hover:text-white">Gallery</p>
-                <div className="absolute inset-x-0 bottom-[15px] h-[1px] rounded-xl bg-black group-hover:bg-[#1CA8CB] transform scale-x-0 origin-left transition-transform duration-300 group-hover:scale-x-100"></div>
+                <div className="absolute inset-x-0 bottom-[15px] h-[1px] rounded-xl bg-black group-hover:bg-white transform scale-x-0 origin-left transition-transform duration-300 group-hover:scale-x-100"></div>
               </div>
               {/* <div className="group flex items-center navlink relative h-full cursor-pointer">
               <p className="group-hover:text-white">Tours</p>
-              <div className="absolute inset-x-0 bottom-[15px] h-[1px] rounded-xl bg-black group-hover:bg-[#1CA8CB] transform scale-x-0 origin-left transition-transform duration-300 group-hover:scale-x-100"></div>
+              <div className="absolute inset-x-0 bottom-[15px] h-[1px] rounded-xl bg-black group-hover:bg-white transform scale-x-0 origin-left transition-transform duration-300 group-hover:scale-x-100"></div>
             </div> */}
             </ul>
           </div>
@@ -401,7 +400,7 @@ export default function Nav() {
               <div>Book Now</div>
               <FaArrowRight />
             </span>
-            <div className="absolute inset-0 bg-black border-transparent">
+            <div className="absolute inset-0 bg-black group-hover:bg-transparent border-transparent">
               <div className="mask absolute inset-0 bg-white transition-all duration-500 transform translate-x-[-100%] group-hover:translate-x-0 border-transparent"></div>
             </div>
           </div>

@@ -13,7 +13,7 @@ const PopularLocation = () => {
   // max-w-[400px] min-w-[200px] min-h-[500px]
   return (
     <div
-      className={`relative bg-black shadow-xl flex flex-col group rounded-lg w-[95%]`}
+      className={`relative bg-black shadow-xl flex flex-col group rounded-lg w-[95%] `}
       data-aos="fade-up"
     >
       <div className="img overflow-hidden rounded-t-lg">
@@ -54,7 +54,7 @@ const PopularLocation = () => {
             <MdArrowForward />
           </span>
           <div className="absolute inset-0 bg-white border-transparent">
-            <div className="mask absolute inset-0 bg-[#1CA8CB] transition-all duration-500 transform translate-x-[-100%] group-hover:translate-x-0 border-transparent"></div>
+            <div className="mask absolute inset-0 bg-lemonYellow transition-all duration-500 transform translate-x-[-100%] group-hover:translate-x-0 border-transparent"></div>
           </div>
         </div>
       </div>

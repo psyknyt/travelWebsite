@@ -58,7 +58,7 @@ const TestimonialCard = () => {
 const TestimonialSection = () => {
   return (
     <div
-      className="pb-20 h-[80vh]"
+      className="pb-20 h-[80vh] "
       style={{
         backgroundImage: `url(${bgLineImage})`,
         backgroundSize: "cover",
