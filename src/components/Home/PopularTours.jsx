@@ -35,7 +35,7 @@ const PopularTours = () => {
           Most Popular Tours
         </div>
       </div>
-      <div className="flex  justify-center items-center py-5">
+      <div className="flex justify-center items-center py-5 w-full lg:w-[90%] mx-auto">
         <Swiper
           spaceBetween={10}
           modules={[Pagination, Autoplay]}
@@ -64,6 +64,7 @@ const PopularTours = () => {
               spaceBetween: 10,
             },
           }}
+          className="w-full mx-auto"
         >
           <SwiperSlide
             className="flex justify-center items-center z-10 my-10 mx-auto hover:-translate-y-2 transition-all duration-500 delay-100 ease-in-out"

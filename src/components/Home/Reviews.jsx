@@ -2,7 +2,7 @@ import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Navigation, Pagination } from "swiper/modules";
 
-import "swiper/css"; // Import Swiper styles
+import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 
@@ -74,23 +74,18 @@ const TestimonialSection = () => {
         </div>
       </div>
       <div
-        className="flex w-full  justify-center items-center py-5"
+        className="flex w-full  justify-center items-center py-5 lg:w-[90%] mx-auto"
         id="reviews"
       >
         <Swiper
           modules={[Pagination, Autoplay]}
-          // pagination={{
-          //   clickable: true,
-          // }}
-          // TODO stopped navigation
           navigation={false}
           autoplay={{
-            delay: 5000,
+            delay: 50000,
             disableOnInteraction: false,
           }}
           loop={true}
           id="commercial"
-          // TODO made some changes to the  breakpoints for mobile viewinG
           breakpoints={{
             640: {
               slidesPerView: 1,
@@ -107,16 +102,16 @@ const TestimonialSection = () => {
           }}
           className="w-full"
         >
-          <SwiperSlide className="z-10 m-3 my-10 mx-auto ">
+          <SwiperSlide className="z-10 my-10 mx-auto bg-gray-500 flex justify-center items-center">
             <TestimonialCard />
           </SwiperSlide>
-          <SwiperSlide className="m-3 my-10 mx-auto">
+          <SwiperSlide className="my-10 mx-auto">
             <TestimonialCard />
           </SwiperSlide>
-          <SwiperSlide className="m-3 my-10 bgmx-auto">
+          <SwiperSlide className="my-10 mx-auto">
             <TestimonialCard />
           </SwiperSlide>
-          <SwiperSlide className="m-3 my-10  mx-auto ">
+          <SwiperSlide className=" my-10  mx-auto">
             <TestimonialCard />
           </SwiperSlide>
         </Swiper>

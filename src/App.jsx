@@ -25,7 +25,8 @@ import RotatingSwiper from "./components/Home/RotatingSwiper";
 import WhyUs from "./components/Home/WhyUs";
 import TopSpot from "./components/Home/TopSpot";
 import BookForm from "./components/utils/BookForm";
-
+import TrendingTours from "./components/Home/TrendingTours";
+import ChooseTrek from "./components/Home/ChooseTrek";
 import "animate.css";
 
 function App() {
@@ -40,9 +41,11 @@ function App() {
       <HeroSection />
       {/* <FeaturedDestination /> */}
       {/* <RotatingSwiper /> */}
+      <ChooseTrek />
+      <TrendingTours />
       <PopularTours />
       {/* <SwiperCards /> */}
-      {/* <LetsGoTogether /> */}
+      <LetsGoTogether />
       <TopSpot />
       <WhyUs />
       <Gallery />

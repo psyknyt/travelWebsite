@@ -3,7 +3,7 @@ import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Navigation, Pagination } from "swiper/modules";
 
-import "swiper/css"; // Import Swiper styles\
+import "swiper/css";
 
 import banner1 from "../../assets/slide_01.png";
 import banner2 from "../../assets/slide_02.png";
@@ -12,16 +12,10 @@ import { FaArrowRight } from "react-icons/fa";
 const HeroSection = () => {
   return (
     <div className="relative z-20">
-      {/* TODO Added an mask */}
       <div className="relative top-0 left-0 h-max lg:col-span-2">
-        {/* <div className="absolute inset-0 bg-black opacity-50"></div> */}
         <Swiper
           spaceBetween={30}
           loop={true}
-          // pagination={{
-          //   clickable: true,
-          // }}
-          // navigation={true}
           modules={[Pagination, Autoplay, Navigation, Pagination]}
           autoplay={{
             delay: 5000,

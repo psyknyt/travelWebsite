@@ -239,3 +239,15 @@ form .form-select {
   width: 100%;
   z-index: 9;
 } */
+
+.trending-swiper .swiper-button-next {
+  color: black;
+  font-size: 25px;
+  font-weight: 800;
+}
+
+.trending-swiper .swiper-button-prev {
+  color: black;
+  font-size: 25px;
+  font-weight: 800;
+}
