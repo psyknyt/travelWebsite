@@ -39,7 +39,7 @@ const TrendingTourLocation = () => {
           className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-125"
         />
       </div>
-      <div className="absolute bg-black px-4 py-6 bg-opacity-60 text-white flex flex-col gap-4 justify-start items-start w-full h-[130px] bottom-0 transition-all duration-300 delay-150">
+      <div className="absolute bg-black px-4 py-6 bg-opacity-50 text-white flex flex-col gap-4 justify-start items-start w-full h-[130px] bottom-0 transition-all duration-300 delay-150">
         <div className="flex flex-col justify-start items-start text-xl font-semibold">
           Kedarkantha Trek
         </div>

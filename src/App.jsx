@@ -45,7 +45,7 @@ function App() {
       <TrendingTours />
       <PopularTours />
       {/* <SwiperCards /> */}
-      <LetsGoTogether />
+      {/* <LetsGoTogether /> */}
       <TopSpot />
       <WhyUs />
       <Gallery />
