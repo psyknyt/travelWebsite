@@ -102,7 +102,7 @@ const TestimonialSection = () => {
           }}
           className="w-full"
         >
-          <SwiperSlide className="z-10 my-10 mx-auto bg-gray-500 flex justify-center items-center">
+          <SwiperSlide className="z-10 my-10 mx-auto flex justify-center items-center">
             <TestimonialCard />
           </SwiperSlide>
           <SwiperSlide className="my-10 mx-auto">
