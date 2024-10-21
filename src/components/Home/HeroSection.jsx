@@ -43,8 +43,8 @@ const HeroSection = () => {
                     Our Featured Destinations
                   </div>
                   <div className="flex flex-col md:flex-row gap-2 animate__animated animate__fadeInUp animate__delay-2s">
-                    <div className="flex bg-lemonYellow text-white px-8 py-4 rounded-[32px] relative overflow-hidden hover:bg-opacity-80 cursor-pointer mr-1 z-40 group border-none  transition-all duration-500 delay-500 ease-in-out">
-                      <span className="relative z-10 flex items-center justify-center gap-2">
+                    <div className="flex bg-lemonYellow text-black  px-8 py-4 rounded-[32px] relative overflow-hidden hover:bg-opacity-80 cursor-pointer mr-1 z-40 group border-none  transition-all duration-500 delay-500 ease-in-out">
+                      <span className="relative z-10 flex items-center justify-center gap-2 group-hover:text-white transition-all duration-300 delay-200 ease-in-out">
                         <div>Explore Tours</div>
                         <FaArrowRight />
                       </span>
@@ -87,8 +87,8 @@ const HeroSection = () => {
                     Our Featured Destinations
                   </div>
                   <div className="flex flex-col md:flex-row gap-2 animate__animated animate__fadeInUp animate__delay-2s">
-                    <div className="flex bg-lemonYellow text-white px-8 py-4 rounded-[32px] relative overflow-hidden hover:bg-opacity-80 cursor-pointer mr-1 z-40 group border-none  transition-all duration-500 delay-500 ease-in-out">
-                      <span className="relative z-10 flex items-center justify-center gap-2">
+                    <div className="flex bg-lemonYellow text-black  px-8 py-4 rounded-[32px] relative overflow-hidden hover:bg-opacity-80 cursor-pointer mr-1 z-40 group border-none  transition-all duration-500 delay-500 ease-in-out">
+                      <span className="relative z-10 flex items-center justify-center gap-2 group-hover:text-white transition-all duration-300 delay-200 ease-in-out">
                         <div>Explore Tours</div>
                         <FaArrowRight />
                       </span>

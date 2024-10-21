@@ -34,7 +34,7 @@
   width: 170%;
   height: 170%;
   border-radius: 50%;
-  background-color: #ffbf4f;
+  background-color: #fef250;
   opacity: 0.05;
   z-index: 1;
   animation: flicker 2s infinite ease-in-out alternate;

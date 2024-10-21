@@ -17,7 +17,8 @@ export default {
         blueisGray: "#1CA8CB",
         smokeColor: "#E9F6F9",
         titleColor: "#113D48",
-        lemonYellow: "#ffbf4f",
+        lemonYellow: "#FEF250",
+        // lemonYellow: "#ffbf4f",
         // lemonYellow: "#FBD149",
       },
       screens: {

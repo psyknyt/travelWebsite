@@ -1,4 +1,9 @@
-import { useState } from "react";
+import {
+  Accordion,
+  AccordionHeader,
+  AccordionBody,
+} from "@material-tailwind/react";
+import { useState, useEffect } from "react";
 import React from "react";
 
 import "./navbar.css";
@@ -15,6 +20,7 @@ import logoBgMask from "../../assets/background/logo_bg_mask.png";
 import { useNavigate } from "react-router-dom";
 
 import bgImage from "../../assets/Kedarkantha_Trek_thumb.jpg";
+import { setActive } from "@material-tailwind/react/components/Tabs/TabsContext";
 
 const navbarProps = {
   Logo: { type: "img", text: "LOGO GOES HERE !", img: "/vite.svg" },
@@ -44,7 +50,7 @@ const Logo = () => {
   return (
     <a
       href="https://thecrazymountaineers.com/"
-      className="logo wrapper min-w-16 max-w-48 flex items-center justify-center px-2"
+      className="logo wrapper w-[8rem]  sm:w-48 flex items-center justify-center px-2"
     >
       <img src={navBarLogo} alt="logo" />
     </a>
@@ -54,7 +60,7 @@ const Logo = () => {
 const MenuToggleButton = ({ show, setShow }) => {
   return (
     <div
-      className="menu_toggle_btn wrapper flex md:hidden items-center justify-center w-16 h-full  ml-auto"
+      className="menu_toggle_btn wrapper flex lg:hidden items-center justify-center w-16 h-full  ml-auto"
       onClick={() => setShow(!show)}
     >
       <div className="relative  w-full h-full flex flex-col gap-y-4 justify-center items-center">
@@ -83,11 +89,155 @@ const MenuToggleButton = ({ show, setShow }) => {
   );
 };
 
+const chooseDropdownData = [
+  {
+    menuName: "Treks by Name",
+    items: [
+      "Kedarkantha trek",
+      "Har ki dun trek",
+      "Gaumukh tapovan",
+      "Rupin Pass trek",
+      "Dayara bugyal trek",
+      "Nag Tibba Trek",
+      "Roopkund trek",
+      "Chopta Trek",
+      "Gaumukh tapovan trek",
+      "Rupin Pass trek",
+      "Valley of flowers trek",
+    ],
+  },
+  {
+    menuName: "Months",
+    items: [
+      "January",
+      "February",
+      "March",
+      "April",
+      "May",
+      "June",
+      "July",
+      "August",
+      "September",
+      "October",
+      "November",
+      "December",
+    ],
+  },
+  {
+    menuName: "Difficulty",
+    items: ["Easy", "Moderate", "Difficult", "Very Difficult"],
+  },
+  {
+    menuName: "Seasons",
+    items: ["Winter", "Spring", "Summer", "Monsoon", "Autumn"],
+  },
+];
+
+const DropdownMenu = ({
+  menuName,
+  items,
+  activeDropdown,
+  setActiveDropDown,
+}) => {
+  return (
+    <div
+      className="relative rounded-lg group py-2 px-4 bg-white w-full capitalize hover:bg-gray-100"
+      onMouseEnter={() => setActiveDropDown(menuName)}
+      onMouseLeave={() => setActiveDropDown("")}
+    >
+      {menuName}
+      <div
+        className={`absolute top-2 rounded-lg right-[-100%] ${
+          activeDropdown === menuName
+            ? "flex flex-col h-fit w-full"
+            : "hidden h-0 w-0"
+        } transition-all duration-300 ease-in-out bg-white text-black`}
+      >
+        <ul className="type-none flex flex-col ">
+          {items.map((item, index) => (
+            <li
+              key={index}
+              className={`hover:bg-gray-200 px-4 py-2 border-b-[0.1px] border-gray-300 ${
+                index === 0 ? "rounded-t-lg" : ""
+              } ${index === items.length - 1 ? "rounded-b-lg" : ""}`}
+            >
+              {item}
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+  );
+};
+
+function Icon({ id, open }) {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      viewBox="0 0 24 24"
+      strokeWidth={1.5}
+      stroke="currentColor"
+      className={`${
+        id === open ? "rotate-180" : ""
+      } h-5 w-5 transition-transform`}
+    >
+      <path
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        d="M19.5 8.25l-7.5 7.5-7.5-7.5"
+      />
+    </svg>
+  );
+}
+
+export function SmallScreenAccordion() {
+  const [open, setOpen] = useState(0);
+
+  const handleOpen = (value) => setOpen(open === value ? 0 : value);
+
+  return (
+    <>
+      {chooseDropdownData.map((menu, index) => (
+        <Accordion
+          key={index}
+          open={open === index + 1}
+          icon={<Icon id={index + 1} open={open} />}
+        >
+          <AccordionHeader
+            onClick={() => handleOpen(index + 1)}
+            className={`font-normal pb-0 ${
+              open === index + 1 ? "text-red-400 text-lg" : " text-sm  "
+            }`}
+          >
+            {menu.menuName}
+          </AccordionHeader>
+          <AccordionBody>
+            <ul className="list-none pl-0 gap-1">
+              {menu.items.map((item, i) => (
+                <li
+                  key={i}
+                  className="py-1  px-2 font-normal transition-all duration-300 ease-in-out  hover:bg-gray-100 flex justify-start items-start cursor-pointer w-[95%] border-b-[1px] border-gray-400"
+                >
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </AccordionBody>
+        </Accordion>
+      ))}
+    </>
+  );
+}
+
 export default function Nav() {
   const [show, setShow] = React.useState(false);
   const [hover, setHover] = React.useState(false);
-  const [isVisible, setIsVisible] = useState(false); // isvisible right now working for Treks only small screen to make it work for more items just change the isVisible to other names like isVisibleTreks and same for others where you want to do it...
+  const [isVisible, setIsVisible] = useState(false);
   const [isDropDownVisible, setIsDropdownVisible] = useState(false);
+  const [activeDropDown, setActiveDropDown] = useState("");
+  const [chooseTrekDropdown, setChooseTrekDropdown] = useState(false);
+
   const navigate = useNavigate();
 
   const toggleDropown = () => {
@@ -98,11 +248,29 @@ export default function Nav() {
     setIsVisible(!isVisible);
   };
 
-  console.log("is dropdown: ", isDropDownVisible);
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth < 1280) {
+        setShow(true);
+      } else {
+        setShow(false);
+      }
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    handleResize();
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
+  console.log("choose dropdown hover: ", chooseTrekDropdown);
 
   return (
     <div className="flex flex-col font-inter text-[16px] font-normal leading-[26px] ">
-      <div className="h-8 w-[90%]  mx-auto bg-white flex justify-between  items-center text-center px-4 border-b-2 border-gray-200 cursor-pointer font-inter pl-5 text-[11px] sm:text-[13px]  font-normal">
+      <div className="h-8 w-[90%]  mx-auto bg-white flex justify-between  items-center text-center px-4 cursor-pointer font-inter pl-5 text-[11px] sm:text-[13px]  font-normal">
         <div className="hidden lg:flex gap-2">
           <div className="hover:text-white transition-all duration-300 delay-150 ease-in-out flex justify-between items-center gap-2 font-inter tracking-wide">
             <IoLocationOutline className="w-4 h-4 font-semibold" />
@@ -137,7 +305,7 @@ export default function Nav() {
       </div>
       <div className="flex bg-lemonYellow">
         <div
-          className="z-50 font-fredoka font-normal text-sm nav-wrapper w-[90%] mx-auto h-[85px] flex justify-between items-center py-2"
+          className="z-50 font-fredoka font-normal text-sm nav-wrapper w-[95%] lg:w-[] mx-auto h-[85px] flex justify-between items-center py-2 relative"
           onClick={() => setIsDropdownVisible(false)}
         >
           <div className="nav-logo flex justify-center items-center px-2 font-bold text-xs ">
@@ -146,9 +314,9 @@ export default function Nav() {
           {/* for small devices DRAWER */}
           <div className="">
             <div
-              className={`menu-wrapper bg-white top-0 z-50 w-[70%] sm:w-[50%] fixed md:hidden  transition-all duration-700 delay-300 md:transform-none ${
+              className={` bg-white top-0 z-50 w-[70%] sm:w-[50%] fixed xl:hidden  transition-all duration-700 delay-300 md:transform-none ${
                 show ? "left-0 h-full" : "h-0 left-[-2000px]"
-              } md:h-full md:bottom-auto `}
+              }`}
             >
               <div className="relative flex justify-center items-center py-5 bg-blue-100">
                 <Logo />
@@ -160,9 +328,9 @@ export default function Nav() {
                 </button>
               </div>
               <ul
-                className={`font-inter menu flex flex-col md:flex-row w-[80%] mx-auto transition-all duration-500 md:transform-none md:delay-0 md:duration-0 ${
+                className={`font-inter flex flex-col w-[80%] mx-auto transition-all duration-500 md:transform-none md:delay-0 md:duration-0 ${
                   show ? "h-screen " : "h-0 "
-                } md:h-full md:space-x-4  md:pt-0 md:pl-auto text-left font-normal text-[16px]`}
+                }  text-left font-normal text-[16px]`}
               >
                 <li className="md:text-[#0A1D56] cursor-pointer pt-4 pb-1 transition-all duration-500 ease-in-out text-[16px]">
                   <div
@@ -222,31 +390,31 @@ export default function Nav() {
                 </li>
 
                 <li
-                  className="pt-4 pb-1 md:h-full  text-[#0A1D56]  justify-start items-center flex cursor-pointer"
+                  className="pt-4 pb-1 text-[#0A1D56]  justify-start items-center flex cursor-pointer"
                   onClick={() => navigate("/")}
                 >
                   Home
                 </li>
                 <div className="w-full mx-auto border-[1px] h-0 bg-gray-400" />
                 <li
-                  className="pt-4 pb-1 md:h-full  text-[#0A1D56]  justify-start items-center flex cursor-pointer"
+                  className="pt-4 pb-1  text-[#0A1D56]  justify-start items-center flex cursor-pointer"
                   onClick={() => navigate("/aboutus")}
                 >
                   About Us
                 </li>
                 <div className="w-full mx-auto border-[1px] h-0 bg-gray-400" />
                 <li
-                  className="pt-4 pb-1 md:h-full  text-[#0A1D56]  justify-start items-center flex cursor-pointer"
+                  className="pt-4 pb-1  text-[#0A1D56]  justify-start items-center flex cursor-pointer"
                   onClick={() => navigate("/contact")}
                 >
                   Contact
                 </li>
                 <div className="w-full mx-auto border-[1px] h-0 bg-gray-400" />
-                <li className="pt-4 pb-1 md:h-full  text-[#0A1D56]  justify-start items-center flex cursor-pointer">
+                <li className="pt-4 pb-1 text-[#0A1D56]  justify-start items-center flex cursor-pointer">
                   Blogs
                 </li>
                 <div className="w-full mx-auto border-[1px] h-0 bg-gray-400" />
-                <li className="pt-4 pb-1 md:h-full  text-[#0A1D56]  justify-start items-center flex cursor-pointer">
+                <li className="pt-4 pb-1 text-[#0A1D56]  justify-start items-center flex cursor-pointer">
                   Gallery
                 </li>
                 {/* <div className="w-full mx-auto border-[1px] h-0 bg-gray-400" />
@@ -257,29 +425,29 @@ export default function Nav() {
               </ul>
             </div>
             <div
-              className={`fixed inset-0 bg-black bg-opacity-70 z-[30] ${
+              className={`fixed inset-0 bg-black bg-opacity-70 z-[45] ${
                 show ? "flex" : "hidden"
               }`}
               onClick={() => setShow(!show)}
             />
           </div>
           {/* for bigger screen */}
-          <div className="mx-auto hidden md:flex px-4 text-[16px] font-normal font-inter h-full tracking-wider">
+          <div className="mx-auto hidden lg:flex px-4 text-[15px] xl:text-[16px] font-normal font-inter h-full tracking-wider text-nowrap">
             <ul className="type-none flex  md:space-x-5 h-full mr-5 gap-[0.1rem] lg:gap-4">
               <div
                 className="group flex items-center navlink relative h-full cursor-pointer"
                 onClick={() => navigate("/")}
               >
-                <p className="group-hover:text-white">Home</p>
-                <div className="absolute inset-x-0 bottom-[15px] h-[1px] rounded-xl bg-black group-hover:bg-white transform scale-x-0 origin-left transition-transform duration-300 group-hover:scale-x-100"></div>
+                <p className="">Home</p>
+                <div className="absolute inset-x-0 bottom-[15px] h-[1px] rounded-xl bg-black  transform scale-x-0 origin-left transition-transform duration-300 group-hover:scale-x-100"></div>
               </div>
 
               <div
                 className="group flex items-center navlink relative h-full cursor-pointer"
                 onClick={() => navigate("/aboutus")}
               >
-                <p className="group-hover:text-white">About Us</p>
-                <div className="absolute inset-x-0 bottom-[15px] h-[1px] rounded-xl bg-black group-hover:bg-white transform scale-x-0 origin-left transition-transform duration-300 group-hover:scale-x-100"></div>
+                <p className="">About Us</p>
+                <div className="absolute inset-x-0 bottom-[15px] h-[1px] rounded-xl bg-black  transform scale-x-0 origin-left transition-transform duration-300 group-hover:scale-x-100"></div>
               </div>
               <div
                 className="navlink relative h-full cursor-pointer"
@@ -287,10 +455,10 @@ export default function Nav() {
                 onMouseLeave={() => setIsDropdownVisible(false)}
               >
                 <div className="relative flex group items-center gap-1 h-full ">
-                  <p className="group-hover:text-white">Treks</p>
+                  <p className="">Treks</p>
 
                   {/* Bottom border animation */}
-                  <div className="absolute inset-x-0 bottom-[15px] h-[1px] rounded-xl bg-black group-hover:bg-white transform scale-x-0 origin-left transition-transform duration-300 group-hover:scale-x-100"></div>
+                  <div className="absolute inset-x-0 bottom-[15px] h-[1px] rounded-xl bg-black  transform scale-x-0 origin-left transition-transform duration-300 group-hover:scale-x-100"></div>
 
                   {/* Rotating arrow icon */}
                   <svg
@@ -374,28 +542,89 @@ export default function Nav() {
               </div>
 
               <div className="group flex items-center navlink relative h-full cursor-pointer">
-                <p className="group-hover:text-white">Blogs</p>
-                <div className="absolute inset-x-0 bottom-[15px] h-[1px] rounded-xl bg-black group-hover:bg-white transform scale-x-0 origin-left transition-transform duration-300 group-hover:scale-x-100"></div>
+                <p className="">Blogs</p>
+                <div className="absolute inset-x-0 bottom-[15px] h-[1px] rounded-xl bg-black  transform scale-x-0 origin-left transition-transform duration-300 group-hover:scale-x-100"></div>
               </div>
 
               <div className="group flex items-center navlink relative h-full cursor-pointer">
-                <p className="group-hover:text-white">Gallery</p>
-                <div className="absolute inset-x-0 bottom-[15px] h-[1px] rounded-xl bg-black group-hover:bg-white transform scale-x-0 origin-left transition-transform duration-300 group-hover:scale-x-100"></div>
+                <p className="">Gallery</p>
+                <div className="absolute inset-x-0 bottom-[15px] h-[1px] rounded-xl bg-black  transform scale-x-0 origin-left transition-transform duration-300 group-hover:scale-x-100"></div>
               </div>
               <div
                 className="group flex items-center navlink relative h-full cursor-pointer"
                 onClick={() => navigate("/contact")}
               >
-                <p className="group-hover:text-white">Contact</p>
-                <div className="absolute inset-x-0 bottom-[15px] h-[1px] rounded-xl bg-black group-hover:bg-white transform scale-x-0 origin-left transition-transform duration-300 group-hover:scale-x-100"></div>
+                <p className="">Contact</p>
+                <div className="absolute inset-x-0 bottom-[15px] h-[1px] rounded-xl bg-black  transform scale-x-0 origin-left transition-transform duration-300 group-hover:scale-x-100"></div>
               </div>
               {/* <div className="group flex items-center navlink relative h-full cursor-pointer">
-              <p className="group-hover:text-white">Tours</p>
-              <div className="absolute inset-x-0 bottom-[15px] h-[1px] rounded-xl bg-black group-hover:bg-white transform scale-x-0 origin-left transition-transform duration-300 group-hover:scale-x-100"></div>
+              <p className="">Tours</p>
+              <div className="absolute inset-x-0 bottom-[15px] h-[1px] rounded-xl bg-black  transform scale-x-0 origin-left transition-transform duration-300 group-hover:scale-x-100"></div>
             </div> */}
             </ul>
           </div>
-          <div className="hidden md:flex bg-black text-white hover:text-black px-8 py-3 rounded-[32px] relative overflow-hidden hover:bg-opacity-80 cursor-pointer mr-1 z-40 group border-none">
+
+          <div className=" mx-auto text-nowrap flex cursor-pointer mr-1 z-40 group relative">
+            <div
+              className="relative rounded-[32px] bg-white text-black px-4 py-1 sm:px-8 sm:py-3 border-none overflow-hidden hover:bg-opacity-90"
+              onClick={() => setChooseTrekDropdown(!chooseTrekDropdown)}
+            >
+              <span className="relative z-10 flex items-center justify-center gap-2">
+                <div>Choose Trek</div>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  strokeWidth={1.5}
+                  stroke="currentColor"
+                  className={`w-3 h-3 transition-transform duration-500 ease-in-out group-hover:hover:bg-white group-hover:rotate-180 rotate-0
+                  `}
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="m19.5 8.25-7.5 7.5-7.5-7.5"
+                  />
+                </svg>
+              </span>
+            </div>
+
+            <div
+              className={`absolute z-[30] bg-white  shadow-md rounded-lg w-[200px] mx-auto text-sm font-light tracking-wide transition-all duration-1000 delay-0 ease-in-out transform
+                   group-hover:translate-y-0 group-hover:top-[110%] group-hover:opacity-100
+                  -translate-y-4 opacity-100  top-[-5000%]
+               hidden sm:flex flex-col justify-between items-start`}
+              style={{
+                transformOrigin: "top",
+              }}
+            >
+              {chooseDropdownData.map((dropdown, index) => (
+                <DropdownMenu
+                  key={index}
+                  menuName={dropdown.menuName}
+                  items={dropdown.items}
+                  activeDropdown={activeDropDown}
+                  setActiveDropDown={setActiveDropDown}
+                />
+              ))}
+            </div>
+          </div>
+
+          <div
+            className={` py-2 absolute z-[30] bg-white  shadow-md w-screen px-4 left-[-3%] right-0 mx-auto text-sm font-light tracking-wide transition-all duration-1000 delay-0 ease-in-out transform
+                   group-hover:translate-y-0 top-[120%] group-hover:opacity-100
+                  -translate-y-4 opacity-100 
+            ${
+              chooseTrekDropdown ? "flex sm:hidden" : "hidden"
+            } flex-col justify-between items-start`}
+            style={{
+              transformOrigin: "top",
+            }}
+          >
+            <SmallScreenAccordion />
+          </div>
+
+          <div className="hidden text-nowrap md:flex bg-black text-white hover:text-black px-8 py-3 rounded-[32px] relative overflow-hidden hover:bg-opacity-80 cursor-pointer mr-1 z-40 group border-none">
             <span className="relative z-10 flex items-center justify-center gap-2">
               <div>Book Now</div>
               <FaArrowRight />
