@@ -248,24 +248,6 @@ export default function Nav() {
     setIsVisible(!isVisible);
   };
 
-  useEffect(() => {
-    const handleResize = () => {
-      if (window.innerWidth < 1280) {
-        setShow(true);
-      } else {
-        setShow(false);
-      }
-    };
-
-    window.addEventListener("resize", handleResize);
-
-    handleResize();
-
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  }, []);
-
   console.log("choose dropdown hover: ", chooseTrekDropdown);
 
   return (
