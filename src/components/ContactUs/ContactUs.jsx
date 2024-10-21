@@ -16,7 +16,7 @@ const ContactUs = () => {
   return (
     <div className="flex flex-col justify-start bg-gray-400">
       <TopCard title={"Contact Us"} bgImage={banner1} />
-      <div className="bg-white py-5 overflow-hidden">
+      <div className="bg-white pt-5 overflow-hidden">
         <div className="flex flex-col justify-center items-center mb-5  pt-[2rem] pb-[1rem]">
           <div className="flex justify-center items-center font-montez text-[40px]">
             Get In Touch

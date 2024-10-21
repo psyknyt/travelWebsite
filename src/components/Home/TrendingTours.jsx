@@ -22,8 +22,50 @@ import { MdArrowForward } from "react-icons/md";
 import { GoClock } from "react-icons/go";
 import starImg from "../../assets/starImg.png";
 import { FaArrowRight } from "react-icons/fa";
+import travellerImg from "../../assets/traveller4.jpg";
+import kedarkanthaTrek from "../../assets/Kedarkantha_Trek_thumb.jpg";
+import dyaraBuyalTrek from "../../assets/Dayara_Bugyal_Trek_thumb.jpg";
+import jammuKashmir from "../../assets/jammu-kashmir.jpg";
+import himachalPradesh from "../../assets/himachal-pradesh.jpg";
+import DeoriTalTrek from "../../assets/Deoria_Tal_Chopta_Chandrashila_Trek_thumb.jpg";
+import kedarnathTrek from "../../assets/Kedarnath_Yatra_thumb.jpg";
+import harKiDunTrek from "../../assets/Har_Ki_Dun_Trek_thumb.jpg";
+import gaumukhTapovanTrek from "../../assets/Gaumukh_Tapovan_thumb.jpg";
 
-const TrendingTourLocation = () => {
+const trekListings = [
+  {
+    name: "Kedarkantha Trek",
+    listing: 1,
+    img: kedarkanthaTrek,
+  },
+  {
+    name: "Har Ki Dun Trek",
+    listing: 2,
+    img: harKiDunTrek,
+  },
+  {
+    name: "Gaumukh Tapovan",
+    listing: 3,
+    img: gaumukhTapovanTrek,
+  },
+  {
+    name: "Dayara Bugyal Trek",
+    listing: 5,
+    img: dyaraBuyalTrek,
+  },
+  {
+    name: "Kedarnath Trek",
+    listing: 7,
+    img: kedarnathTrek,
+  },
+  {
+    name: "Deoria Tal Chopta Chandrashila Trek",
+    listing: 9,
+    img: DeoriTalTrek,
+  },
+];
+
+const TrendingTourLocation = ({ props }) => {
   const cardShadow = {
     boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08)",
   };
@@ -34,14 +76,14 @@ const TrendingTourLocation = () => {
     >
       <div className="relative w-full h-full img overflow-hidden rounded-t-lg max-h-[400px]">
         <img
-          src={bgImage}
+          src={props?.img}
           alt="card image"
           className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-125"
         />
       </div>
       <div className="absolute bg-black px-4 py-6 bg-opacity-50 text-white flex flex-col gap-4 justify-start items-start w-full h-[130px] bottom-0 transition-all duration-300 delay-150">
         <div className="flex flex-col justify-start items-start text-xl font-semibold">
-          Kedarkantha Trek
+          {props?.name}
         </div>
         <div className="flex justify-between items-center w-full ">
           <div>Uttarkashi</div>
@@ -109,72 +151,16 @@ const TrendingTours = () => {
           }}
           className="trending-swiper"
         >
-          <SwiperSlide
-            className="flex justify-center items-center z-10 my-10 mx-auto hover:-translate-y-2 transition-all duration-500 delay-100 ease-in-out"
-            style={{ display: "flex", justifyContent: "center" }}
-          >
-            <TrendingTourLocation />
-          </SwiperSlide>
-          <SwiperSlide
-            className="flex justify-center items-center z-10 my-10 mx-auto hover:-translate-y-2 transition-all duration-500 delay-100 ease-in-out"
-            style={{ display: "flex", justifyContent: "center" }}
-          >
-            <TrendingTourLocation />
-          </SwiperSlide>
-          <SwiperSlide
-            className="flex justify-center items-center z-10 my-10 mx-auto hover:-translate-y-2 transition-all duration-500 delay-100 ease-in-out"
-            style={{ display: "flex", justifyContent: "center" }}
-          >
-            <TrendingTourLocation />
-          </SwiperSlide>
-          <SwiperSlide
-            className="flex justify-center items-center z-10 my-10 mx-auto hover:-translate-y-2 transition-all duration-500 delay-100 ease-in-out"
-            style={{ display: "flex", justifyContent: "center" }}
-          >
-            <TrendingTourLocation />
-          </SwiperSlide>
-          <SwiperSlide
-            className="flex justify-center items-center z-10 my-10 mx-auto hover:-translate-y-2 transition-all duration-500 delay-100 ease-in-out"
-            style={{ display: "flex", justifyContent: "center" }}
-          >
-            <TrendingTourLocation />
-          </SwiperSlide>
-          <SwiperSlide
-            className="flex justify-center items-center z-10 my-10 mx-auto hover:-translate-y-2 transition-all duration-500 delay-100 ease-in-out"
-            style={{ display: "flex", justifyContent: "center" }}
-          >
-            <TrendingTourLocation />
-          </SwiperSlide>
-          <SwiperSlide
-            className="flex justify-center items-center z-10 my-10 mx-auto hover:-translate-y-2 transition-all duration-500 delay-100 ease-in-out"
-            style={{ display: "flex", justifyContent: "center" }}
-          >
-            <TrendingTourLocation />
-          </SwiperSlide>
-          <SwiperSlide
-            className="flex justify-center items-center z-10 my-10 mx-auto hover:-translate-y-2 transition-all duration-500 delay-100 ease-in-out"
-            style={{ display: "flex", justifyContent: "center" }}
-          >
-            <TrendingTourLocation />
-          </SwiperSlide>
-          <SwiperSlide
-            className="flex justify-center items-center z-10 my-10 mx-auto hover:-translate-y-2 transition-all duration-500 delay-100 ease-in-out"
-            style={{ display: "flex", justifyContent: "center" }}
-          >
-            <TrendingTourLocation />
-          </SwiperSlide>
-          <SwiperSlide
-            className="flex justify-center items-center z-10 my-10 mx-auto hover:-translate-y-2 transition-all duration-500 delay-100 ease-in-out"
-            style={{ display: "flex", justifyContent: "center" }}
-          >
-            <TrendingTourLocation />
-          </SwiperSlide>
-          <SwiperSlide
-            className="flex justify-center items-center z-10 my-10 mx-auto hover:-translate-y-2 transition-all duration-500 delay-100 ease-in-out"
-            style={{ display: "flex", justifyContent: "center" }}
-          >
-            <TrendingTourLocation />
-          </SwiperSlide>
+          {trekListings.map((el) => {
+            return (
+              <SwiperSlide
+                className="flex justify-center items-center z-10 my-10 mx-auto hover:-translate-y-2 transition-all duration-500 delay-100 ease-in-out"
+                style={{ display: "flex", justifyContent: "center" }}
+              >
+                <TrendingTourLocation props={el} />
+              </SwiperSlide>
+            );
+          })}
         </Swiper>
       </div>
     </div>

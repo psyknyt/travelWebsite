@@ -13,6 +13,15 @@ import { FaTwitter } from "react-icons/fa";
 import { FaLinkedinIn } from "react-icons/fa";
 import { FaWhatsapp } from "react-icons/fa";
 
+import kedarkanthaTrek from "../../assets/Kedarkantha_Trek_thumb.jpg";
+import dyaraBuyalTrek from "../../assets/Dayara_Bugyal_Trek_thumb.jpg";
+import jammuKashmir from "../../assets/jammu-kashmir.jpg";
+import himachalPradesh from "../../assets/himachal-pradesh.jpg";
+import DeoriTalTrek from "../../assets/Deoria_Tal_Chopta_Chandrashila_Trek_thumb.jpg";
+import kedarnathTrek from "../../assets/Kedarnath_Yatra_thumb.jpg";
+import harKiDunTrek from "../../assets/Har_Ki_Dun_Trek_thumb.jpg";
+import gaumukhTapovanTrek from "../../assets/Gaumukh_Tapovan_thumb.jpg";
+
 export function Footer() {
   return (
     <footer class="bg-black bg-opacity-90 text-white overflow-hidden">
@@ -147,7 +156,7 @@ export function Footer() {
                 <div className="flex flex-row justify-between items-center gap-2">
                   <div className="relative group w-[5rem] h-[5rem]">
                     <img
-                      src={bgImage}
+                      src={kedarkanthaTrek}
                       className="w-full h-full object-center object-cover rounded-sm z-30"
                     />
                     <div className="absolute flex justify-center items-center inset-0 bg-black bg-opacity-30 z-20 opacity-0 group-hover:opacity-60 group-hover:z-40 transform scale-0 group-hover:scale-100 group-hover:bg-opacity-70 transition-all duration-700 delay-300 ease-in-out rounded-sm pointer-events-none group-hover:pointer-events-auto">
@@ -156,7 +165,7 @@ export function Footer() {
                   </div>
                   <div className="relative group w-[5rem] h-[5rem]">
                     <img
-                      src={bgImage}
+                      src={kedarnathTrek}
                       className="w-full h-full object-center object-cover rounded-sm z-30"
                     />
                     <div className="absolute flex justify-center items-center inset-0 bg-black bg-opacity-30 z-20 opacity-0 group-hover:opacity-60 group-hover:z-40 transform scale-0 group-hover:scale-100 group-hover:bg-opacity-70 transition-all duration-700 delay-300 ease-in-out rounded-sm pointer-events-none group-hover:pointer-events-auto">
@@ -165,7 +174,7 @@ export function Footer() {
                   </div>
                   <div className="relative group w-[5rem] h-[5rem]">
                     <img
-                      src={bgImage}
+                      src={dyaraBuyalTrek}
                       className="w-full h-full object-center object-cover rounded-sm z-30"
                     />
                     <div className="absolute flex justify-center items-center inset-0 bg-black bg-opacity-30 z-20 opacity-0 group-hover:opacity-60 group-hover:z-40 transform scale-0 group-hover:scale-100 group-hover:bg-opacity-70 transition-all duration-700 delay-300 ease-in-out rounded-sm pointer-events-none group-hover:pointer-events-auto">
@@ -176,7 +185,7 @@ export function Footer() {
                 <div className="flex flex-row justify-between items-center gap-2">
                   <div className="relative group w-[5rem] h-[5rem]">
                     <img
-                      src={bgImage}
+                      src={harKiDunTrek}
                       className="w-full h-full object-center object-cover rounded-sm z-30"
                     />
                     <div className="absolute flex justify-center items-center inset-0 bg-black bg-opacity-30 z-20 opacity-0 group-hover:opacity-60 group-hover:z-40 transform scale-0 group-hover:scale-100 group-hover:bg-opacity-70 transition-all duration-700 delay-300 ease-in-out rounded-sm pointer-events-none group-hover:pointer-events-auto">
@@ -185,7 +194,7 @@ export function Footer() {
                   </div>
                   <div className="relative group w-[5rem] h-[5rem]">
                     <img
-                      src={bgImage}
+                      src={DeoriTalTrek}
                       className="w-full h-full object-center object-cover rounded-sm z-30"
                     />
                     <div className="absolute flex justify-center items-center inset-0 bg-black bg-opacity-30 z-20 opacity-0 group-hover:opacity-60 group-hover:z-40 transform scale-0 group-hover:scale-100 group-hover:bg-opacity-70 transition-all duration-700 delay-300 ease-in-out rounded-sm pointer-events-none group-hover:pointer-events-auto">
@@ -194,7 +203,7 @@ export function Footer() {
                   </div>
                   <div className="relative group w-[5rem] h-[5rem]">
                     <img
-                      src={bgImage}
+                      src={jammuKashmir}
                       className="w-full h-full object-center object-cover rounded-sm z-30"
                     />
                     <div className="absolute flex justify-center items-center inset-0 bg-black bg-opacity-30 z-20 opacity-0 group-hover:opacity-60 group-hover:z-40 transform scale-0 group-hover:scale-100 group-hover:bg-opacity-70 transition-all duration-700 delay-300 ease-in-out rounded-sm pointer-events-none group-hover:pointer-events-auto">

@@ -16,6 +16,47 @@ import {
   Navigation,
 } from "swiper/modules";
 import PopularLocation from "../utils/PopularLocation";
+import kedarkanthaTrek from "../../assets/Kedarkantha_Trek_thumb.jpg";
+import dyaraBuyalTrek from "../../assets/Dayara_Bugyal_Trek_thumb.jpg";
+import jammuKashmir from "../../assets/jammu-kashmir.jpg";
+import himachalPradesh from "../../assets/himachal-pradesh.jpg";
+import DeoriTalTrek from "../../assets/Deoria_Tal_Chopta_Chandrashila_Trek_thumb.jpg";
+import kedarnathTrek from "../../assets/Kedarnath_Yatra_thumb.jpg";
+import harKiDunTrek from "../../assets/Har_Ki_Dun_Trek_thumb.jpg";
+import gaumukhTapovanTrek from "../../assets/Gaumukh_Tapovan_thumb.jpg";
+
+const trekListings = [
+  {
+    name: "Kedarkantha Trek",
+    listing: 1,
+    img: kedarkanthaTrek,
+  },
+  {
+    name: "Har Ki Dun Trek",
+    listing: 2,
+    img: harKiDunTrek,
+  },
+  {
+    name: "Gaumukh Tapovan",
+    listing: 3,
+    img: gaumukhTapovanTrek,
+  },
+  {
+    name: "Dayara Bugyal Trek",
+    listing: 5,
+    img: dyaraBuyalTrek,
+  },
+  {
+    name: "Kedarnath Trek",
+    listing: 7,
+    img: kedarnathTrek,
+  },
+  {
+    name: "Deoria Tal Chopta Chandrashila Trek",
+    listing: 9,
+    img: DeoriTalTrek,
+  },
+];
 
 const PopularTours = () => {
   return (
@@ -66,72 +107,16 @@ const PopularTours = () => {
           }}
           className="w-full mx-auto"
         >
-          <SwiperSlide
-            className="flex justify-center items-center z-10 my-10 mx-auto hover:-translate-y-2 transition-all duration-500 delay-100 ease-in-out"
-            style={{ display: "flex", justifyContent: "center" }}
-          >
-            <PopularLocation />
-          </SwiperSlide>
-          <SwiperSlide
-            className="flex justify-center items-center z-10 my-10 mx-auto hover:-translate-y-2 transition-all duration-500 delay-100 ease-in-out"
-            style={{ display: "flex", justifyContent: "center" }}
-          >
-            <PopularLocation />
-          </SwiperSlide>
-          <SwiperSlide
-            className="flex justify-center items-center z-10 my-10 mx-auto hover:-translate-y-2 transition-all duration-500 delay-100 ease-in-out"
-            style={{ display: "flex", justifyContent: "center" }}
-          >
-            <PopularLocation />
-          </SwiperSlide>
-          <SwiperSlide
-            className="flex justify-center items-center z-10 my-10 mx-auto hover:-translate-y-2 transition-all duration-500 delay-100 ease-in-out"
-            style={{ display: "flex", justifyContent: "center" }}
-          >
-            <PopularLocation />
-          </SwiperSlide>
-          <SwiperSlide
-            className="flex justify-center items-center z-10 my-10 mx-auto hover:-translate-y-2 transition-all duration-500 delay-100 ease-in-out"
-            style={{ display: "flex", justifyContent: "center" }}
-          >
-            <PopularLocation />
-          </SwiperSlide>
-          <SwiperSlide
-            className="flex justify-center items-center z-10 my-10 mx-auto hover:-translate-y-2 transition-all duration-500 delay-100 ease-in-out"
-            style={{ display: "flex", justifyContent: "center" }}
-          >
-            <PopularLocation />
-          </SwiperSlide>
-          <SwiperSlide
-            className="flex justify-center items-center z-10 my-10 mx-auto hover:-translate-y-2 transition-all duration-500 delay-100 ease-in-out"
-            style={{ display: "flex", justifyContent: "center" }}
-          >
-            <PopularLocation />
-          </SwiperSlide>
-          <SwiperSlide
-            className="flex justify-center items-center z-10 my-10 mx-auto hover:-translate-y-2 transition-all duration-500 delay-100 ease-in-out"
-            style={{ display: "flex", justifyContent: "center" }}
-          >
-            <PopularLocation />
-          </SwiperSlide>
-          <SwiperSlide
-            className="flex justify-center items-center z-10 my-10 mx-auto hover:-translate-y-2 transition-all duration-500 delay-100 ease-in-out"
-            style={{ display: "flex", justifyContent: "center" }}
-          >
-            <PopularLocation />
-          </SwiperSlide>
-          <SwiperSlide
-            className="flex justify-center items-center z-10 my-10 mx-auto hover:-translate-y-2 transition-all duration-500 delay-100 ease-in-out"
-            style={{ display: "flex", justifyContent: "center" }}
-          >
-            <PopularLocation />
-          </SwiperSlide>
-          <SwiperSlide
-            className="flex justify-center items-center z-10 my-10 mx-auto hover:-translate-y-2 transition-all duration-500 delay-100 ease-in-out"
-            style={{ display: "flex", justifyContent: "center" }}
-          >
-            <PopularLocation />
-          </SwiperSlide>
+          {trekListings.map((el) => {
+            return (
+              <SwiperSlide
+                className="flex justify-center items-center z-10 my-10 mx-auto hover:-translate-y-2 transition-all duration-500 delay-100 ease-in-out"
+                style={{ display: "flex", justifyContent: "center" }}
+              >
+                <PopularLocation props={el} />
+              </SwiperSlide>
+            );
+          })}
         </Swiper>
       </div>
     </div>

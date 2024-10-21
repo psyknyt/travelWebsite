@@ -6,7 +6,7 @@ import { MdArrowForward } from "react-icons/md";
 import { GoClock } from "react-icons/go";
 import starImg from "../../assets/starImg.png";
 
-const PopularLocation = () => {
+const PopularLocation = ({ props }) => {
   const cardShadow = {
     boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08)",
   };
@@ -16,16 +16,16 @@ const PopularLocation = () => {
       className={`relative bg-black shadow-xl flex flex-col group rounded-lg w-[95%] `}
       data-aos="fade-up"
     >
-      <div className="img overflow-hidden rounded-t-lg">
+      <div className="img overflow-hidden rounded-t-lg min-h-[250px] max-h-[250px]">
         <img
-          src={bgImage}
+          src={props.img}
           alt="card image"
           className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-125"
         />
       </div>
-      <div className="h-[200px] flex flex-col px-4 py-2 bg-gray-100 ">
+      <div className="min-h-[200px] max-h-[200px] flex flex-col px-4 py-2 bg-gray-100 ">
         <p className="font-normal font-inter tracking-wider text-md  py-2">
-          Kedarkantha
+          {props.name}
         </p>
         <div className="py-2 flex items-center gap-3">
           <div className="flex flex-row gap-[4px]">

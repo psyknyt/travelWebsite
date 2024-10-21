@@ -39,11 +39,9 @@ function App() {
   let homeContent = (
     <div className="flex flex-col">
       <HeroSection />
-
       <ChooseTrek />
       <TrendingTours />
       <PopularTours />
-
       <TopSpot />
       <WhyUs />
       <Gallery />

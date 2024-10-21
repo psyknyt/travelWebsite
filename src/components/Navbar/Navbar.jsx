@@ -175,7 +175,7 @@ function Icon({ id, open }) {
     <svg
       xmlns="http://www.w3.org/2000/svg"
       fill="none"
-      viewBox="0 0 24 24"
+      viewBox="0 0 20 20"
       strokeWidth={1.5}
       stroke="currentColor"
       className={`${
@@ -203,6 +203,7 @@ export function SmallScreenAccordion() {
           key={index}
           open={open === index + 1}
           icon={<Icon id={index + 1} open={open} />}
+          className="border-b-[1px] border-gray-300 pb-2"
         >
           <AccordionHeader
             onClick={() => handleOpen(index + 1)}
@@ -217,7 +218,7 @@ export function SmallScreenAccordion() {
               {menu.items.map((item, i) => (
                 <li
                   key={i}
-                  className="py-1  px-2 font-normal transition-all duration-300 ease-in-out  hover:bg-gray-100 flex justify-start items-start cursor-pointer w-[95%] border-b-[1px] border-gray-400"
+                  className="py-1 px-2 font-normal transition-all duration-300 ease-in-out  hover:bg-gray-100 flex justify-start items-start cursor-pointer w-full border-b-[1px] border-gray-400"
                 >
                   {item}
                 </li>
@@ -244,10 +245,24 @@ export default function Nav() {
     console.log("mouse-event");
     setIsDropdownVisible(!isDropDownVisible);
   };
+
   const handleDropdown = () => {
     setIsVisible(!isVisible);
   };
 
+  const handleScroll = () => {
+    setChooseTrekDropdown(false);
+  };
+
+  useEffect(() => {
+    // Add scroll event listener when component mounts
+    window.addEventListener("scroll", handleScroll);
+
+    // Cleanup the event listener when component unmounts
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
   console.log("choose dropdown hover: ", chooseTrekDropdown);
 
   return (
@@ -546,6 +561,7 @@ export default function Nav() {
             </ul>
           </div>
 
+          {/* ChooseTrek dropdown for bigger screen*/}
           <div className=" mx-auto text-nowrap flex cursor-pointer mr-1 z-40 group relative">
             <div
               className="relative rounded-[32px] bg-white text-black px-4 py-1 sm:px-8 sm:py-3 border-none overflow-hidden hover:bg-opacity-90"
@@ -592,6 +608,7 @@ export default function Nav() {
             </div>
           </div>
 
+          {/* ChooseTrek dropdown for smaller screen*/}
           <div
             className={` py-2 absolute z-[30] bg-white  shadow-md w-screen px-4 left-[-3%] right-0 mx-auto text-sm font-light tracking-wide transition-all duration-1000 delay-0 ease-in-out transform
                    group-hover:translate-y-0 top-[120%] group-hover:opacity-100

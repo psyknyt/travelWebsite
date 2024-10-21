@@ -3,6 +3,9 @@ import bgImage from "../../assets/Kedarkantha_Trek_thumb.jpg";
 import routeSvg from "../../assets/svg/about_1_1.svg";
 import safetySvg from "../../assets/svg/about_1_2.svg";
 import professionalSvg from "../../assets/svg/about_1_3.svg";
+import DeoriTalTrek from "../../assets/Deoria_Tal_Chopta_Chandrashila_Trek_thumb.jpg";
+import kedarnathTrek from "../../assets/Kedarnath_Yatra_thumb.jpg";
+import harKiDunTrek from "../../assets/Har_Ki_Dun_Trek_thumb.jpg";
 import { FaArrowRight } from "react-icons/fa";
 
 const WhyUs = () => {
@@ -85,19 +88,19 @@ const WhyUs = () => {
         <div className="grid grid-cols-2 gap-4 w-full md:w-[80%] lg:w-[50%] lg:max-w-[600px]  h-full py-4">
           <div className="w-full h-full flex justify-center items-center mx-auto overflow-hidden transition-all duration-500 ease-in-out rounded-2xl">
             <img
-              src={bgImage}
+              src={kedarnathTrek}
               className="object-cover w-full h-full object-center rounded-xl hover:scale-110 transition-all duration-500 ease-in-out"
             />
           </div>
           <div className="w-full h-full flex justify-center items-center mx-auto overflow-hidden transition-all duration-500 ease-in-out rounded-2xl">
             <img
-              src={bgImage}
+              src={DeoriTalTrek}
               className="object-cover w-full h-full object-center rounded-xl hover:scale-110 transition-all duration-500 ease-in-out"
             />
           </div>
           <div className="w-full h-full flex justify-center items-center mx-auto overflow-hidden transition-all duration-500 ease-in-out rounded-2xl">
             <img
-              src={bgImage}
+              src={harKiDunTrek}
               className="object-cover w-full h-full object-center rounded-xl hover:scale-110 transition-all duration-500 ease-in-out"
             />
           </div>

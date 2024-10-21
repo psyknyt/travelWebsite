@@ -10,21 +10,58 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 import travellerImg from "../../assets/traveller4.jpg";
+import kedarkanthaTrek from "../../assets/Kedarkantha_Trek_thumb.jpg";
+import dyaraBuyalTrek from "../../assets/Dayara_Bugyal_Trek_thumb.jpg";
+import jammuKashmir from "../../assets/jammu-kashmir.jpg";
+import himachalPradesh from "../../assets/himachal-pradesh.jpg";
+import DeoriTalTrek from "../../assets/Deoria_Tal_Chopta_Chandrashila_Trek_thumb.jpg";
+import kedarnathTrek from "../../assets/Kedarnath_Yatra_thumb.jpg";
+import harKiDunTrek from "../../assets/Har_Ki_Dun_Trek_thumb.jpg";
+import gaumukhTapovanTrek from "../../assets/Gaumukh_Tapovan_thumb.jpg";
 
-const TopSpotCard = () => {
+const trekListings = [
+  {
+    name: "Kedarkantha Trek",
+    listing: 1,
+    img: kedarkanthaTrek,
+  },
+  {
+    name: "Har Ki Dun Trek",
+    listing: 2,
+    img: harKiDunTrek,
+  },
+  {
+    name: "Gaumukh Tapovan",
+    listing: 3,
+    img: gaumukhTapovanTrek,
+  },
+  {
+    name: "Dayara Bugyal Trek",
+    listing: 5,
+    img: dyaraBuyalTrek,
+  },
+  {
+    name: "Kedarnath Trek",
+    listing: 7,
+    img: kedarnathTrek,
+  },
+  {
+    name: "Deoria Tal Chopta Chandrashila Trek",
+    listing: 9,
+    img: DeoriTalTrek,
+  },
+];
+
+const TopSpotCard = ({ props }) => {
   return (
-    <div className="destination-box  w-[90%] sm:w-[80%]  md:w-full group transition-all duration-300 delay-100 ease-in-out h-[500px]  max-h-[500px] mx-auto rounded-xl overflow-hidden flex flex-col justify-between relative">
+    <div className="destination-box bg-black bg-opacity-40  w-[90%] sm:w-[80%]  md:w-full group transition-all duration-300 delay-100 ease-in-out h-[500px]  max-h-[500px] mx-auto rounded-xl overflow-hidden flex flex-col justify-between relative">
       <img
-        src={travellerImg}
-        className="w-full z-10 h-full rounded-xl global-img box-img object-cover object-center group-hover:scale-110 transition-all duration-500 delay-100 ease-in-out relative"
+        src={props.img}
+        className="w-full z-10 h-full rounded-xl box-img object-cover group-hover:scale-110 transition-all duration-500 delay-100 ease-in-out relative"
       />
-      {/* <div className="absolute z-20 bottom-0 flex flex-col justify-between items-start px-4 py-6 text-white w-full">
-        <div>Location</div>
-        <div>10 Listings</div>
-      </div> */}
       <div className="absolute z-20  px-4 py-6 text-white flex flex-col gap-4 justify-start items-start w-full bottom-0 transition-all duration-300 delay-150">
-        <div className="flex flex-col justify-start items-start text-xl font-semibold">
-          Kedarkantha Trek
+        <div className="flex flex-col justify-start items-start text-xl font-bold">
+          {props.name}
         </div>
         <div className="flex justify-between items-center w-full">
           10 Listings
@@ -83,18 +120,14 @@ const TopSpot = () => {
           }}
           className="w-full flex justify-center items-center"
         >
-          <SwiperSlide className="z-10 my-10 mx-auto w-full md:px-4 hover:-translate-y-3 transition-all duration-500 delay-100 ease-in-out">
-            <TopSpotCard />
-          </SwiperSlide>
-          <SwiperSlide className=" my-10 mx-auto w-full md:px-4 hover:-translate-y-3 transition-all duration-500 delay-100 ease-in-out">
-            <TopSpotCard />
-          </SwiperSlide>
-          <SwiperSlide className=" my-10 bgmx-auto w-full md:px-4 hover:-translate-y-3 transition-all duration-500 delay-100 ease-in-out">
-            <TopSpotCard />
-          </SwiperSlide>
-          <SwiperSlide className=" my-10  mx-auto w-full md:px-4 hover:-translate-y-3 transition-all duration-500 delay-100 ease-in-out">
-            <TopSpotCard />
-          </SwiperSlide>
+          {trekListings.map((el) => (
+            <SwiperSlide
+              key={el.listing}
+              className="z-10 my-10 mx-auto w-full md:px-4 hover:-translate-y-3 transition-all duration-500 delay-100 ease-in-out"
+            >
+              <TopSpotCard props={el} />
+            </SwiperSlide>
+          ))}
         </Swiper>
       </div>
     </div>
