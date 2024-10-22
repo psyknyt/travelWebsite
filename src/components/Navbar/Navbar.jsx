@@ -414,10 +414,13 @@ export default function Nav() {
                 <li className="pt-4 pb-1 text-[#0A1D56]  justify-start items-center flex cursor-pointer">
                   Gallery
                 </li>
-                {/* <div className="w-full mx-auto border-[1px] h-0 bg-gray-400" />
-              <li className="pt-4 pb-1 md:h-full  text-[#0A1D56]  justify-start items-center flex cursor-pointer">
-                Tours
-              </li> */}
+                <li
+                  className="pt-4 pb-1 text-[#0A1D56]  justify-start items-center flex cursor-pointer"
+                  onClick={() => navigate("/services")}
+                >
+                  Services
+                </li>
+                <div className="w-full mx-auto border-[1px] h-0 bg-gray-400" />
                 <div className="w-full mx-auto border-[1px] h-0 bg-gray-400" />
               </ul>
             </div>
@@ -446,97 +449,62 @@ export default function Nav() {
                 <p className="">About Us</p>
                 <div className="absolute inset-x-0 bottom-[15px] h-[1px] rounded-xl bg-black  transform scale-x-0 origin-left transition-transform duration-300 group-hover:scale-x-100"></div>
               </div>
-              <div
-                className="navlink relative h-full cursor-pointer"
-                onMouseEnter={() => setIsDropdownVisible(true)}
-                onMouseLeave={() => setIsDropdownVisible(false)}
-              >
-                <div className="relative flex group items-center gap-1 h-full ">
-                  <p className="">Treks</p>
 
-                  {/* Bottom border animation */}
-                  <div className="absolute inset-x-0 bottom-[15px] h-[1px] rounded-xl bg-black  transform scale-x-0 origin-left transition-transform duration-300 group-hover:scale-x-100"></div>
-
-                  {/* Rotating arrow icon */}
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    strokeWidth={1.5}
-                    stroke="currentColor"
-                    className={`w-3 h-3 transition-transform duration-500 ease-in-out group-hover:hover:bg-white ${
-                      isDropDownVisible ? "rotate-180" : "rotate-0"
-                    }`}
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="m19.5 8.25-7.5 7.5-7.5-7.5"
+              <div className="h-full items-center text-nowrap flex cursor-pointer group relative">
+                <div
+                  className="relative text-black border-none overflow-hidden h-full"
+                  onClick={() => setChooseTrekDropdown(!chooseTrekDropdown)}
+                >
+                  <span className="relative z-10 flex items-center justify-center gap-2 h-full">
+                    <div>Activities</div>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      strokeWidth={1.5}
+                      stroke="currentColor"
+                      className={`w-3 h-3 transition-transform duration-500 ease-in-out group-hover:rotate-180 rotate-0`}
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        d="m19.5 8.25-7.5 7.5-7.5-7.5"
+                      />
+                    </svg>
+                  </span>
+                  {/* The horizontal line */}
+                  <div className="absolute inset-x-0 bottom-[15px] h-[1px] rounded-xl bg-black transform scale-x-0 origin-left transition-transform duration-300 group-hover:scale-x-100" />
+                </div>
+                <div
+                  className={`absolute z-[30] bg-white  shadow-md rounded-lg w-[200px] mx-auto text-sm font-light tracking-wide transition-all duration-500 delay-0 ease-in-out transform
+                   group-hover:translate-y-0 group-hover:top-[110%] group-hover:opacity-100
+                  -translate-y-4 opacity-0  top-[-5000%]
+               hidden sm:flex flex-col justify-between items-start ${
+                 chooseTrekDropdown ? "flex" : "hidden"
+               }`}
+                  style={{
+                    transformOrigin: "top",
+                  }}
+                >
+                  {chooseDropdownData.map((dropdown, index) => (
+                    <DropdownMenu
+                      key={index}
+                      menuName={dropdown.menuName}
+                      items={dropdown.items}
+                      activeDropdown={activeDropDown}
+                      setActiveDropDown={setActiveDropDown}
                     />
-                  </svg>
-
-                  {/* {isDropDownVisible && ( */}
-                  {/* Dropdown menu */}
+                  ))}
                   <div
-                    className={`absolute top-[100%] z-[40] bg-white  shadow-md rounded md:w-[80vw] lg:w-[850px] h-[450px] mx-auto text-sm font-light tracking-wide transition-all duration-1000 delay-0 ease-in-out transform ${
-                      isDropDownVisible
-                        ? "translate-y-0 opacity-100 left-[-300%] xl:left-[-400%]"
-                        : "-translate-y-4 opacity-100  left-[5000%]"
-                    } flex flex-row justify-between items-start`}
-                    style={{
-                      transformOrigin: "top",
-                    }}
-                    onMouseLeave={() => setIsDropdownVisible(false)}
+                    className="relative rounded-lg group py-2 px-4 bg-white w-full capitalize hover:bg-gray-100"
+                    onClick={() => navigate("/services")}
                   >
-                    <ul className="w-[20%] flex justify-start items-start flex-col">
-                      <div className="p-2 text-nowrap hover:text-black font-normal w-full">
-                        Treks
-                      </div>
-                      <li className="p-2 text-nowrap hover:text-black w-full">
-                        Uttarakhand-treks
-                      </li>
-                      <li className="p-2 text-nowrap hover:text-black w-full">
-                        Himachal-treks
-                      </li>
-                      <li className="p-2 text-nowrap hover:text-black w-full">
-                        Jammu & Kashmir-treks
-                      </li>
-                      <li className="p-2 text-nowrap hover:text-black w-full">
-                        Leh-treks
-                      </li>
-                    </ul>
-
-                    <ul className="w-[20%] flex justify-start items-start flex-col">
-                      <div className="p-2 text-nowrap hover:text-black font-normal">
-                        Activities
-                      </div>
-                      <li className="p-2 text-nowrap hover:text-black">
-                        Uttarakhand-treks
-                      </li>
-                      <li className="p-2 text-nowrap hover:text-black">
-                        Himachal-treks
-                      </li>
-                      <li className="p-2 text-nowrap hover:text-black">
-                        Jammu & Kashmir-treks
-                      </li>
-                      <li className="p-2 text-nowrap hover:text-black">
-                        Leh-treks
-                      </li>
-                    </ul>
-                    <div className="w-[50%] h-full flex flex-col justify-center items-center px-2 py-4 gap-2">
-                      <img
-                        src={bgImage}
-                        className="object-cover object-center w-full h-[50%] rounded-md"
-                      />
-                      <img
-                        src={bgImage}
-                        className="object-cover object-center w-full h-[50%] rounded-md"
-                      />
-                    </div>
+                    Services
                   </div>
-                  {/* )} */}
                 </div>
               </div>
+
+              {/* </div> */}
 
               <div className="group flex items-center navlink relative h-full cursor-pointer">
                 <p className="">Blogs</p>
@@ -560,9 +528,7 @@ export default function Nav() {
             </div> */}
             </ul>
           </div>
-
-          {/* ChooseTrek dropdown for bigger screen*/}
-          <div className=" mx-auto text-nowrap flex cursor-pointer mr-1 z-40 group relative">
+          <div className=" mx-auto text-nowrap flex lg:hidden cursor-pointer mr-1 z-40 group relative">
             <div
               className="relative rounded-[32px] bg-white text-black px-4 py-1 sm:px-8 sm:py-3 border-none overflow-hidden hover:bg-opacity-90"
               onClick={() => setChooseTrekDropdown(!chooseTrekDropdown)}
@@ -586,12 +552,13 @@ export default function Nav() {
                 </svg>
               </span>
             </div>
-
             <div
-              className={`absolute z-[30] bg-white  shadow-md rounded-lg w-[200px] mx-auto text-sm font-light tracking-wide transition-all duration-1000 delay-0 ease-in-out transform
+              className={`absolute z-[30] bg-white  shadow-md rounded-lg w-[200px] mx-auto text-sm font-light tracking-wide transition-all duration-500 delay-0 ease-in-out transform
                    group-hover:translate-y-0 group-hover:top-[110%] group-hover:opacity-100
-                  -translate-y-4 opacity-100  top-[-5000%]
-               hidden sm:flex flex-col justify-between items-start`}
+                  -translate-y-4 opacity-0  top-[-5000%]
+               hidden sm:flex flex-col justify-between items-start ${
+                 chooseTrekDropdown ? "flex" : "lg:hidden"
+               }`}
               style={{
                 transformOrigin: "top",
               }}
@@ -605,6 +572,12 @@ export default function Nav() {
                   setActiveDropDown={setActiveDropDown}
                 />
               ))}
+              <div
+                className="relative rounded-lg group py-2 px-4 bg-white w-full capitalize hover:bg-gray-100"
+                onClick={() => navigate("/services")}
+              >
+                Services
+              </div>
             </div>
           </div>
 
@@ -622,8 +595,7 @@ export default function Nav() {
           >
             <SmallScreenAccordion />
           </div>
-
-          <div className="hidden text-nowrap md:flex bg-black text-white hover:text-black px-8 py-3 rounded-[32px] relative overflow-hidden hover:bg-opacity-80 cursor-pointer mr-1 z-40 group border-none">
+          <div className="ml-auto hidden text-nowrap md:flex bg-black text-white hover:text-black px-8 py-3 rounded-[32px] relative overflow-hidden hover:bg-opacity-80 cursor-pointer mr-1 z-40 group border-none">
             <span className="relative z-10 flex items-center justify-center gap-2">
               <div>Book Now</div>
               <FaArrowRight />
@@ -632,10 +604,94 @@ export default function Nav() {
               <div className="mask absolute inset-0 bg-white transition-all duration-500 transform translate-x-[-100%] group-hover:translate-x-0 border-transparent"></div>
             </div>
           </div>
-
           <MenuToggleButton show={show} setShow={setShow} />
         </div>
       </div>
     </div>
   );
 }
+
+// Treks Dropdown
+// <div
+//   className="navlink relative h-full cursor-pointer"
+//   onMouseEnter={() => setIsDropdownVisible(true)}
+//   onMouseLeave={() => setIsDropdownVisible(false)}
+// >
+//   <div className="relative flex group items-center gap-1 h-full ">
+//     <p className="">Treks</p>
+
+//     {/* Bottom border animation */}
+//     <div className="absolute inset-x-0 bottom-[15px] h-[1px] rounded-xl bg-black  transform scale-x-0 origin-left transition-transform duration-300 group-hover:scale-x-100"></div>
+
+//     {/* Rotating arrow icon */}
+//     <svg
+//       xmlns="http://www.w3.org/2000/svg"
+//       fill="none"
+//       viewBox="0 0 24 24"
+//       strokeWidth={1.5}
+//       stroke="currentColor"
+//       className={`w-3 h-3 transition-transform duration-500 ease-in-out group-hover:hover:bg-white ${
+//         isDropDownVisible ? "rotate-180" : "rotate-0"
+//       }`}
+//     >
+//       <path
+//         strokeLinecap="round"
+//         strokeLinejoin="round"
+//         d="m19.5 8.25-7.5 7.5-7.5-7.5"
+//       />
+//     </svg>
+
+//     {/* {isDropDownVisible && ( */}
+//     {/* Dropdown menu */}
+//     <div
+//       className={`absolute top-[100%] z-[40] bg-white  shadow-md rounded md:w-[80vw] lg:w-[850px] h-[450px] mx-auto text-sm font-light tracking-wide transition-all duration-1000 delay-0 ease-in-out transform ${
+//         isDropDownVisible
+//           ? "translate-y-0 opacity-100 left-[-300%] xl:left-[-400%]"
+//           : "-translate-y-4 opacity-100  left-[5000%]"
+//       } flex flex-row justify-between items-start`}
+//       style={{
+//         transformOrigin: "top",
+//       }}
+//       onMouseLeave={() => setIsDropdownVisible(false)}
+//     >
+//       <ul className="w-[20%] flex justify-start items-start flex-col">
+//         <div className="p-2 text-nowrap hover:text-black font-normal w-full">
+//           Treks
+//         </div>
+//         <li className="p-2 text-nowrap hover:text-black w-full">
+//           Uttarakhand-treks
+//         </li>
+//         <li className="p-2 text-nowrap hover:text-black w-full">
+//           Himachal-treks
+//         </li>
+//         <li className="p-2 text-nowrap hover:text-black w-full">
+//           Jammu & Kashmir-treks
+//         </li>
+//         <li className="p-2 text-nowrap hover:text-black w-full">Leh-treks</li>
+//       </ul>
+
+//       <ul className="w-[20%] flex justify-start items-start flex-col">
+//         <div className="p-2 text-nowrap hover:text-black font-normal">
+//           Activities
+//         </div>
+//         <li className="p-2 text-nowrap hover:text-black">Uttarakhand-treks</li>
+//         <li className="p-2 text-nowrap hover:text-black">Himachal-treks</li>
+//         <li className="p-2 text-nowrap hover:text-black">
+//           Jammu & Kashmir-treks
+//         </li>
+//         <li className="p-2 text-nowrap hover:text-black">Leh-treks</li>
+//       </ul>
+//       <div className="w-[50%] h-full flex flex-col justify-center items-center px-2 py-4 gap-2">
+//         <img
+//           src={bgImage}
+//           className="object-cover object-center w-full h-[50%] rounded-md"
+//         />
+//         <img
+//           src={bgImage}
+//           className="object-cover object-center w-full h-[50%] rounded-md"
+//         />
+//       </div>
+//     </div>
+//     {/* )} */}
+//   </div>
+// </div>;

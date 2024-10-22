@@ -27,6 +27,8 @@ import TopSpot from "./components/Home/TopSpot";
 import BookForm from "./components/utils/BookForm";
 import TrendingTours from "./components/Home/TrendingTours";
 import ChooseTrek from "./components/Home/ChooseTrek";
+import ServicePage from "./components/Services/ServicePage";
+
 import "animate.css";
 
 function App() {
@@ -58,6 +60,7 @@ function App() {
         <Route path="/" element={homeContent} />
         <Route path="/contact" element={<ContactUs />} />
         <Route path="/aboutus" element={<AboutUs />} />
+        <Route path="/services" element={<ServicePage />} />
       </Routes>
       <Footer />
     </div>

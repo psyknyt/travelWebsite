@@ -54,16 +54,17 @@ const trekListings = [
 
 const TopSpotCard = ({ props }) => {
   return (
-    <div className="destination-box bg-black bg-opacity-40  w-[90%] sm:w-[80%]  md:w-full group transition-all duration-300 delay-100 ease-in-out h-[500px]  max-h-[500px] mx-auto rounded-xl overflow-hidden flex flex-col justify-between relative">
+    <div className="destination-box   w-[90%] sm:w-[80%]  md:w-full group transition-all duration-300 delay-100 ease-in-out h-[500px]  max-h-[500px] mx-auto rounded-xl overflow-hidden flex flex-col justify-between relative">
       <img
         src={props.img}
         className="w-full z-10 h-full rounded-xl box-img object-cover group-hover:scale-110 transition-all duration-500 delay-100 ease-in-out relative"
       />
-      <div className="absolute z-20  px-4 py-6 text-white flex flex-col gap-4 justify-start items-start w-full bottom-0 transition-all duration-300 delay-150">
+      <div className="bg-black bg-opacity-30 h-full w-full z-20 absolute top-0" />
+      <div className="absolute z-30  px-4 py-6 text-lemonYellow  flex flex-col gap-4 justify-start items-start w-full bottom-0 transition-all duration-300 delay-150 tracking-wider">
         <div className="flex flex-col justify-start items-start text-xl font-bold">
           {props.name}
         </div>
-        <div className="flex justify-between items-center w-full">
+        <div className="flex justify-between items-center w-full font-normal">
           10 Listings
         </div>
       </div>

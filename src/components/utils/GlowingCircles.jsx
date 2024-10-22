@@ -8,7 +8,7 @@ const GlowingCircle = ({ props }) => {
       {" "}
       {/* Add margin for spacing */}
       <div className="circle w-[16rem] h-[16rem] rounded-full border-[2px] border-lemonYellow z-30 flex items-center justify-center">
-        <div className="p-2 w-[14rem] h-[14rem] bg-lemonYellow bg-opacity-40 flex flex-col items-center justify-center rounded-full absolute">
+        <div className="p-2 w-[14rem] h-[14rem] bg-lemonYellow bg-opacity-40 hover:bg-opacity-60 transition-all duration-500 ease-in-out flex flex-col items-center justify-center rounded-full absolute">
           <Counter
             number={props.number}
             title={props.title}

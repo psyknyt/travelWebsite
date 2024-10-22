@@ -106,7 +106,7 @@ const BookForm = () => {
               ></textarea>
               <AiOutlineWechatWork className="w-6 h-6 absolute top-[17px] right-[18px] flex justify-center items-center " />
             </div>
-            <div className="group w-[210px]  text-sm font-inter text-nowrap flex bg-lemonYellow text-white px-8 py-4 rounded-[32px] relative overflow-hidden hover:bg-opacity-80 cursor-pointer mr-1 z-40 group border-none">
+            <div className="group w-[210px]  text-sm font-inter text-nowrap flex bg-lemonYellow text-black hover:text-lemonYellow px-8 py-4 rounded-[32px] relative overflow-hidden hover:bg-opacity-80 cursor-pointer mr-1 z-40 group border-none">
               <span className="relative z-10 flex items-center justify-center gap-4">
                 <button type="submit" className="th-btn style3">
                   Send message

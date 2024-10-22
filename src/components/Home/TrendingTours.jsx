@@ -82,15 +82,14 @@ const TrendingTourLocation = ({ props }) => {
         />
       </div>
       <div className="absolute bg-black px-4 py-6 bg-opacity-50 text-white flex flex-col gap-4 justify-start items-start w-full h-[130px] bottom-0 transition-all duration-300 delay-150">
-        <div className="flex flex-col justify-start items-start text-xl font-semibold">
+        <div className="flex flex-col justify-start items-start text-xl font-semibold w-[98%] truncate">
           {props?.name}
         </div>
         <div className="flex justify-between items-center w-full ">
           <div>Uttarkashi</div>
-          <div className="flex bg-transparent text-white px-4 py-2 rounded-[32px] relative overflow-hidden hover:bg-opacity-80 cursor-pointer mr-1 z-40 group border-white border-[1.5px] group-hover:border-transparent group-hover:border-[0px]  transition-all duration-700 delay-500 ease-in-out">
-            <span className="relative z-10 flex items-center justify-center gap-2 transition-all duration-500 delay-300 ease-in-out">
+          <div className="flex bg-transparent text-white group px-4 py-2 rounded-[32px] relative overflow-hidden hover:bg-opacity-80 cursor-pointer mr-1 z-40 group border-white border-[1.5px] group-hover:border-transparent group-hover:border-[0px]  transition-all duration-700 delay-500 ease-in-out">
+            <span className="relative group-hover:text-black z-10 flex items-center justify-center gap-2 transition-all duration-500 delay-300 ease-in-out">
               <div>View Details</div>
-              {/* <FaArrowRight /> */}
             </span>
             <div className="absolute inset-0 bg-transparent">
               <div className="mask absolute inset-0 bg-lemonYellow transition-all duration-700 delay-150 ease-in-out transform translate-x-[-100%] group-hover:translate-x-0 "></div>

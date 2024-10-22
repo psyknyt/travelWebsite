@@ -16,11 +16,11 @@ const PopularLocation = ({ props }) => {
       className={`relative bg-black shadow-xl flex flex-col group rounded-lg w-[95%] `}
       data-aos="fade-up"
     >
-      <div className="img overflow-hidden rounded-t-lg min-h-[250px] max-h-[250px]">
+      <div className="overflow-hidden rounded-t-lg h-[250px] min-h-[250px] max-h-[250px] object-cover object-center">
         <img
           src={props.img}
           alt="card image"
-          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-125"
+          className="w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-125"
         />
       </div>
       <div className="min-h-[200px] max-h-[200px] flex flex-col px-4 py-2 bg-gray-100 ">
@@ -48,8 +48,8 @@ const PopularLocation = ({ props }) => {
           <GoClock className="w-5 h-5" />
           <div className="font-light">7 Days</div>
         </div>
-        <div className="flex bg-white text-black group-hover:text-white hover:font-normal px-4 py-2 rounded-[32px] relative overflow-hidden hover:bg-opacity-80 cursor-pointer mr-1 z-40 group border-none">
-          <span className="relative z-10 flex items-center justify-center gap-2">
+        <div className="flex bg-white text-black group-hover:text-black hover:font-normal px-4 py-2 rounded-[32px] relative overflow-hidden hover:bg-opacity-80 cursor-pointer mr-1 z-40 group border-none">
+          <span className="relative z-10 flex items-center justify-center gap-2 text-sm">
             <div>Book Now</div>
             <MdArrowForward />
           </span>
