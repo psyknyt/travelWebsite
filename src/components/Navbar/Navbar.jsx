@@ -263,36 +263,35 @@ export default function Nav() {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
-  console.log("choose dropdown hover: ", chooseTrekDropdown);
 
   return (
-    <div className="flex flex-col font-inter text-[16px] font-normal leading-[26px] ">
-      <div className="h-8 w-[90%]  mx-auto bg-white flex justify-between  items-center text-center px-4 cursor-pointer font-inter pl-5 text-[11px] sm:text-[13px]  font-normal">
+    <div className="flex flex-col font-inter text-[16px] font-normal leading-[26px] fixed z-50 top-0 left-0 right-0 w-full bg-white">
+      <div className="h-8 w-[90%]  mx-auto bg-white flex justify-between   items-center text-center px-4 cursor-pointer font-inter pl-5 text-[10px] sm:text-[12px]  font-normal">
         <div className="hidden lg:flex gap-2">
-          <div className="hover:text-white transition-all duration-300 delay-150 ease-in-out flex justify-between items-center gap-2 font-inter tracking-wide">
+          <div className="transition-all duration-300 delay-150 ease-in-out flex justify-between items-center gap-2 font-inter tracking-wide">
             <IoLocationOutline className="w-4 h-4 font-semibold" />
             <div>Clock Tower, Dehardun</div>
           </div>
           <div className="text-gray-400">|</div>
-          <div className="hover:text-white transition-all duration-300 delay-150 ease-in-out flex justify-between items-center gap-2 tracking-wide">
+          <div className="transition-all duration-300 delay-150 ease-in-out flex justify-between items-center gap-2 tracking-wide">
             <GoClock className="w-4 h-4 " />
             <div>Sun to Friday: 8.00 am - 7.00 pm</div>
           </div>
         </div>
         <div className="flex gap-2 tracking-wider justify-center items-center w-[98%] md:w-fit mx-auto md:ml-auto md:mr-5 lg:ml-0 lg:mr-0">
-          <div className="hover:text-white transition-all duration-300 delay-150 ease-in-out">
+          <div className="transition-all duration-300 delay-150 ease-in-out">
             Ph no.
           </div>
           <div className="text-gray-400">|</div>
-          <div className="hover:text-white transition-all duration-300 delay-150 ease-in-out">
+          <div className="transition-all duration-300 delay-150 ease-in-out">
             FAQ
           </div>
           <div className="text-gray-400">|</div>
-          <div className="hover:text-white transition-all duration-300 delay-150 ease-in-out">
+          <div className="transition-all duration-300 delay-150 ease-in-out">
             Support
           </div>
           <div className="text-gray-400">|</div>
-          <div className="flex flex-row justify-center items-center hover:text-white">
+          <div className="flex flex-row justify-center items-center">
             <div className="transition-all duration-300 delay-150 ease-in-out">
               Sign in/Register
             </div>
@@ -300,7 +299,10 @@ export default function Nav() {
           </div>
         </div>
       </div>
-      <div className="flex bg-lemonYellow">
+      <div
+        className="flex bg-lemonYellow "
+        style={{ position: "sticky", top: 0 }}
+      >
         <div
           className="z-50 font-fredoka font-normal text-sm nav-wrapper w-[95%] lg:w-[] mx-auto h-[85px] flex justify-between items-center py-2 relative"
           onClick={() => setIsDropdownVisible(false)}
@@ -308,6 +310,7 @@ export default function Nav() {
           <div className="nav-logo flex justify-center items-center px-2 font-bold text-xs ">
             <Logo />
           </div>
+
           {/* for small devices DRAWER */}
           <div className="">
             <div
@@ -393,6 +396,7 @@ export default function Nav() {
                   Home
                 </li>
                 <div className="w-full mx-auto border-[1px] h-0 bg-gray-400" />
+
                 <li
                   className="pt-4 pb-1  text-[#0A1D56]  justify-start items-center flex cursor-pointer"
                   onClick={() => navigate("/aboutus")}
@@ -400,6 +404,7 @@ export default function Nav() {
                   About Us
                 </li>
                 <div className="w-full mx-auto border-[1px] h-0 bg-gray-400" />
+
                 <li
                   className="pt-4 pb-1  text-[#0A1D56]  justify-start items-center flex cursor-pointer"
                   onClick={() => navigate("/contact")}
@@ -407,13 +412,17 @@ export default function Nav() {
                   Contact
                 </li>
                 <div className="w-full mx-auto border-[1px] h-0 bg-gray-400" />
+
                 <li className="pt-4 pb-1 text-[#0A1D56]  justify-start items-center flex cursor-pointer">
                   Blogs
                 </li>
                 <div className="w-full mx-auto border-[1px] h-0 bg-gray-400" />
+
                 <li className="pt-4 pb-1 text-[#0A1D56]  justify-start items-center flex cursor-pointer">
                   Gallery
                 </li>
+                <div className="w-full mx-auto border-[1px] h-0 bg-gray-400" />
+
                 <li
                   className="pt-4 pb-1 text-[#0A1D56]  justify-start items-center flex cursor-pointer"
                   onClick={() => navigate("/services")}
@@ -421,6 +430,10 @@ export default function Nav() {
                   Services
                 </li>
                 <div className="w-full mx-auto border-[1px] h-0 bg-gray-400" />
+
+                <li className="pt-4 pb-1 text-[#0A1D56]  justify-start items-center flex cursor-pointer">
+                  FAQ's
+                </li>
                 <div className="w-full mx-auto border-[1px] h-0 bg-gray-400" />
               </ul>
             </div>
@@ -431,8 +444,9 @@ export default function Nav() {
               onClick={() => setShow(!show)}
             />
           </div>
+
           {/* for bigger screen */}
-          <div className="mx-auto hidden lg:flex px-4 text-[15px] xl:text-[16px] font-normal font-inter h-full tracking-wider text-nowrap">
+          <div className="ml-auto mr-5 hidden lg:flex px-4 text-[15px] xl:text-[16px] font-normal font-inter h-full tracking-wider text-nowrap">
             <ul className="type-none flex  md:space-x-5 h-full mr-5 gap-[0.1rem] lg:gap-4">
               <div
                 className="group flex items-center navlink relative h-full cursor-pointer"
@@ -476,7 +490,7 @@ export default function Nav() {
                   <div className="absolute inset-x-0 bottom-[15px] h-[1px] rounded-xl bg-black transform scale-x-0 origin-left transition-transform duration-300 group-hover:scale-x-100" />
                 </div>
                 <div
-                  className={`absolute z-[30] bg-white  shadow-md rounded-lg w-[200px] mx-auto text-sm font-light tracking-wide transition-all duration-500 delay-0 ease-in-out transform
+                  className={`absolute -z-[10] hover:z-[30] bg-white  shadow-md rounded-lg w-[200px] mx-auto text-sm font-light tracking-wide transition-all duration-500 delay-0 ease-in-out transform
                    group-hover:translate-y-0 group-hover:top-[110%] group-hover:opacity-100
                   -translate-y-4 opacity-0  top-[-5000%]
                hidden sm:flex flex-col justify-between items-start ${
@@ -504,8 +518,6 @@ export default function Nav() {
                 </div>
               </div>
 
-              {/* </div> */}
-
               <div className="group flex items-center navlink relative h-full cursor-pointer">
                 <p className="">Blogs</p>
                 <div className="absolute inset-x-0 bottom-[15px] h-[1px] rounded-xl bg-black  transform scale-x-0 origin-left transition-transform duration-300 group-hover:scale-x-100"></div>
@@ -515,6 +527,7 @@ export default function Nav() {
                 <p className="">Gallery</p>
                 <div className="absolute inset-x-0 bottom-[15px] h-[1px] rounded-xl bg-black  transform scale-x-0 origin-left transition-transform duration-300 group-hover:scale-x-100"></div>
               </div>
+
               <div
                 className="group flex items-center navlink relative h-full cursor-pointer"
                 onClick={() => navigate("/contact")}
@@ -522,12 +535,14 @@ export default function Nav() {
                 <p className="">Contact</p>
                 <div className="absolute inset-x-0 bottom-[15px] h-[1px] rounded-xl bg-black  transform scale-x-0 origin-left transition-transform duration-300 group-hover:scale-x-100"></div>
               </div>
-              {/* <div className="group flex items-center navlink relative h-full cursor-pointer">
-              <p className="">Tours</p>
-              <div className="absolute inset-x-0 bottom-[15px] h-[1px] rounded-xl bg-black  transform scale-x-0 origin-left transition-transform duration-300 group-hover:scale-x-100"></div>
-            </div> */}
+
+              <div className="group flex items-center navlink relative h-full cursor-pointer">
+                <p className="">FAQ's</p>
+                <div className="absolute inset-x-0 bottom-[15px] h-[1px] rounded-xl bg-black  transform scale-x-0 origin-left transition-transform duration-300 group-hover:scale-x-100"></div>
+              </div>
             </ul>
           </div>
+
           <div className=" mx-auto text-nowrap flex lg:hidden cursor-pointer mr-1 z-40 group relative">
             <div
               className="relative rounded-[32px] bg-white text-black px-4 py-1 sm:px-8 sm:py-3 border-none overflow-hidden hover:bg-opacity-90"
@@ -553,7 +568,7 @@ export default function Nav() {
               </span>
             </div>
             <div
-              className={`absolute z-[30] bg-white  shadow-md rounded-lg w-[200px] mx-auto text-sm font-light tracking-wide transition-all duration-500 delay-0 ease-in-out transform
+              className={`absolute -z-[10] hover:z-[30] bg-white  shadow-md rounded-lg w-[200px] mx-auto text-sm font-light tracking-wide transition-all duration-500 delay-0 ease-in-out transform
                    group-hover:translate-y-0 group-hover:top-[110%] group-hover:opacity-100
                   -translate-y-4 opacity-0  top-[-5000%]
                hidden sm:flex flex-col justify-between items-start ${
@@ -595,6 +610,7 @@ export default function Nav() {
           >
             <SmallScreenAccordion />
           </div>
+
           <div className="ml-auto hidden text-nowrap md:flex bg-black text-white hover:text-black px-8 py-3 rounded-[32px] relative overflow-hidden hover:bg-opacity-80 cursor-pointer mr-1 z-40 group border-none">
             <span className="relative z-10 flex items-center justify-center gap-2">
               <div>Book Now</div>

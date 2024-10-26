@@ -3,7 +3,7 @@ import React from "react";
 const TopCard = ({ title, bgImage }) => {
   return (
     <div
-      className="w-full relative h-[55vh] flex justfiy-center items-center"
+      className="w-full relative h-[55vh] flex justfiy-center items-center mt-[5rem]"
       style={{
         backgroundImage: `url(${bgImage})`,
         backgroundSize: "cover",

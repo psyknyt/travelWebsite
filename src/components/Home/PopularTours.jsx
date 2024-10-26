@@ -76,6 +76,9 @@ const PopularTours = () => {
           Most Popular Tours
         </div>
       </div>
+      <div className="w-[90%]  flex py-2 justify-center items-center tracking-widest text-sm md:text-md text-center font-medium font-inter  md:w-[80%] mx-auto">
+        You don’t want to miss the nature, give yourself a break & Escape
+      </div>
       <div className="flex justify-center items-center py-5 w-full lg:w-[90%] mx-auto">
         <Swiper
           spaceBetween={10}

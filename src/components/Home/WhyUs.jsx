@@ -31,8 +31,7 @@ const WhyUs = () => {
               <div className="flex flex-col justify-between items-center xs:items-start font-inter leading-normal">
                 <div className="text-[24px] font-semibold">Exclusive Trip</div>
                 <div className="text-[16px] font-normal text-gray-500 text-center xs:text-left">
-                  There are many variations of passages of available but the
-                  majority.
+                  Discover Journeys Like Never Before.
                 </div>
               </div>
             </div>
@@ -49,8 +48,7 @@ const WhyUs = () => {
                   Safety First Always
                 </div>
                 <div className="text-[16px] font-normal text-gray-500 text-center xs:text-left">
-                  There are many variations of passages of available but the
-                  majority.
+                  Your Safety is always our first priority.
                 </div>
               </div>
             </div>
@@ -67,8 +65,7 @@ const WhyUs = () => {
                   Professional Guide
                 </div>
                 <div className="text-[16px] font-normal text-gray-500 text-center xs:text-left">
-                  There are many variations of passages of available but the
-                  majority.
+                  Our Experienced Professionals will lead your way.
                 </div>
               </div>
             </div>

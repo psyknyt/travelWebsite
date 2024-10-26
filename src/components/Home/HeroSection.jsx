@@ -11,7 +11,7 @@ import { FaArrowRight } from "react-icons/fa";
 
 const HeroSection = () => {
   return (
-    <div className="relative z-20">
+    <div className="relative z-20 mt-[5rem]">
       <div className="relative top-0 left-0 h-max lg:col-span-2">
         <Swiper
           spaceBetween={30}

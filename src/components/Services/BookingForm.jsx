@@ -22,7 +22,7 @@ const BookingForm = () => {
 
   return (
     <div
-      className={`w-[90%] md:w-[50%] lg:w-[30%] sticky top-0 right-0 max-w-md mx-auto bg-white shadow-md rounded-lg p-6 mt-10 cardShadow`}
+      className={`sticky top-5 w-full right-0 md:max-w-md mx-auto bg-gray-50 shadow-md rounded-lg p-6 mt-10 cardShadow`}
     >
       <h2 className="text-2xl font-semibold text-center mb-4">Booking Form</h2>
       <form onSubmit={handleSubmit} className="space-y-6">

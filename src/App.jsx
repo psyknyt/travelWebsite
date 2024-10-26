@@ -54,7 +54,7 @@ function App() {
   );
 
   return (
-    <div className="w-full overflow-x-hidden">
+    <div className="w-full">
       <Nav />
       <Routes>
         <Route path="/" element={homeContent} />

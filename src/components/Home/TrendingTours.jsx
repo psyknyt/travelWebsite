@@ -119,6 +119,11 @@ const TrendingTours = () => {
           Upcoming Winter Treks
         </div>
       </div>
+
+      <div className="w-[90%]  flex py-2 justify-center items-center tracking-widest text-sm md:text-md text-center font-medium font-inter  md:w-[80%] mx-auto">
+        Plan Your Winter Trek with The Crazy Mountaineers for a Memorable
+        Experience.
+      </div>
       <div className="flex  justify-center items-center py-5 w-full lg:w-[90%] mx-auto">
         <Swiper
           spaceBetween={10}

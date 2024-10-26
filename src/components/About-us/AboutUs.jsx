@@ -8,6 +8,7 @@ import professionalSvg from "../../assets/svg/about_1_3.svg";
 import { FaArrowRight } from "react-icons/fa";
 
 import PricingPlans from "./PricingPlans";
+import WorkingOffice from "./WorkingOffice";
 
 const WelcomeSection = () => {
   return (
@@ -32,19 +33,15 @@ const WelcomeSection = () => {
           <div className="pt-2 font-inter text-2xl sm:text-3xl md:text-4xl font-semibold tracking-wide flex justify-center items-center">
             We are a World of reputed Travel Agency
           </div>
-          <div className="font-inter text-[16px] flex flex-col justify-between items-start pt-[1rem] leading-8 ">
-            <p className="font-inter text-[16px] tracking-wide">
-              There are many variations of passages of available but the
-              majority have suffered alteration in some form, by injected hum
-              randomised words.
-            </p>
-            <p className="font-inter text-[16px] tracking-wide">
-              Leiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam, quis nostrud exercitation ullamco laboris
-              nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-              reprehenderit in voluptate velit esse cillum dolore eu fugiat
-              nulla pariatur. Excepteur sint occaecat cupidatat non proident,
-              sunt in culpa qui officia deserunt.
+          <div className="font-inter text-[16px] flex flex-col justify-between items-start pt-[1rem] leading-8 tracking-wide">
+            <p>
+              The Crazy Mountaineers is an initiative of a family to promote eco
+              and safe tourism in the Himalayan Region & help society understand
+              the importance of the Himalayan eco system. Being the top rated
+              and oldest trekking company in Uttarakhand, India, we create a
+              safe and thrilling environment for our trekkers and provide value
+              to our customers by providing them with the best services and
+              affordable trekking packages.
             </p>
             <div className="flex flex-col justify-start items-start w-full md:w-[90%] lg:max-w-[500px] mx-4 mt-4 gap-4">
               <div className="flex justify-between items-start gap-4">
@@ -60,8 +57,7 @@ const WelcomeSection = () => {
                     Exclusive Trip
                   </div>
                   <div className="text-[16px] font-normal text-gray-500">
-                    There are many variations of passages of available but the
-                    majority.
+                    Discover Journeys Like Never Before.
                   </div>
                 </div>
               </div>
@@ -78,8 +74,7 @@ const WelcomeSection = () => {
                     Safety First Always
                   </div>
                   <div className="text-[16px] font-normal text-gray-500">
-                    There are many variations of passages of available but the
-                    majority.
+                    Your Safety is always our first priority.
                   </div>
                 </div>
               </div>
@@ -96,8 +91,7 @@ const WelcomeSection = () => {
                     Professional Guide
                   </div>
                   <div className="text-[16px] font-normal text-gray-500">
-                    There are many variations of passages of available but the
-                    majority.
+                    Our Experienced Professionals will lead your way.
                   </div>
                 </div>
               </div>
@@ -126,6 +120,7 @@ const AboutUs = () => {
       <TopCard title={"About Us"} bgImage={banner1} />
       <WelcomeSection />
       <PricingPlans />
+      <WorkingOffice />
       {/* <div className="grid grid-flow-cols justify-center items-center"></div> */}
     </div>
   );

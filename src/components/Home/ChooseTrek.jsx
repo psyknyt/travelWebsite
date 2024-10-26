@@ -55,6 +55,14 @@ const ChooseTrek = () => {
           Winter Trek
         </div>
       </div>
+      <div className="w-[90%]  flex py-2 justify-center items-center tracking-widest text-sm md:text-md text-center font-medium font-inter  md:w-[80%] mx-auto">
+        The Crazy Mountaineers is an initiative of a family to promote eco and
+        safe tourism in the Himalayan Region & help society understand the
+        importance of the Himalayan eco system. Being the top rated and oldest
+        trekking company in Uttarakhand, India, we create a safe and thrilling
+        environment for our trekkers and provide value to our customers by
+        providing them with the best services and affordable trekking packages.
+      </div>
       <div className="flex flex-col xl:flex-row justify-center items-center gap-8 py-10">
         <div className="flex flex-col sm:flex-row justify-center items-center gap-8">
           {locations.slice(0, 2).map((location, index) => (

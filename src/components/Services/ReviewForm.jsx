@@ -42,7 +42,7 @@ const ReviewForm = () => {
   };
 
   return (
-    <div className="p-2 rounded-md flex flex-col justify-start items-start w-full md:w-[50%] mr-auto font-inter">
+    <div className="p-2 rounded-md flex flex-col justify-centre items-center md:justify-start md:items-start w-full md:w-[50%] mr-auto font-inter">
       <h2 className="text-xl font-semibold  mb-4">Add a Review</h2>
 
       {/* Show success message on form submission */}
@@ -52,7 +52,7 @@ const ReviewForm = () => {
         </div>
       )}
 
-      <form onSubmit={handleSubmit} className="space-y-4">
+      <form onSubmit={handleSubmit} className="space-y-4 w-full">
         {/* First Name */}
         <div className="flex flex-col gap-2 tracking-wider">
           <label htmlFor="firstName" className="block  font-normal">
