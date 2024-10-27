@@ -1,6 +1,9 @@
 import React from "react";
 
 const QuickFacts = ({ quickFacts }) => {
+  if (QuickFacts.length) {
+    return;
+  }
   const {
     duration,
     highestPoint,

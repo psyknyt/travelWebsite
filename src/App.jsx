@@ -29,9 +29,12 @@ import TrendingTours from "./components/Home/TrendingTours";
 import ChooseTrek from "./components/Home/ChooseTrek";
 import ServicePage from "./components/Services/ServicePage";
 
+import { useTrek } from "./Context/SelectedServiceContext";
 import "animate.css";
 
 function App() {
+  const { selectedTrek, setSelectedTrek } = useTrek();
+
   useEffect(() => {
     AOS.init({
       duration: 1500,

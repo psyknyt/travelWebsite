@@ -8,7 +8,7 @@ const WorkingOffice = () => {
   };
   return (
     <div
-      className="flex flex-col lg:flex-row h-screen  justify-center items-center lg:justify-between lg:items-start py-[10rem] w-[95%] lg:max-w-[1200px] mx-auto text-[16px] tracking-wide gap-4"
+      className="flex flex-col lg:flex-row h-screen  justify-center items-center lg:justify-between lg:items-start py-[10rem] w-[95%] lg:max-w-[1200px] mx-auto text-[16px] tracking-wide gap-8 md:gap-4"
       style={{
         backgroundImage: `url(${bgLineImage})`,
         backgroundSize: "cover",

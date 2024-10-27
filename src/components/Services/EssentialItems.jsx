@@ -78,13 +78,10 @@ const EssentialItems = () => {
   ];
 
   return (
-    <div className="container mx-auto my-8 p-6">
-      <h2 className="text-2xl font-bold text-center mb-6">
-        Essential Items for the Kedarkantha Trek
-      </h2>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+    <div className=" mx-auto my-8 p-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 w-full">
         {essentials.map((section, index) => (
-          <div key={index} className="border p-4 rounded-lg shadow-md">
+          <div key={index} className="border p-4 rounded-lg ">
             <h3 className="text-xl font-semibold mb-4">{section.category}</h3>
             <ul className="list-disc list-inside space-y-2">
               {section.items.map((item, idx) => (

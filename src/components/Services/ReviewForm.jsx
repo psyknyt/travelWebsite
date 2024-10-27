@@ -42,7 +42,7 @@ const ReviewForm = () => {
   };
 
   return (
-    <div className="p-2 rounded-md flex flex-col justify-centre items-center md:justify-start md:items-start w-full md:w-[50%] mr-auto font-inter">
+    <div className="p-2 rounded-md flex flex-col justify-centre items-center md:justify-start md:items-start w-full md:w-[60%] mr-auto font-inter bg-gray-50 shadow-md">
       <h2 className="text-xl font-semibold  mb-4">Add a Review</h2>
 
       {/* Show success message on form submission */}

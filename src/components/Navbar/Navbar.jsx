@@ -22,6 +22,8 @@ import { useNavigate } from "react-router-dom";
 import bgImage from "../../assets/Kedarkantha_Trek_thumb.jpg";
 import { setActive } from "@material-tailwind/react/components/Tabs/TabsContext";
 
+import { useTrek } from "../../Context/SelectedServiceContext";
+
 const navbarProps = {
   Logo: { type: "img", text: "LOGO GOES HERE !", img: "/vite.svg" },
   Nav: {
@@ -135,10 +137,21 @@ const chooseDropdownData = [
 
 const DropdownMenu = ({
   menuName,
+  index,
   items,
   activeDropdown,
   setActiveDropDown,
 }) => {
+  const navigate = useNavigate();
+  const { selectedTrek, setSelectedTrek } = useTrek();
+
+  useEffect(() => {
+    if (selectedTrek !== null) {
+      navigate("/services");
+    }
+    console.log("selected services is: ", selectedTrek);
+  }, [selectedTrek]);
+
   return (
     <div
       className="relative rounded-lg group py-2 px-4 bg-white w-full capitalize hover:bg-gray-100"
@@ -160,6 +173,9 @@ const DropdownMenu = ({
               className={`hover:bg-gray-200 px-4 py-2 border-b-[0.1px] border-gray-300 ${
                 index === 0 ? "rounded-t-lg" : ""
               } ${index === items.length - 1 ? "rounded-b-lg" : ""}`}
+              onClick={() => {
+                setSelectedTrek(index);
+              }}
             >
               {item}
             </li>
@@ -503,6 +519,7 @@ export default function Nav() {
                   {chooseDropdownData.map((dropdown, index) => (
                     <DropdownMenu
                       key={index}
+                      index={index}
                       menuName={dropdown.menuName}
                       items={dropdown.items}
                       activeDropdown={activeDropDown}

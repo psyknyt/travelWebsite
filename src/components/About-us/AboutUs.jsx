@@ -27,9 +27,11 @@ const WelcomeSection = () => {
           />
         </div>
       </div>
-      <div className="flex flex-col w-full md:w-[80%] mx-auto mt-[1rem] md:mt-[5rem] lg:mt-0 lg:mx-0 lg:w-[50%]">
+      <div className="flex flex-col w-[90%] md:w-[80%] mx-auto mt-[1rem] md:mt-[5rem] lg:mt-0 lg:mx-0 lg:w-[50%]">
         <div className="flex flex-col items-start justify-start gap-2 py-4 px-0 md:px-[2rem]">
-          <div className="font-montez text-4xl leading-6 pt-4">Welcome</div>
+          <div className="font-montez text-4xl leading-6 pt-4 w-full ">
+            Welcome
+          </div>
           <div className="pt-2 font-inter text-2xl sm:text-3xl md:text-4xl font-semibold tracking-wide flex justify-center items-center">
             We are a World of reputed Travel Agency
           </div>
