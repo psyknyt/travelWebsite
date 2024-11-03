@@ -28,6 +28,7 @@ import BookForm from "./components/utils/BookForm";
 import TrendingTours from "./components/Home/TrendingTours";
 import ChooseTrek from "./components/Home/ChooseTrek";
 import ServicePage from "./components/Services/ServicePage";
+import YoutubeVideos from "./components/Home/YoutubeVideos";
 
 import { useTrek } from "./Context/SelectedServiceContext";
 import "animate.css";
@@ -51,6 +52,7 @@ function App() {
       <WhyUs />
       <Gallery />
       <AnalyticData />
+      <YoutubeVideos />
       <TestimonialSection />
       <BookForm />
     </div>
