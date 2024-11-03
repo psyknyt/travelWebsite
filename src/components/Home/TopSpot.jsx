@@ -59,8 +59,8 @@ const TopSpotCard = ({ props }) => {
         src={props.img}
         className="w-full z-10 h-full rounded-xl box-img object-cover group-hover:scale-110 transition-all duration-500 delay-100 ease-in-out relative"
       />
-      <div className="bg-black bg-opacity-30 h-full w-full z-20 absolute top-0" />
-      <div className="absolute z-30  px-4 py-6 text-lemonYellow  flex flex-col gap-4 justify-start items-start w-full bottom-0 transition-all duration-300 delay-150 tracking-wider">
+      <div className="bg-black bg-opacity-10 h-full w-full z-20 absolute top-0" />
+      <div className="absolute z-30  px-4 py-6 text-white  flex flex-col gap-4 justify-start items-start w-full bottom-0 transition-all duration-300 delay-150 tracking-wider">
         <div className="flex flex-col justify-start items-start text-xl font-bold">
           {props.name}
         </div>

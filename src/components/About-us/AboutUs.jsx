@@ -9,6 +9,7 @@ import { FaArrowRight } from "react-icons/fa";
 
 import PricingPlans from "./PricingPlans";
 import WorkingOffice from "./WorkingOffice";
+import Team from "./Team";
 
 const WelcomeSection = () => {
   return (
@@ -118,12 +119,12 @@ const WelcomeSection = () => {
 
 const AboutUs = () => {
   return (
-    <div className="flex flex-col justify-start overflow-hidden">
+    <div className="flex flex-col justify-start overflow-hidden w-full">
       <TopCard title={"About Us"} bgImage={banner1} />
       <WelcomeSection />
       <PricingPlans />
+      <Team />
       <WorkingOffice />
-      {/* <div className="grid grid-flow-cols justify-center items-center"></div> */}
     </div>
   );
 };
