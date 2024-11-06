@@ -10,6 +10,7 @@ import HowToReach from "./HowToReach";
 import EssentialItems from "./EssentialItems";
 import TrekTerms from "./TrekTerms";
 import CancellationPolicy from "./CancellationPolicy";
+import ItiniaryData from "./ItitnearyData";
 
 // image imports
 import kedarkanthaTrek from "../../assets/Kedarkantha_Trek_thumb.jpg";
@@ -33,26 +34,26 @@ const ServicePage = () => {
   const singleAccordionData = [
     {
       title: "How to Reach",
-      component: <HowToReach howToReachData={el.howToReach} />,
+      component: <HowToReach howToReachData={el?.howToReach} />,
     },
     {
       title: "Essential Items",
-      component: <EssentialItems essentialItems={el.essentials} />,
+      component: <EssentialItems essentialItems={el?.essentials} />,
     },
     {
       title: "Trek Terms",
-      component: <TrekTerms terms={el.costTerms} />,
+      component: <TrekTerms terms={el?.costTerms} />,
     },
     {
       title: "Cancellation Policy",
-      component: <CancellationPolicy policy={el.trekCancellation} />,
+      component: <CancellationPolicy policy={el?.trekCancellation} />,
     },
   ];
 
   return (
     <div className="flex mt-[10rem] flex-col justify-center items-start mx-auto w-[90%]  text-sm font-inter tracking-wide ">
       <div className="flex w-full justify-start items-start font-bold text-[30px] tracking-wide font-inter py-5">
-        {el.name}
+        {el?.name}
       </div>
 
       <div className="flex w-full h-fit md:h-[50vh] flex-col md:flex-row justify-between items-center gap-1 rounded-xl ">
@@ -101,7 +102,7 @@ const ServicePage = () => {
               <div className="flex flex-col text-sm font-inter tracking-wider">
                 <div className="font-normal">Tour Code</div>
                 <div className="font-light text-xs text-gray-500">
-                  {el.tourCode}
+                  {el?.tourCode}
                 </div>
               </div>
             </div>
@@ -112,7 +113,7 @@ const ServicePage = () => {
               <div className="flex flex-col text-sm font-inter tracking-wider">
                 <div className="font-normal">Price</div>
                 <div className="font-light text-xs text-gray-500">
-                  {el.price}
+                  {el?.price}
                 </div>
               </div>
             </div>
@@ -123,28 +124,29 @@ const ServicePage = () => {
             </div>
             <div className="flex flex-col gap-8 w-full text-[14px]  tracking-wider py-5">
               <div className="sub-heading text-[20px] flex justify-start items-start font-semibold tracking-wider">
-                {el.overview.title}
+                {el?.overview?.title}
               </div>
-              {el.overview.paragraphs.map((para) => (
+              {el?.overview?.paragraphs.map((para) => (
                 <p>{para}</p>
               ))}
             </div>
           </div>
-          {el.mapImg && (
+          {el?.mapImg && (
             <div className="w-full h-full flex flex-col justify-between items-center gap-4">
               <div className="w-full flex justify-start items-start">
                 A rough map of Kedarkantha Trek Route, not to scale.
               </div>
               <img
                 className="w-full h-full object-contain rounded-md"
-                src={el.mapImg}
+                src={el?.mapImg}
                 alt="trek-map"
               />
             </div>
           )}
-          <QuickFacts quickFacts={el.QuickFacts} />
+          <ItiniaryData itineraryData={el?.itinerary} />
+          <QuickFacts quickFacts={el?.QuickFacts} />
           <AccordionList singleAccordionData={singleAccordionData} />
-          <FAQAccordion faqData={el.faqData} />
+          <FAQAccordion faqData={el?.faqData} />
           <ReviewForm />
         </div>
 

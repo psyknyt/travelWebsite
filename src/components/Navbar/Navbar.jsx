@@ -23,6 +23,7 @@ import bgImage from "../../assets/Kedarkantha_Trek_thumb.jpg";
 import { setActive } from "@material-tailwind/react/components/Tabs/TabsContext";
 
 import { useTrek } from "../../Context/SelectedServiceContext";
+import { treksData } from "../utils/TreksData";
 
 const navbarProps = {
   Logo: { type: "img", text: "LOGO GOES HERE !", img: "/vite.svg" },
@@ -91,22 +92,25 @@ const MenuToggleButton = ({ show, setShow }) => {
   );
 };
 
+const trekNames = treksData?.map((el) => el.name);
+
 const chooseDropdownData = [
   {
     menuName: "Treks by Name",
-    items: [
-      "Kedarkantha trek",
-      "Har ki dun trek",
-      "Gaumukh tapovan",
-      "Rupin Pass trek",
-      "Dayara bugyal trek",
-      "Nag Tibba Trek",
-      "Roopkund trek",
-      "Chopta Trek",
-      "Gaumukh tapovan trek",
-      "Rupin Pass trek",
-      "Valley of flowers trek",
-    ],
+    items: trekNames,
+    // items: [
+    //   "Kedarkantha trek",
+    //   "Har ki dun trek",
+    //   "Gaumukh tapovan",
+    //   "Rupin Pass trek",
+    //   "Dayara bugyal trek",
+    //   "Nag Tibba Trek",
+    //   "Roopkund trek",
+    //   "Chopta Trek",
+    //   "Gaumukh tapovan trek",
+    //   "Rupin Pass trek",
+    //   "Valley of flowers trek",
+    // ],
   },
   {
     menuName: "Months",
@@ -151,10 +155,11 @@ const DropdownMenu = ({
     }
     console.log("selected services is: ", selectedTrek);
   }, [selectedTrek]);
+  console.log("slected trek: ", selectedTrek);
 
   return (
     <div
-      className="relative rounded-lg group py-2 px-4 bg-white w-full capitalize hover:bg-gray-100"
+      className="relative rounded-lg group py-2 px-4 bg-white w-full capitalize hover:bg-gray-100 "
       onMouseEnter={() => setActiveDropDown(menuName)}
       onMouseLeave={() => setActiveDropDown("")}
     >
@@ -166,8 +171,8 @@ const DropdownMenu = ({
             : "hidden h-0 w-0"
         } transition-all duration-300 ease-in-out bg-white text-black`}
       >
-        <ul className="type-none flex flex-col ">
-          {items.map((item, index) => (
+        <ul className="type-none flex flex-col text-sm max-h-[400px] overflow-y-auto overflow-x-hidden">
+          {items?.map((item, index) => (
             <li
               key={index}
               className={`hover:bg-gray-200 px-4 py-2 border-b-[0.1px] border-gray-300 ${
@@ -211,10 +216,20 @@ export function SmallScreenAccordion() {
   const [open, setOpen] = useState(0);
 
   const handleOpen = (value) => setOpen(open === value ? 0 : value);
+  const navigate = useNavigate();
+  const { selectedTrek, setSelectedTrek } = useTrek();
+
+  useEffect(() => {
+    if (selectedTrek !== null) {
+      navigate("/services");
+    }
+    console.log("selected services is: ", selectedTrek);
+  }, [selectedTrek]);
+  console.log("slected trek: ", selectedTrek);
 
   return (
     <>
-      {chooseDropdownData.map((menu, index) => (
+      {chooseDropdownData?.map((menu, index) => (
         <Accordion
           key={index}
           open={open === index + 1}
@@ -231,9 +246,13 @@ export function SmallScreenAccordion() {
           </AccordionHeader>
           <AccordionBody>
             <ul className="list-none pl-0 gap-1">
-              {menu.items.map((item, i) => (
+              {menu?.items?.map((item, i) => (
                 <li
                   key={i}
+                  onClick={() => {
+                    setSelectedTrek(i);
+                    setOpen(0);
+                  }}
                   className="py-1 px-2 font-normal transition-all duration-300 ease-in-out  hover:bg-gray-100 flex justify-start items-start cursor-pointer w-full border-b-[1px] border-gray-400"
                 >
                   {item}
@@ -516,7 +535,7 @@ export default function Nav() {
                     transformOrigin: "top",
                   }}
                 >
-                  {chooseDropdownData.map((dropdown, index) => (
+                  {chooseDropdownData?.map((dropdown, index) => (
                     <DropdownMenu
                       key={index}
                       index={index}
@@ -595,7 +614,7 @@ export default function Nav() {
                 transformOrigin: "top",
               }}
             >
-              {chooseDropdownData.map((dropdown, index) => (
+              {chooseDropdownData?.map((dropdown, index) => (
                 <DropdownMenu
                   key={index}
                   menuName={dropdown.menuName}

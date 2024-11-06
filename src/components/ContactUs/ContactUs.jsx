@@ -26,58 +26,7 @@ const ContactUs = () => {
             Our Contact Information
           </div>
         </div>
-        <div className="row gy-4 justify-content-center pb-[2rem] w-[90%] mx-auto">
-          <div className="col-xl-4 col-lg-6 group hover:text-lemonYellow">
-            <div className="about-contact-grid style2 gap-2 items-center justify-center">
-              <div className="about-contact-icon flex items-center justify-center  group-hover:bg-lemonYellow text-white rounded-full p-4 bg-black ">
-                <TiLocationOutline className="w-5 h-5 flex items-center justify-center " />
-              </div>
-              <div className="about-contact-details">
-                <h6 className="box-title text-[20px]">Our Address</h6>
-                <p className="about-contact-details-text">
-                  2690 Hiltona Street Victoria
-                </p>
-                <p className="about-contact-details-text">
-                  Road, New York, Canada
-                </p>
-              </div>
-            </div>
-          </div>
-          <div className="col-xl-4 col-lg-6 group hover:text-lemonYellow">
-            <div className="about-contact-grid style2 gap-2 items-center justify-center">
-              <div className="about-contact-icon flex items-center justify-center  group-hover:bg-lemonYellow text-white rounded-full p-4 bg-black ">
-                <MdOutlineWifiCalling3 className="w-5 h-5 flex items-center justify-center " />
-              </div>
-              <div className="about-contact-details">
-                <h6 className="box-title text-[20px]">Phone Number</h6>
-                <p className="about-contact-details-text">
-                  <a href="tel:01234567890">+01 234 567 890</a>
-                </p>
-                <p className="about-contact-details-text">
-                  <a href="tel:01234567890">+09 876 543 210</a>
-                </p>
-              </div>
-            </div>
-          </div>
-          <div className="col-xl-4 col-lg-6 group hover:text-lemonYellow mb-[5rem]">
-            <div className="about-contact-grid style2 gap-2 items-center justify-center">
-              <div className="about-contact-icon flex items-center justify-center  group-hover:bg-lemonYellow text-white rounded-full p-4 bg-black ">
-                <CiMail className="w-5 h-5 flex items-center justify-center " />
-              </div>
-              <div className="about-contact-details">
-                <h6 className="box-title font-inter text-[20px]">
-                  Email Address
-                </h6>
-                <p className="about-contact-details-text">
-                  <a href="mailto:mailinfo00@tourm.com">mailinfo00@gmail.com</a>
-                </p>
-                <p className="about-contact-details-text">
-                  <a href="mailto:support24@tourm.com">support24@gmail.com</a>
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
+        <WorkingOffice />
         <div className="w-[90%] flex flex-col gap-4 mx-auto rounded-md hover:-translate-y-2 transition-all duration-300 ease-in-out py-5">
           <div className="flex flex-col items-center justify-center gap-2 py-4">
             <div className="font-montez text-4xl leading-6 pt-4">Locate us</div>
@@ -91,7 +40,7 @@ const ContactUs = () => {
             referrerPolicy="no-referrer-when-downgrade"
           ></iframe>
         </div>
-        <WorkingOffice />
+
         <BookForm />
       </div>
     </div>

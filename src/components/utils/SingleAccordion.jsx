@@ -5,7 +5,7 @@ const SingleAccordion = ({ title, children }) => {
   const [open, setOpen] = useState(false);
   return (
     <div
-      className="relative flex flex-col justify-center items-center w-full my-5 transition-all duration-300 ease-in-out shadow-md"
+      className="relative flex flex-col justify-center items-center w-full my-5 transition-all duration-300 ease-in-out rounded-md"
       onClick={() => setOpen(!open)}
     >
       <div
