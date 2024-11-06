@@ -146,7 +146,7 @@ const ServicePage = () => {
           <ItiniaryData itineraryData={el?.itinerary} />
           <QuickFacts quickFacts={el?.QuickFacts} />
           <AccordionList singleAccordionData={singleAccordionData} />
-          <FAQAccordion faqData={el?.faqData} />
+          {el?.faqData?.length > 0 && <FAQAccordion faqData={el?.faqData} />}
           <ReviewForm />
         </div>
 

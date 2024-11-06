@@ -21,7 +21,7 @@ const ItiniaryData = ({ itineraryData }) => {
           onClick={() => handleToggle(index)}
         >
           <div className="text-gray-700">
-            {item.description.map((desc, idx) => (
+            {item?.description?.map((desc, idx) => (
               <p key={idx} className="mb-2">
                 {desc}
               </p>

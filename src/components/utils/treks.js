@@ -531,4 +531,356 @@ const trekds = [
       ],
     },
   },
+  {
+    name: "Deoria Tal Chopta Chandrashila Trek",
+    title: "Deoria Tal Chopta Chandrashila Trek : Best Trek For Bird Watchers",
+    tourCode: "122132140",
+    price: "₹ 8,999",
+    mapImg: "",
+    overview: {
+      title: "Deoria Tal Chopta Chandrashila Trek",
+      paragraphs: [
+        "Deoria Tal - Chopta Chandrashila trek is a very beautiful trek in India that any trekking lover would like to do. Especially for those who are beginners and would like to embark on the magnificent Himalayan treks. You get everything that you are looking for from the Garhwal Himalaya range out of this Deoria - Chandrashila trek. Therefore, if you see Deoria - Chandrashila as a wintry trek, you will be amazed to see such a pretty campsite view that is surrounded by an alluring lake, snow-capped Himalayan towering mountains just lying right before you.",
+
+        "This Chandrashila trek can be a milestone journey of your life, located at a height of about 4000 m. The Tungnath temple is a center of attraction of Chandrashila trek, situated at the top. When you pass through Rohini Bugyal clearing in the middle of the forest, it stops you from moving to see such a beautiful landscape view. Alongside, when you reach up to the Birugali campsite, you get to see the snow line with the colorful wintry landscape. Reaching an altitude of 2438 meters, you get a chance to relish the charming beauty of Deoria Tal lake. In the forest trail from Deoria to Bhrujgali, you see a different variety of trees across the dense forest, moss-covered trails, and grassland.",
+
+        "If you are a bird lover, then definitely this place will attract you a lot because this place is full of chirping of many birds. Sometimes you even do not get the voices of people standing nearby to you due to birds’ sounds. A five-day Deoriatal Chandrashila Trek has great things to offer you, whether seeing the real beauty of the Himalayan peaks that protect hamlets and ridges or a mesmerizing sunrise view from the top of the summit.",
+
+        "A combination of Deoria Chandrashila is something that you look out for the adventurous and enthralled trek. Finally, climbing through the snow you reach the top of Chandrashila. The Sunrise view from the top is outstanding.",
+
+        "Also, you can enjoy the picturesque sight view from Chandrashila peak of other peaks including Mt. Chaukhamba, Mt. Neelkantha, Mt. Bhagirathi, Mt. Trishul, and Mt. Maiktoli. When you see Mt. Nanda Devi, which is the highest summit with an altitude of 25,646 feet (7,817 meters), probably you get stunned after seeing the wonderful scenic view.",
+
+        "The best time for doing the Chandrashila trek is winter because you get more things to experience. For snow trek, mid-December to the end of December. Try to ignore starting January to end February due to heavy snowfall. Then you can take a start from mid-March to the end of April still the snow is fully covering the landscape. The fabulous summit view is just breathtaking and you cannot stop yourself from capturing this great panorama.",
+      ],
+    },
+    duration: "",
+    distance: "30 km",
+    altitude: "13,100",
+    Grade: ["Easy"],
+    location: {
+      state: "Uttarakhand",
+      region: "Rudraprayag",
+      wildlifeSanctuary: "",
+    },
+    highlights: [
+      "Sankri village",
+      "Juda ka Talab",
+      "Kedarkantha Peak",
+      "Har ki Dun views",
+      "Frozen lake at Juda ka Talab",
+      "Sunrise at Kedarkantha Peak",
+    ],
+    bestTimeToVisit: ["December", "January", "February", "March", "April"],
+    itinerary: [
+      {
+        day: "Day 1",
+        title: "Drive Haridwar-Sari",
+        description: [
+          "You are expected to reach Haridwar Railway Station at 8 am in the morning, from there you will be picked up by our tour guide. It is advised to reach a day before the trek starts in order to avoid any last-minute hassle. In the morning, we will leave for Sari village, which will take about 8 to 9 hours. The route is full of the beauty of the lower Garhwal Himalayas. We will cross the famous Devprayag where the Alaknanda and Bhagirathi rivers meet.",
+
+          "Driving further from Devprayag, we will reach Sari village by late evening. The village has a picturesque view with small houses and patches of green agricultural fields and mountains in the background. You can check out the local market at Sari for any last-minute shopping.",
+        ],
+        briefOverview: [
+          "Dehradun ISBT",
+          "Pick Up Time: 8:00 am",
+          "Distance: 220 km",
+          "Driving Time: 8 hours",
+          "Altitude: 6,600 ft",
+          "Network Availability: Available till Sari",
+        ],
+      },
+      {
+        day: "Day 2",
+        title: "Sari to Deoriatal",
+        description: [
+          "The first day we start off the trek on an easy trail with a mix of ascents and descents. The trail is well defined with rocks. At the end of the trail, you will be able to clearly see the Chandrashila peak and Tungnath temple. From here the trail becomes steep and a bit difficult, this will be your first challenge. As we keep walking we will reach the Forest Department resting spot and depending on the time we have in hand we can rest here for a while.",
+
+          "Continuing on the trail we will walk into a beautiful forest of rhododendrons, this is going to be a memorable experience, we will soon reach Deoria Tal. We will reach Deoria Tal by late afternoon and will be spending the night at the camps.",
+        ],
+        briefOverview: [
+          "Distance: 3 km",
+          "Trekking Time: 1 hour",
+          "Altitude: 7,800 ft",
+          "Water Source: None",
+        ],
+      },
+      {
+        day: "Day 3",
+        title: "Deoriatal to Chopta through Rohini Bugyal",
+        description: [
+          "As we keep walking further, you will find more rhododendron & maples in the forest, and on the trail, you will find small shrines and a trail of red & yellow flags tied on them. Soon the trail will enter an ascending trail towards Chopta & Rohgini Bugyal. After the ascent, the trail levels out and upon reaching the other side of the forest, the majestic view of the Chandrashila awaits you.",
+
+          "This trail is also known as Kedarnath Sanctuary Trail, we will soon reach the Bhadwal temple. Three trek routes leave from here: one goes back to Sari village, the other towards Ukhimath, and the third one goes to the Rohini Bugyal. Walking down, you will find a small stream flowing, and you can fill your water bottles here. A little walk up from here, the meadows will start, and you will be able to see local shepherds grazing their livestock. We will be arriving at Chopta soon, where we will camp for the night.",
+        ],
+        briefOverview: [
+          "Distance: 16 km",
+          "Trekking Time: 7-8 hours",
+          "Altitude: 8,700 ft",
+          "Water Source: A ground water source before entering Rohini Bugyal. Waterfalls on the second half of the trail.",
+        ],
+      },
+      {
+        day: "Day 4",
+        title: "Chopta to Tungnath, Chandrashilla Summit and back to Chopta",
+        description: [
+          "Today we will start early, starting in the dark, we will have a beautiful sunrise ahead of us that we are gonna view from the Tungnath top. Again, we walk on a well-defined trail from Chopta to the temple. Today is going to be a difficult hike with sharp turns & steep ascents. After crossing a few bends, you will be able to see the breathtaking view of Chandrashila ahead of you.",
+
+          "Thick snow covers this area during the winter seasons, so beware and take careful steps. Make sure to take all the necessary winter gear like crampons, gators, microspikes, etc. with you. When you reach the summit, you will be able to view the magnificent 360-degree view of the Garhwal & Kumaon mountains. As we climb down to Chopta, it will be easier and less time-consuming.",
+        ],
+        briefOverview: [
+          "Chopta to Tungnath, Chandrashilla Summit and back (Trek 8 km)",
+          "Trekking Time: 7-8 hours",
+          "Altitude: 13,100 ft",
+          "Water Source: None",
+          "View: Mountains of Garhwal and Kumaon - Nanda Devi, Trishul, Nandaghunti, Kamet, Dronagiri, Chaukhamba, Kedar Dome, Thalaysagar, Gangotri ranges, Jahanukut, etc.",
+        ],
+      },
+      {
+        day: "Day 5",
+        title: "Chopta to Haridwar",
+        description: [
+          "Today we will be heading back from Chopta to Haridwar, This will be a 7 hour drive and you will be leaving with the beautiful memories of your experience.",
+        ],
+        briefOverview: [
+          "Drop Off Point-Haridwar Railway station",
+          "Distance- 210 km",
+          "Time- 7 hour; destination to be reached around 6:30 pm",
+        ],
+      },
+    ],
+    QuickFacts: {},
+    howToReach: {
+      byAir:
+        "Jolly Grant Airport in Dehradun serves as the nearest airport to Haridwar, located about 48 km away. Direct flights from Mumbai and Delhi, as well as connecting flights from other cities, are available. Daily flights from Delhi are available. We recommend reaching Haridwar a day early if coming by flight. Local transportation is available from the airport to reach Haridwar by road from Dehradun.",
+
+      byTrain: [
+        {
+          name: "Haridwar Railway Station",
+          description:
+            "Haridwar has its own railway station, connecting it well to major cities like Delhi, Kolkata, Mumbai, Dehradun, Jaipur, Ahmedabad, Patna, Gaya, Varanasi, Bhubaneswar, Puri, and Kochi through various express trains. An excellent rail network connects Haridwar to important cities like Delhi, Mussoorie, Mumbai, Varanasi, Lucknow, and Kolkata.",
+        },
+        {
+          name: "DDN NZM AC EXPRESS",
+          trainNo: 2205,
+          departure: "Varies",
+          arrival: "Varies",
+          from: "Delhi",
+        },
+        {
+          name: "Doon Express",
+          trainNo: 13009,
+          from: "Kolkata",
+        },
+        {
+          name: "Dehradun Express",
+          trainNo: 19019,
+          from: "Mumbai",
+        },
+        {
+          name: "Dehradun Express",
+          trainNo: 12687,
+          from: "Chennai",
+        },
+      ],
+      byBus: [
+        {
+          type: "text",
+          content:
+            "Haridwar is accessible by road from Delhi, Haryana, UP, Punjab, and other parts of Uttarakhand. A number of state and private buses connect Haridwar to these locations with frequent, economical services.",
+        },
+        {
+          type: "text",
+          content:
+            "For visitors traveling to Dehradun, regular buses are available from Delhi’s ISBT Kashmere Gate. We recommend choosing government buses from ISBT Kashmere Gate, as private buses operating from outside ISBT may be less reliable. Buses usually drop you at Haridwar bus station, from where you can go to Haridwar Railway Station.",
+        },
+        {
+          type: "header",
+          content: "Travel from Dehradun to Sankri",
+          subitems: [
+            "THE CRAZY MOUNTAINEERS will arrange a Tata Sumo or similar vehicle to pick you up from Dehradun Railway Station at 6:00 AM.",
+            "The pick-up is included in the trek cost.",
+            "You will reach Sankri by approximately 5:00 PM.",
+          ],
+        },
+        {
+          type: "header",
+          content: "Travel from Haridwar to Sari Village",
+          subitems: [
+            "THE CRAZY MOUNTAINEERS Tata Sumo or similar vehicles will pick you up from Haridwar Railway Station at 6:00 AM.",
+            "The pick-up is included in the trek cost.",
+            "You will reach Sari village by approximately 3:00 PM.",
+          ],
+        },
+        {
+          type: "text",
+          content:
+            "Note: Food from Dehradun to Sankri is not included in the trek cost.",
+        },
+      ],
+    },
+    essentials: [
+      {
+        category: "Backpack & Rain Cover",
+        items: [
+          "Backpack & rain cover (50 - 60 ltr) with comfortable shoulder straps",
+          "Day pack + rain cover (20 - 30 ltr) if hiring a mule or porter",
+        ],
+      },
+      {
+        category: "Walking Gear",
+        items: [
+          "Walking stick (At least one advisable)",
+          "Head torch - 1 Nos.",
+          "Water bottle/Hydration pack - 2 bottles of one litre each",
+          "Hydration pack users: 1 hydration pack + 1 litre bottle",
+          "Carry at least one thermos flask",
+          "Snacks: Energy bars, dry fruits, electral/ors",
+        ],
+      },
+      {
+        category: "Personal Medical Kit",
+        items: ["Consult your doctor"],
+      },
+      {
+        category: "Clothing",
+        items: [
+          "2 Full sleeves T-shirts (Non-cotton)",
+          "1 Fleece T-shirt",
+          "1 Fleece jacket (Alternative: woollen sweater)",
+          "1 Down feather / Hollofil jacket",
+          "Wind & waterproof jacket & pants - 1 Pair",
+          "Thermal inners (upper and lower) - 1 Pair",
+          "2 Synthetic trek pants (avoid shorts, fitting denims, capris)",
+          "1 Poncho",
+        ],
+      },
+      {
+        category: "Head Protection",
+        items: [
+          "1 Sun cap (covering the neck as well)",
+          "1 Woollen cap",
+          "1 Balaclava",
+          "1 Neck-gaiters",
+          "Sunglasses (dark with side cover, U/V protected)",
+          "For spectacles wearers: (A) Contact lenses, (B) Photochromatic glasses",
+        ],
+      },
+      {
+        category: "Footwear",
+        items: [
+          "1 Pair of trekking shoes (waterproof, high ankle with good grip)",
+          "1 Pair of floaters/flip-flops (optional)",
+          "5 Pairs of cotton socks",
+          "3 Pairs of woollen socks",
+          "1 Pair of gaiters (The Crazy Mountaineers team will notify if required)",
+        ],
+      },
+      {
+        category: "Hand Protection",
+        items: [
+          "1 Pair of waterproof gloves",
+          "1 Pair of fleece/woollen gloves",
+        ],
+      },
+      {
+        category: "Personal Utilities",
+        items: [
+          "Sunscreen cream",
+          "Hand sanitizer",
+          "Moisturiser",
+          "Antibacterial powder",
+          "Toilet paper & wipes",
+          "Toothbrush and toothpaste",
+          "Lip balm",
+          "Quick dry towel",
+        ],
+      },
+    ],
+    costTerms: {
+      inclusions: [
+        "Accommodation (Home stay, Camping)",
+        "Meals while on trek (Veg. + Egg)",
+        "Trek equipment: Sleeping bag, mattress, tent (twin sharing), kitchen & dining tent, toilet tent, utensils, and crampon (if required)",
+        "All necessary permits and entry fees",
+        "First aid medical kits, stretcher, and oxygen cylinder",
+        "Mountaineering qualified & professional trek leader, guide, and support staff",
+        "Transport from Dehradun to Sankri and return (according to itinerary)",
+        "Mules to carry the central luggage",
+      ],
+      exclusions: [
+        "Any kind of personal expenses",
+        "Food during the transit",
+        "Insurance",
+        "Mules or porter to carry personal luggage",
+        "Anything not specifically mentioned under the head 'Inclusions'",
+        "Any kind of emergency evacuation charges",
+      ],
+      additionalNotes: [
+        {
+          note: "Normally, THE CRAZY MOUNTAINEERS expect you to carry your personal luggage on your own. However, if you wish to offload your backpack, you can give it to a mule.",
+        },
+        {
+          offloadingCharges: {
+            advance: "INR 1200 if paid online 10 days in advance",
+            onSpot: "INR 1500 if informed after reaching Sankri",
+            weightLimit:
+              "The backpack cannot weigh more than 11 kgs and must have a waterproof cover. Suitcases/strolleys/bags are not allowed.",
+          },
+        },
+        {
+          bookingInfo:
+            "To book a Trek/adventure program, please use our online booking form, or alternatively, you can call us. For confirmation of your tour, you will need to wire a deposit and an initial payment.",
+        },
+      ],
+    },
+    faqData: [
+      {
+        question: "How long is the Deoria Tal Chopta Chandrashila Trek?",
+        answer:
+          "The Chandrashila Trek is a short trek and the distance from the base to the peak is 5 km.",
+      },
+      {
+        question: "Is Deoria Tal Chopta Chandrashila Trek easy?",
+        answer:
+          "Yes, Chandrashila trek is an easy trek and is highly recommended for beginners.",
+      },
+      {
+        question: "Which is the best month to experience snow in Chandrashila?",
+        answer:
+          "January and February are the best months to experience snow in Chandrashila.",
+      },
+      {
+        question:
+          "What is the maximum altitude of Deoria Tal Chopta Chandrashila Trek?",
+        answer: "The maximum height of the trek is 4,000 m above sea level.",
+      },
+      {
+        question:
+          "How to reach Deoria Tal Chopta Chandrashila Trek from Dehradun?",
+        answer:
+          "Direct buses from Dehradun to Chopta are not available; therefore, if you plan to go by bus, you will have to catch a bus up to Ukhimath & from there you will have to hire a taxi to reach Chopta.",
+      },
+    ],
+    trekCancellation: {
+      menuName: "Trek Cancellation Policies",
+      items: [
+        "Cancellations prior to 24 days from the start of the trek:",
+        "- Book any other trek till one year or get 95% refund (Note: If the trek charges are more, the balance needs to be paid by the trekker).",
+        "",
+        "Cancellations between 24 days and 14 days to the start of the trek:",
+        "- Choose to go for the same trek, with any other batch, till year or get 70% refund.",
+        "",
+        "Cancellations between 14 days and 10 days to the start of the trek:",
+        "- Choose to go on the same trek, in the same season, with any other batch or get 50% refund.",
+        "",
+        "Cancellations less than 10 days to the start of the trek:",
+        "- Transfer your trek (same trek, same batch) to your friend. No cash refund.",
+        "",
+        "Note:",
+        "- Change of trek batch is dependent on the availability of seats in the batch.",
+        "- In case of transferring a trek to a friend, he/she should satisfy all the mandatory requirements put forward by THE CRAZY MOUNTAINEERS.",
+        "- THE CRAZY MOUNTAINEERS holds the right to change/cancel the policies, without prior notice.",
+      ],
+    },
+  },
 ];

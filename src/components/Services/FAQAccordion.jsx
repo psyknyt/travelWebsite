@@ -12,6 +12,8 @@ const FAQAccordion = ({ faqData }) => {
     setOpen(open === index ? 0 : index); // Toggle open/close on click
   };
 
+  console.log("faq data is: ", faqData);
+
   return (
     <div className="w-full mx-auto my-8">
       {faqData?.map((menu, index) => (
@@ -27,10 +29,10 @@ const FAQAccordion = ({ faqData }) => {
               open === index + 1 ? "text-red-400 text-lg" : " text-sm  "
             }`}
           >
-            {menu.menuName}
+            {menu?.menuName || menu?.question}
           </AccordionHeader>
           <AccordionBody>
-            {menu.component || (
+            {menu?.component || menu?.answer || (
               <ul className="list-none pl-0 gap-1">
                 {menu?.items?.map((item, i) => (
                   <li
