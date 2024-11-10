@@ -145,23 +145,22 @@ const trekds = [
     ],
     QuickFacts: {},
     howToReach: {
-      byAir: [
-        {
-          description:
-            "Bhuntar, which is 52 km away from Manali, is the nearest airport. Taxi services are available from Bhuntar to Manali, costing about Rs. 700-1000. Bhuntar is well connected to Delhi by air, with airlines like Indian Airlines, Kingfisher Airlines, MDLR Airlines, and Jagson Airlines operating flights from Delhi and Chandigarh to Kullu.",
-        },
-      ],
+      byAir:
+        "Bhuntar, which is 52 km away from Manali, is the nearest airport. Taxi services are available from Bhuntar to Manali, costing about Rs. 700-1000. Bhuntar is well connected to Delhi by air, with airlines like Indian Airlines, Kingfisher Airlines, MDLR Airlines, and Jagson Airlines operating flights from Delhi and Chandigarh to Kullu.",
       byRoad: [
         {
-          description:
+          type: "text",
+          content:
             "Manali is well connected to Delhi. Take an overnight bus from Delhi to Manali. Tickets can be booked online at www.redbus.in or www.hrtc.gov.in.",
         },
         {
-          description:
+          type: "text",
+          content:
             "Tip: Since the Delhi to Manali journey is long, most Volvo private buses leave Delhi between 5 PM and 6 PM. The last government bus leaves at 8:30 PM from ISBT Kashmere Gate.",
         },
         {
-          description:
+          type: "text",
+          content:
             "Buses from Manali to Delhi leave between 4 PM and 5 PM. Your tentative arrival in Delhi may be between 6 AM and 10 AM. Plan your onward journeys only after noon, allowing enough buffer for bus delays.",
         },
       ],

@@ -5,7 +5,7 @@ const TrekContext = createContext();
 
 // Create a Provider Component
 export const TrekProvider = ({ children }) => {
-  const [selectedTrek, setSelectedTrek] = useState(0);
+  const [selectedTrek, setSelectedTrek] = useState(null);
 
   return (
     <TrekContext.Provider value={{ selectedTrek, setSelectedTrek }}>

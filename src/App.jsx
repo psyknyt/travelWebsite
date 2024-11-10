@@ -19,7 +19,7 @@ import AnalyticData from "./components/Home/AnalyticData";
 import PopularTours from "./components/Home/PopularTours";
 import ContactUs from "./components/ContactUs/ContactUs";
 import AboutUs from "./components/About-us/AboutUs";
-import Gallery from "./components/Home/Gallery";
+import HomeGallery from "./components/Home/Gallery";
 import LetsGoTogether from "./components/Home/LetsGoTogether";
 import RotatingSwiper from "./components/Home/RotatingSwiper";
 import WhyUs from "./components/Home/WhyUs";
@@ -29,6 +29,7 @@ import TrendingTours from "./components/Home/TrendingTours";
 import ChooseTrek from "./components/Home/ChooseTrek";
 import ServicePage from "./components/Services/ServicePage";
 import YoutubeVideos from "./components/Home/YoutubeVideos";
+import Gallery from "./components/Gallery/Gallery";
 
 import { useTrek } from "./Context/SelectedServiceContext";
 import "animate.css";
@@ -50,7 +51,7 @@ function App() {
       <PopularTours />
       <TopSpot />
       <WhyUs />
-      <Gallery />
+      <HomeGallery />
       <AnalyticData />
       <YoutubeVideos />
       <TestimonialSection />
@@ -66,6 +67,7 @@ function App() {
         <Route path="/contact" element={<ContactUs />} />
         <Route path="/aboutus" element={<AboutUs />} />
         <Route path="/services" element={<ServicePage />} />
+        <Route path="/gallery" element={<Gallery />} />
       </Routes>
       <Footer />
     </div>

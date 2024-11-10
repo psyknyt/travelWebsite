@@ -453,7 +453,10 @@ export default function Nav() {
                 </li>
                 <div className="w-full mx-auto border-[1px] h-0 bg-gray-400" />
 
-                <li className="pt-4 pb-1 text-[#0A1D56]  justify-start items-center flex cursor-pointer">
+                <li
+                  className="pt-4 pb-1 text-[#0A1D56]  justify-start items-center flex cursor-pointer"
+                  onClick={() => navigate("/gallery")}
+                >
                   Gallery
                 </li>
                 <div className="w-full mx-auto border-[1px] h-0 bg-gray-400" />
@@ -559,7 +562,10 @@ export default function Nav() {
                 <div className="absolute inset-x-0 bottom-[15px] h-[1px] rounded-xl bg-black  transform scale-x-0 origin-left transition-transform duration-300 group-hover:scale-x-100"></div>
               </div>
 
-              <div className="group flex items-center navlink relative h-full cursor-pointer">
+              <div
+                className="group flex items-center navlink relative h-full cursor-pointer"
+                onClick={() => navigate("/gallery")}
+              >
                 <p className="">Gallery</p>
                 <div className="absolute inset-x-0 bottom-[15px] h-[1px] rounded-xl bg-black  transform scale-x-0 origin-left transition-transform duration-300 group-hover:scale-x-100"></div>
               </div>

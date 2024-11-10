@@ -9,7 +9,7 @@ import DeoriTalTrek from "../../assets/Deoria_Tal_Chopta_Chandrashila_Trek_thumb
 import kedarnathTrek from "../../assets/Kedarnath_Yatra_thumb.jpg";
 import harKiDunTrek from "../../assets/Har_Ki_Dun_Trek_thumb.jpg";
 
-const Gallery = () => {
+const HomeGallery = () => {
   return (
     <div
       className="flex flex-col py-5"
@@ -98,4 +98,4 @@ const Gallery = () => {
   );
 };
 
-export default Gallery;
+export default HomeGallery;
