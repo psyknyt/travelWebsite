@@ -44,7 +44,7 @@ function App() {
   }, []);
 
   let homeContent = (
-    <div className="flex flex-col">
+    <div className="flex flex-col overflow-hidden">
       <HeroSection />
       <ChooseTrek />
       <TrendingTours />

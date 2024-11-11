@@ -111,7 +111,7 @@ const YoutubeVideos = () => {
         <div className="font-montez text-4xl leading-6 pt-4">
           Informative Videos
         </div>
-        <div className="pt-2 font-inter text-2xl sm:text-3xl md:text-4xl font-semibold tracking-wide flex justify-center items-center text-nowrap">
+        <div className="pt-2 font-inter text-sm sm:text-3xl md:text-4xl font-semibold tracking-wide flex justify-center items-center sm:text-nowrap">
           Checkout some informative videos on our treks
         </div>
       </div>

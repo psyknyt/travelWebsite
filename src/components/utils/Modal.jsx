@@ -20,13 +20,13 @@ const Modal = ({ image, onClose }) => {
           alt={image.alt}
           className="rounded-md w-full h-full object-contain"
         />
-        <div className="font-normal text-lg">{image.title}</div>
-        <p>{image.description}</p>
+        <div className="font-normal text-lg ">{image.title}</div>
+        <p>{image?.description}</p>
         <div
           onClick={onClose}
-          className="absolute text-white top-0 right-0 text-xl"
+          className="absolute text-white -top-8 -right-8 text-xl"
         >
-          <IoMdClose className="w-5 h-5" />
+          <IoMdClose className="w-8 h-8" />
         </div>
       </div>
     </div>

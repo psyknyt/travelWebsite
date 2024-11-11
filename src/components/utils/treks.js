@@ -882,4 +882,267 @@ const trekds = [
       ],
     },
   },
+  {
+    name: "Shumga Trek",
+    title: "Shumga Trek",
+    tourCode: "122132157",
+    price: "₹ 8,799",
+    mapImg: "",
+    overview: {
+      title: "Vasuki Tal Trek, Kedarnath & Badrinath",
+      paragraphs: [
+        "The Shumga trek is a remote trek located in Kullu Valley of the Himachal Pradesh region. The trail passes through the lesser travelled locations of the Great Himalayan National Park. On the way you will spot lush green plateaus and endless mountain ranges along with a wide variety of fauna. The hike to the summit is as exciting as claiming the summit. The variation in the trail takes you through the forests of pine to rhododendron on a trail that sometimes ascends and descends at other times.",
+
+        "Towards the end of the trek comes the alpine meadows which are home to a number of beautiful birds like Monal, Tragopan, Koklash and others. On the top which lies on the ridge separating Tirthan & Sainj Valley, there is a shrine dedicated to Goddess Jogni also known as Sati. You will also be able to view the peaks of Lower Himalayas like Banjar, Thachi, and Mandi as well as peaks of Greater Himalayas. Some important peaks that can be seen from the Shumga Top are Gushu, Pishu in Tirth, Shupakuni, Kingkullen, Snow Peak in Rakti & Vasuki Nag.",
+      ],
+    },
+    duration: "6 Days",
+    distance: "30 km",
+    altitude: "13,500",
+    Grade: ["Easy", "Moderate"],
+    location: {
+      state: "Himachal Pradesh",
+      region: "Kullu",
+      wildlifeSanctuary: "",
+    },
+    highlights: [
+      "Sankri village",
+      "Juda ka Talab",
+      "Kedarkantha Peak",
+      "Har ki Dun views",
+      "Frozen lake at Juda ka Talab",
+      "Sunrise at Kedarkantha Peak",
+    ],
+    bestTimeToVisit: ["December", "January", "February", "March", "April"],
+    itinerary: [
+      {
+        day: "Day 1",
+        title: "Mandi to Shangarh",
+        description: [
+          "The first day of the journey starts with a beautiful mountain ride from Mandi to Sangarh. The ride will be accompanied by steep turns and mountains covered with trees. We will also cross the famous Pandoh Dam which was built in 1977. As we get closer to the Sainj River vast meadows will come into view. One of the things that catches the eye when we reach Sangarh are the temples that are built in this area.",
+
+          "The village provides a perfect setting to relax and unwind from the journey. The village is surrounded by green grasslands with white snow covered mountains towering in the background. Overnight stay will be in tents / guesthouses.",
+        ],
+        briefOverview: [
+          "Driving Distance - 70 Km",
+          "Driving Time - 3 Hours",
+          "Max Altitude - 7,200 ft.",
+          "Network - Available",
+          "Overnight stay at a guesthouse / tents",
+        ],
+      },
+      {
+        day: "Day 2",
+        title: "Shangarh to Lapah camp",
+        description: [
+          "On the second day, after having breakfast in the morning, we will start walking towards the Lapah Campsite. The trail to the Lapah village is an easy, level walk which is used frequently by the villagers. The hike will take you through dense forests of pine as we cross Barshangarh village.",
+
+          "From Lapah village, the campsite is 2 Km further on a steep trail. The climb to the campsite will leave you mesmerised with the views of Greater Himalayan Peaks at a distance.",
+        ],
+        briefOverview: [
+          "Trekking Distance - 2 Km",
+          "Trekking Time - Varies",
+          "Max Altitude - Not specified",
+          "Night stay in camps",
+        ],
+      },
+      {
+        day: "Day 3",
+        title: "Lapah Camp to Sara Lake",
+        description: [
+          "Today we will start walking to Sara Lake on a trail parallel to Saradhar Ridge. The starting 2 Km of a trail is a moderate ascent followed by a steep climb for another 2 Km. You will notice quick changes in the vegetation as we keep walking, from thick Pine, Fir and Spruce forests to Rhododendron and Junipers scrubs.",
+
+          "At the end of today's trek we will cross Raila Village and our campsite for today is just a few meters ahead beside Sara Lake. It is a small lake surrounded by Oak trees. You can explore the area around to get better views of the Greater Himalayan Ranges. Night stay will be in tents.",
+        ],
+        briefOverview: [
+          "Trekking Distance - 6.5 Km",
+          "Max Altitude - 10,500 ft.",
+          "Night stay in camps",
+        ],
+      },
+      {
+        day: "Day 4",
+        title: "Sara Lake to Shumga Summit Point & Back",
+        description: [
+          "The trek from Sara Lake to Shumga Summit is 4 Km and therefore we will cover a total of 8 Km to the peak and back for today. The trail is of moderate difficulty so you can just walk along and enjoy the greenery filled with Rhododendron and Junipers. As we keep pushing towards the top, you will notice that the treeline starts to end and huge lavish meadows begin.",
+
+          "The Shumga Peak is unique because it lies on a ridge that separates Sainj & Tirthan Valley. From the top you will get a 360 degrees view of the Greater as well as Lower Himalayan Ranges and on a clear day you can also see the peaks of Spiti and Kinnaur region from this place. Along with Pir Panjal range, you will be able to spot Beas River flowing through the Kullu Valley.",
+        ],
+        briefOverview: [
+          "Trekking Distance - 8 Km",
+          "Max Altitude - Not specified",
+          "Overnight stay in camps at Sara Lake",
+        ],
+      },
+      {
+        day: "Day 5",
+        title: ": Kedarnath to Vasuki Tal(4300 m)- Kedarnath ",
+        description: [],
+        briefOverview: ["Trekking Distance: 5-6 Km", "Trekking Time: 3-4 Hour"],
+      },
+      {
+        day: "Day 6",
+        title: "Kedarnath to Rudraprayag/Pipal Koti",
+        description: [],
+        briefOverview: ["Trek", "Drive"],
+      },
+      {
+        day: "Day 7",
+        title: "Rudraprayag/Pipal Koti to Badrinath",
+        description: [],
+        briefOverview: [],
+      },
+      {
+        day: "Day 8",
+        title: "Badrinath sightseeing",
+        description: [],
+        briefOverview: [],
+      },
+      {
+        day: "Day 9",
+        title: "Badrinath to haridwar",
+        description: [],
+        briefOverview: [],
+      },
+    ],
+    QuickFacts: {},
+    howToReach: {},
+    essentials: [
+      {
+        category: "Backpack & Rain Cover",
+        items: [
+          "Backpack & rain cover (50 - 60 ltr) with comfortable shoulder straps",
+          "Day pack + rain cover (20 - 30 ltr) if hiring a mule or porter",
+        ],
+      },
+      {
+        category: "Walking Gear",
+        items: [
+          "Walking stick (At least one advisable)",
+          "Head torch - 1 Nos.",
+          "Water bottle/Hydration pack - 2 bottles of one litre each",
+          "Hydration pack users: 1 hydration pack + 1 litre bottle",
+          "Carry at least one thermos flask",
+          "Snacks: Energy bars, dry fruits, electral/ors",
+        ],
+      },
+      {
+        category: "Personal Medical Kit",
+        items: ["Consult your doctor"],
+      },
+      {
+        category: "Clothing",
+        items: [
+          "2 Full sleeves T-shirts (Non-cotton)",
+          "1 Fleece T-shirt",
+          "1 Fleece jacket (Alternative: woollen sweater)",
+          "1 Down feather / Hollofil jacket",
+          "Wind & waterproof jacket & pants - 1 Pair",
+          "Thermal inners (upper and lower) - 1 Pair",
+          "2 Synthetic trek pants (avoid shorts, fitting denims, capris)",
+          "1 Poncho",
+        ],
+      },
+      {
+        category: "Head Protection",
+        items: [
+          "1 Sun cap (covering the neck as well)",
+          "1 Woollen cap",
+          "1 Balaclava",
+          "1 Neck-gaiters",
+          "Sunglasses (dark with side cover, U/V protected)",
+          "For spectacles wearers: (A) Contact lenses, (B) Photochromatic glasses",
+        ],
+      },
+      {
+        category: "Footwear",
+        items: [
+          "1 Pair of trekking shoes (waterproof, high ankle with good grip)",
+          "1 Pair of floaters/flip-flops (optional)",
+          "5 Pairs of cotton socks",
+          "3 Pairs of woollen socks",
+          "1 Pair of gaiters (The Crazy Mountaineers team will notify if required)",
+        ],
+      },
+      {
+        category: "Hand Protection",
+        items: [
+          "1 Pair of waterproof gloves",
+          "1 Pair of fleece/woollen gloves",
+        ],
+      },
+      {
+        category: "Personal Utilities",
+        items: [
+          "Sunscreen cream",
+          "Hand sanitizer",
+          "Moisturiser",
+          "Antibacterial powder",
+          "Toilet paper & wipes",
+          "Toothbrush and toothpaste",
+          "Lip balm",
+          "Quick dry towel",
+        ],
+      },
+    ],
+    costTerms: {
+      inclusions: [
+        "Accommodation (Home stay, Camping)",
+        "Meals while on trek (Veg. + Egg)",
+        "Trek equipment: Sleeping bag, mattress, tent (twin sharing), kitchen & dining tent, toilet tent, utensils, and crampon (if required)",
+        "All necessary permits and entry fees",
+        "First aid medical kits, stretcher, and oxygen cylinder",
+        "Mountaineering qualified & professional trek leader, guide, and support staff",
+        "Transport from Dehradun to Sankri and return (according to itinerary)",
+        "Mules to carry the central luggage",
+      ],
+      exclusions: [
+        "Any kind of personal expenses",
+        "Food during the transit",
+        "Insurance",
+        "Mules or porter to carry personal luggage",
+        "Anything not specifically mentioned under the head 'Inclusions'",
+        "Any kind of emergency evacuation charges",
+      ],
+      additionalNotes: [
+        {
+          note: "Normally, THE CRAZY MOUNTAINEERS expect you to carry your personal luggage on your own. However, if you wish to offload your backpack, you can give it to a mule.",
+        },
+        {
+          offloadingCharges: {
+            advance: "INR 1200 if paid online 10 days in advance",
+            onSpot: "INR 1500 if informed after reaching Sankri",
+            weightLimit:
+              "The backpack cannot weigh more than 11 kgs and must have a waterproof cover. Suitcases/strolleys/bags are not allowed.",
+          },
+        },
+        {
+          bookingInfo:
+            "To book a Trek/adventure program, please use our online booking form, or alternatively, you can call us. For confirmation of your tour, you will need to wire a deposit and an initial payment.",
+        },
+      ],
+    },
+    faqData: [],
+    trekCancellation: {
+      menuName: "Trek Cancellation Policies",
+      items: [
+        "Cancellations prior to 24 days from the start of the trek:",
+        "- Book any other trek till one year or get 95% refund (Note: If the trek charges are more, the balance needs to be paid by the trekker).",
+        "",
+        "Cancellations between 24 days and 14 days to the start of the trek:",
+        "- Choose to go for the same trek, with any other batch, till year or get 70% refund.",
+        "",
+        "Cancellations between 14 days and 10 days to the start of the trek:",
+        "- Choose to go on the same trek, in the same season, with any other batch or get 50% refund.",
+        "",
+        "Cancellations less than 10 days to the start of the trek:",
+        "- Transfer your trek (same trek, same batch) to your friend. No cash refund.",
+        "",
+        "Note:",
+        "- Change of trek batch is dependent on the availability of seats in the batch.",
+        "- In case of transferring a trek to a friend, he/she should satisfy all the mandatory requirements put forward by THE CRAZY MOUNTAINEERS.",
+        "- THE CRAZY MOUNTAINEERS holds the right to change/cancel the policies, without prior notice.",
+      ],
+    },
+  },
 ];

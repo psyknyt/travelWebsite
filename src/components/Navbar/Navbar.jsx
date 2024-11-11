@@ -235,6 +235,7 @@ export function SmallScreenAccordion() {
           open={open === index + 1}
           icon={<Icon id={index + 1} open={open} />}
           className="border-b-[1px] border-gray-300 pb-2"
+          onMouseIn={() => console.log("mosue hover")}
         >
           <AccordionHeader
             onClick={() => handleOpen(index + 1)}
@@ -245,7 +246,7 @@ export function SmallScreenAccordion() {
             {menu.menuName}
           </AccordionHeader>
           <AccordionBody>
-            <ul className="list-none pl-0 gap-1">
+            <ul className="list-none pl-0 gap-1 h-[60vh] overflow-y-auto">
               {menu?.items?.map((item, i) => (
                 <li
                   key={i}
@@ -642,10 +643,10 @@ export default function Nav() {
           <div
             className={` py-2 absolute z-[30] bg-white  shadow-md w-screen px-4 left-[-3%] right-0 mx-auto text-sm font-light tracking-wide transition-all duration-1000 delay-0 ease-in-out transform
                    group-hover:translate-y-0 top-[120%] group-hover:opacity-100
-                  -translate-y-4 opacity-100 
+                  -translate-y-4 opacity-100
             ${
               chooseTrekDropdown ? "flex sm:hidden" : "hidden"
-            } flex-col justify-between items-start`}
+            } flex-col justify-between items-start transition-all duration-500 ease-in-out`}
             style={{
               transformOrigin: "top",
             }}
