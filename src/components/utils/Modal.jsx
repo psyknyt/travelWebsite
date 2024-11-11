@@ -24,7 +24,7 @@ const Modal = ({ image, onClose }) => {
         <p>{image?.description}</p>
         <div
           onClick={onClose}
-          className="absolute text-white -top-8 -right-8 text-xl"
+          className="absolute text-white -top-6 -right-6 sm:-top-8 sm:-right-8 text-xl"
         >
           <IoMdClose className="w-8 h-8" />
         </div>

@@ -103,7 +103,7 @@ const Gallery = () => {
           return (
             <div
               key={index}
-              className="max-h-[250px] min-h-[250px] relative group"
+              className="max-h-[250px] min-h-[250px] relative group rounded-md"
               onClick={() => {
                 openModal(image);
                 console.log("image clicked is: ", image);
@@ -112,7 +112,7 @@ const Gallery = () => {
               <img
                 src={image?.src}
                 alt={image?.alt}
-                className="h-full w-full object-cover object-center"
+                className="h-full w-full object-cover object-center rounded-md"
               />
               <div className="absolute bottom-0 bg-black bg-opacity-20 text-white h-[40px] w-full overflow-hidden text-center py-2 truncate px-4 font-normal group-hover:h-full transition-all duration-500 ease-in-out flex items-end justify-center">
                 {image?.title}
