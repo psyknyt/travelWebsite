@@ -329,7 +329,8 @@ export default function Nav() {
           <div className="text-gray-400">|</div>
           <div className="flex flex-row justify-center items-center">
             <div className="transition-all duration-300 delay-150 ease-in-out">
-              Sign in/Register
+              <span onClick={() => navigate("/login")}>Sign in</span>/
+              <span onClick={() => navigate("/signup")}>Register</span>
             </div>
             <CiUser className="flex items-center justify-center w-4 h-4" />
           </div>

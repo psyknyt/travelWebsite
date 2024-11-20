@@ -4,6 +4,7 @@ import "./App.css";
 import { Routes, Route } from "react-router-dom";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import "animate.css";
 
 import Nav from "./components/Navbar/Navbar";
 import { Footer } from "./components/Footer/Footer";
@@ -30,9 +31,9 @@ import ChooseTrek from "./components/Home/ChooseTrek";
 import ServicePage from "./components/Services/ServicePage";
 import YoutubeVideos from "./components/Home/YoutubeVideos";
 import Gallery from "./components/Gallery/Gallery";
-
+import LoginPage from "./components/utils/LoginPage";
+import SignUpPage from "./components/utils/SignUpPage";
 import { useTrek } from "./Context/SelectedServiceContext";
-import "animate.css";
 
 function App() {
   const { selectedTrek, setSelectedTrek } = useTrek();
@@ -48,6 +49,7 @@ function App() {
       <HeroSection />
       <ChooseTrek />
       <TrendingTours />
+      <FeaturedDestination />
       <PopularTours />
       <TopSpot />
       <WhyUs />
@@ -68,6 +70,8 @@ function App() {
         <Route path="/aboutus" element={<AboutUs />} />
         <Route path="/services" element={<ServicePage />} />
         <Route path="/gallery" element={<Gallery />} />
+        <Route path="/login" element={<LoginPage />} />
+        <Route path="/signup" element={<SignUpPage />} />
       </Routes>
       <Footer />
     </div>
