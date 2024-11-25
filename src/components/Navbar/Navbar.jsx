@@ -328,10 +328,11 @@ export default function Nav() {
           </div>
           <div className="text-gray-400">|</div>
           <div className="flex flex-row justify-center items-center">
-            <div className="transition-all duration-300 delay-150 ease-in-out">
+            {localStorage.getItem("auth_token")==null?<div className="transition-all duration-300 delay-150 ease-in-out">
               <span onClick={() => navigate("/login")}>Sign in</span>/
               <span onClick={() => navigate("/signup")}>Register</span>
-            </div>
+            </div>:<p>Pratik</p>}
+            
             <CiUser className="flex items-center justify-center w-4 h-4" />
           </div>
         </div>

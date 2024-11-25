@@ -4,23 +4,23 @@ import App from "./App.jsx";
 import "./index.css";
 import {
   createBrowserRouter,
-  createRoutesFromElements,
   RouterProvider,
-  Routes,
-  Route,
-  Link,
 } from "react-router-dom";
 
 import { TrekProvider } from "./Context/SelectedServiceContext.jsx";
+import { GoogleOAuthProvider } from "@react-oauth/google"; // Import GoogleOAuthProvider
 
 const router = createBrowserRouter([
   { path: "*", Component: App, errorElement: <p>Error</p> },
 ]);
-
+//{localStorage.removeItem("auth_token");}
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <TrekProvider>
-      <RouterProvider router={router} />
-    </TrekProvider>
+    {/* Wrap with GoogleOAuthProvider and provide your Google Client ID */}
+    <GoogleOAuthProvider clientId="779348613946-bbni9alv2p0sv6urmpil72snkub39e8i.apps.googleusercontent.com">
+      <TrekProvider>
+        <RouterProvider router={router} />
+      </TrekProvider>
+    </GoogleOAuthProvider>
   </StrictMode>
 );

@@ -4,10 +4,12 @@ const SignUpPage = () => {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
-    phone: "",
     password: "",
     confirmPassword: "",
   });
+
+  const [loading, setLoading] = useState(false); // Add a loading state
+  const [errorMessage, setErrorMessage] = useState("");
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -17,29 +19,57 @@ const SignUpPage = () => {
     }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
+    setErrorMessage(""); // Reset error message on new attempt
+
     if (formData.password !== formData.confirmPassword) {
       alert("Passwords do not match!");
       return;
-    } else {
-      setFormData({
-        name: "",
-        email: "",
-        phone: "",
-        password: "",
-        confirmPassword: "",
-      });
     }
-    console.log("Form submitted:", formData);
+
+    setLoading(true);
+
+    try {
+      const response = await fetch("http://localhost:5000/api/auth/register", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          username: formData.name,
+          email: formData.email,
+          password: formData.password,
+        }),
+      });
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        setErrorMessage(data.message || "Something went wrong!");
+      } else {
+        alert("User registered successfully!");
+        setFormData({
+          name: "",
+          email: "",
+          password: "",
+          confirmPassword: "",
+        });
+      }
+    } catch (error) {
+      setErrorMessage("Failed to connect to the server. Please try again later.");
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-100">
       <div className="w-full max-w-md bg-white rounded-lg shadow-md p-6">
-        <h2 className="text-2xl font-bold text-center text-gray-700">
-          Sign Up
-        </h2>
+        <h2 className="text-2xl font-bold text-center text-gray-700">Sign Up</h2>
+        {errorMessage && (
+          <p className="text-red-500 text-center mt-2">{errorMessage}</p>
+        )}
         <form onSubmit={handleSubmit} className="mt-4">
           <div className="mb-4">
             <label
@@ -70,23 +100,6 @@ const SignUpPage = () => {
               id="email"
               name="email"
               value={formData.email}
-              onChange={handleChange}
-              className="mt-1 block w-full px-4 py-2 bg-gray-50 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-              required
-            />
-          </div>
-          <div className="mb-4">
-            <label
-              htmlFor="phone"
-              className="block text-sm font-medium text-gray-600"
-            >
-              Phone No
-            </label>
-            <input
-              type="tel"
-              id="phone"
-              name="phone"
-              value={formData.phone}
               onChange={handleChange}
               className="mt-1 block w-full px-4 py-2 bg-gray-50 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
               required
@@ -129,8 +142,9 @@ const SignUpPage = () => {
           <button
             type="submit"
             className="w-full py-2 cursor-pointer bg-lemonYellow text-black font-semibold rounded-md hover:bg-opacity-90 transition"
+            disabled={loading}
           >
-            Sign Up
+            {loading ? "Registering..." : "Sign Up"}
           </button>
         </form>
       </div>
