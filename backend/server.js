@@ -2,8 +2,9 @@ import express from "express";
 import dotenv from "dotenv";
 import cors from "cors";
 import cookieParser from "cookie-parser";
-import session from "express-session"; // Added for Google OAuth
-import passport from "passport"; // Added for Google OAuth
+import session from "express-session";
+import passport from "passport";
+import path from "path"; // Added for serving static files
 import authRoutes from "./routes/authRoutes.js";
 import db from "./config/db.js";
 import "./config/passport.js"; // Import the Google OAuth configuration
@@ -11,6 +12,7 @@ import "./config/passport.js"; // Import the Google OAuth configuration
 dotenv.config();
 const app = express();
 
+// Middleware
 app.use(cors({ origin: "http://localhost:5173", credentials: true }));
 app.use(cookieParser());
 app.use(express.json());
@@ -38,12 +40,11 @@ app.get(
 );
 
 // Google callback route
-app.get(
-  "/api/auth/google/callback",
+app.get("/api/auth/google/callback", 
   passport.authenticate("google", { failureRedirect: "/" }),
   (req, res) => {
-    // Successful authentication, send response or redirect
-    res.redirect("http://localhost:5173"); // Redirect to the frontend
+    const token = jwt.sign({ id: req.user.id }, process.env.JWT_SECRET, { expiresIn: "1h" });
+    res.redirect(`http://localhost:5173?token=${token}`);
   }
 );
 
@@ -56,8 +57,14 @@ app.get("/api/auth/logout", (req, res) => {
   });
 });
 
+// Serve static images
+const __dirname = path.resolve(); // Current directory
+const imagesPath = path.join(__dirname, "images");
+app.use("/images", express.static(imagesPath));
+
 // Start the server
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
   console.log(`Server running on http://localhost:${PORT}`);
+  console.log(`Serving images at http://localhost:${PORT}/images`);
 });

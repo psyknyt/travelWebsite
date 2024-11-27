@@ -1,14 +1,20 @@
-import React, { useState } from "react";
-import { GoogleOAuthProvider, useGoogleLogin } from "@react-oauth/google";
+import React, { useEffect, useState } from "react";
+import { GoogleOAuthProvider } from "@react-oauth/google";
 
 const LoginPage = () => {
-  const [loginData, setLoginData] = useState({
-    email: "",
-    password: "",
-  });
-
+  const [loginData, setLoginData] = useState({ email: "", password: "" });
   const [loading, setLoading] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
+
+  // Extract token from URL if present
+  useEffect(() => {
+    const queryParams = new URLSearchParams(window.location.search);
+    const token = queryParams.get("token");
+    if (token) {
+      localStorage.setItem("auth_token", token);
+      window.location.href = "/"; // Redirect to your app's main page
+    }
+  }, []);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -39,7 +45,7 @@ const LoginPage = () => {
       } else {
         alert("Login successful!");
         localStorage.setItem("auth_token", data.token);
-        window.location.href = "http://localhost:5173/";
+        window.location.href = "/";
       }
     } catch (error) {
       setErrorMessage("Failed to connect to the server. Please try again later.");
@@ -48,53 +54,21 @@ const LoginPage = () => {
     }
   };
 
-  // Google Login handler
-  const handleGoogleLogin = useGoogleLogin({
-    onSuccess: async (response) => {
-      try {
-        const res = await fetch("http://localhost:5000/api/auth/google/callback", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({ token: response.credential }),
-        });
-
-        const data = await res.json();
-
-        if (!res.ok) {
-          setErrorMessage(data.message || "Google Login failed. Please try again.");
-        } else {
-          alert("Google Login successful!");
-          localStorage.setItem("auth_token", data.token);
-          window.location.href = "http://localhost:5173/";
-        }
-      } catch (error) {
-       // setErrorMessage("Logged in success .");
-        alert("Google Login successful!");
-        window.location.href = "http://localhost:5173/";
-      }
-    },
-    onError: () => {
-      setErrorMessage("Google Login failed. Please try again.");
-    },
-  });
+  const handleGoogleLogin = () => {
+    window.location.href = "http://localhost:5000/api/auth/google";
+  };
 
   return (
     <GoogleOAuthProvider clientId="779348613946-bbni9alv2p0sv6urmpil72snkub39e8i.apps.googleusercontent.com">
       <div className="min-h-screen flex items-center justify-center bg-gray-100">
         <div className="w-full max-w-md bg-white rounded-lg shadow-md p-6">
           <h2 className="text-2xl font-bold text-center text-gray-700">Login</h2>
-          {errorMessage && (
-            <p className="text-red-500 text-center mt-2">{errorMessage}</p>
-          )}
+          {errorMessage && <p className="text-red-500 text-center mt-2">{errorMessage}</p>}
+
           {/* Email/Password Login Form */}
           <form onSubmit={handleSubmit} className="mt-4">
             <div className="mb-4">
-              <label
-                htmlFor="email"
-                className="block text-sm font-medium text-gray-600"
-              >
+              <label htmlFor="email" className="block text-sm font-medium text-gray-600">
                 Email
               </label>
               <input
@@ -108,10 +82,7 @@ const LoginPage = () => {
               />
             </div>
             <div className="mb-4">
-              <label
-                htmlFor="password"
-                className="block text-sm font-medium text-gray-600"
-              >
+              <label htmlFor="password" className="block text-sm font-medium text-gray-600">
                 Password
               </label>
               <input
@@ -126,7 +97,7 @@ const LoginPage = () => {
             </div>
             <button
               type="submit"
-              className="w-full py-2 bg-lemonYellow text-black font-semibold rounded-md hover:bg-opacity-90 transition"
+              className="w-full py-2 bg-blue-500 text-white font-semibold rounded-md hover:bg-blue-600 transition"
               disabled={loading}
             >
               {loading ? "Logging in..." : "Login"}
@@ -136,7 +107,7 @@ const LoginPage = () => {
           {/* Google Login Button */}
           <div className="mt-6 flex justify-center">
             <button
-              onClick={() => handleGoogleLogin()}
+              onClick={handleGoogleLogin}
               className="w-full py-2 bg-red-500 text-white font-semibold rounded-md hover:bg-red-600 transition"
             >
               Login with Google
