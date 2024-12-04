@@ -36,32 +36,32 @@ const trekListings = [
   {
     name: "Kedarkantha Trek",
     listing: 1,
-    img: kedarkanthaTrek,
+    img: "http://localhost:5000/images/Kedarkantha_Trek_thumb.jpg",
   },
   {
     name: "Har Ki Dun Trek",
     listing: 2,
-    img: harKiDunTrek,
+    img: "http://localhost:5000/images/Har_Ki_Dun_Trek_thumb.jpg",
   },
   {
     name: "Gaumukh Tapovan",
     listing: 3,
-    img: gaumukhTapovanTrek,
+    img: "http://localhost:5000/images/Gaumukh_Tapovan_thumb.jpg",
   },
   {
     name: "Dayara Bugyal Trek",
     listing: 5,
-    img: dyaraBuyalTrek,
+    img: "http://localhost:5000/images/Dayara_Bugyal_Trek_thumb.jpg",
   },
   {
     name: "Kedarnath Trek",
     listing: 7,
-    img: kedarnathTrek,
+    img: "http://localhost:5000/images/Kedarnath_Yatra_thumb.jpg",
   },
   {
     name: "Deoria Tal Chopta Chandrashila Trek",
     listing: 9,
-    img: DeoriTalTrek,
+    img: "http://localhost:5000/images/Deoria_Tal_Chopta_Chandrashila_Trek_thumb.jpg",
   },
 ];
 

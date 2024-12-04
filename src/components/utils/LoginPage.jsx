@@ -40,12 +40,22 @@ const LoginPage = () => {
 
       const data = await response.json();
 
+      console.log("Response data:", data);//asdasdasdasdihasdfhkasjlfhkjasdfhkjafh
       if (!response.ok) {
         setErrorMessage(data.message || "Login failed. Please try again.");
       } else {
-        alert("Login successful!");
         localStorage.setItem("auth_token", data.token);
-        window.location.href = "/";
+        const message = data.isAdmin
+          ? "Login successful as Admin!"
+          : "Login successful!";
+        alert(message);
+
+        // Redirect based on the isAdmin value
+        if (data.isAdmin) {
+          window.location.href = "/dashboard";
+        } else {
+          window.location.href = "/";
+        }
       }
     } catch (error) {
       setErrorMessage("Failed to connect to the server. Please try again later.");
@@ -59,7 +69,7 @@ const LoginPage = () => {
   };
 
   return (
-    <GoogleOAuthProvider clientId="779348613946-bbni9alv2p0sv6urmpil72snkub39e8i.apps.googleusercontent.com">
+    <GoogleOAuthProvider clientId="YOUR_GOOGLE_CLIENT_ID">
       <div className="min-h-screen flex items-center justify-center bg-gray-100">
         <div className="w-full max-w-md bg-white rounded-lg shadow-md p-6">
           <h2 className="text-2xl font-bold text-center text-gray-700">Login</h2>

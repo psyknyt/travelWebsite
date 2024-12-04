@@ -1,6 +1,4 @@
 import { useState, useEffect } from "react";
-import "./App.css";
-
 import { Routes, Route } from "react-router-dom";
 import AOS from "aos";
 import "aos/dist/aos.css";
@@ -33,6 +31,7 @@ import YoutubeVideos from "./components/Home/YoutubeVideos";
 import Gallery from "./components/Gallery/Gallery";
 import LoginPage from "./components/utils/LoginPage";
 import SignUpPage from "./components/utils/SignUpPage";
+import Dashboard from "./components/utils/Dashboard"; // Import the Dashboard component
 import { useTrek } from "./Context/SelectedServiceContext";
 
 function App() {
@@ -72,6 +71,7 @@ function App() {
         <Route path="/gallery" element={<Gallery />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/signup" element={<SignUpPage />} />
+        <Route path="/dashboard" element={<Dashboard />} /> {/* Added Dashboard Route */}
       </Routes>
       <Footer />
     </div>
