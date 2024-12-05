@@ -4,10 +4,11 @@ import cors from "cors";
 import cookieParser from "cookie-parser";
 import session from "express-session";
 import passport from "passport";
-import path from "path"; // Added for serving static files
+import path from "path";
 import authRoutes from "./routes/authRoutes.js";
 import db from "./config/db.js";
-import "./config/passport.js"; // Import the Google OAuth configuration
+import multer from "multer"; // Added for handling file uploads
+import jwt from "jsonwebtoken";
 
 dotenv.config();
 const app = express();
@@ -16,6 +17,10 @@ const app = express();
 app.use(cors({ origin: "http://localhost:5173", credentials: true }));
 app.use(cookieParser());
 app.use(express.json());
+
+// Add these lines to increase the upload size limit
+app.use(express.json({ limit: "100mb" })); 
+app.use(express.urlencoded({ extended: true, limit: "100mb" }));
 
 // Add session middleware for Google OAuth
 app.use(
@@ -40,7 +45,8 @@ app.get(
 );
 
 // Google callback route
-app.get("/api/auth/google/callback", 
+app.get(
+  "/api/auth/google/callback",
   passport.authenticate("google", { failureRedirect: "/" }),
   (req, res) => {
     const token = jwt.sign({ id: req.user.id }, process.env.JWT_SECRET, { expiresIn: "1h" });
@@ -57,14 +63,63 @@ app.get("/api/auth/logout", (req, res) => {
   });
 });
 
-// Serve static images
-const __dirname = path.resolve(); // Current directory
-const imagesPath = path.join(__dirname, "images");
-app.use("/images", express.static(imagesPath));
+// Multer configuration for handling image uploads
+const upload = multer({ storage: multer.memoryStorage() });
+
+// Image upload route with image_name support
+app.post("/api/upload", upload.single("image"), (req, res) => {
+  console.log("Upload endpoint hit");
+  const { imageName } = req.body; // Expecting imageName from the frontend
+
+  if (!req.file || !imageName) {
+    return res.status(400).json({ message: "File or image name missing" });
+  }
+
+  const imageData = req.file.buffer; // Image data as buffer
+
+  db.query(
+    "INSERT INTO slider_images (image_data, image_name, created_at) VALUES (?, ?, NOW())",
+    [imageData, imageName],
+    (error, results) => {
+      if (error) {
+        if (error.fatal) {
+          console.error('Fatal error in database connection:', error);
+        }else{
+        console.error("Error uploading image:", error);}
+        return res.status(500).json({ message: "Failed to upload image" });
+      }
+      res.status(201).json({
+        message: "Image uploaded successfully",
+        imageId: results.insertId,
+      });
+    }
+  );
+});
+
+
+// Fetch image by ID route
+app.get("/api/images/:id", (req, res) => {
+  const { id } = req.params;
+  console.log("Fetching image with ID:", id);
+
+  db.query("SELECT image_data, mime_type FROM slider_images WHERE id = ?", [id], (error, results) => {
+    if (error) {
+      console.error("Error fetching image:", error);
+      return res.status(500).json({ message: "Failed to fetch image" });
+    }
+
+    if (results.length > 0) {
+      const { image_data, mime_type } = results[0];
+      res.writeHead(200, { "Content-Type": mime_type });
+      res.end(image_data); // Send the binary image data
+    } else {
+      res.status(404).json({ message: "Image not found" });
+    }
+  });
+});
 
 // Start the server
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
   console.log(`Server running on http://localhost:${PORT}`);
-  console.log(`Serving images at http://localhost:${PORT}/images`);
 });
