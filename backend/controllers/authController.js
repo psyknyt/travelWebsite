@@ -14,28 +14,43 @@ export const register = (req, res) => {
     });
   });
 };
-
+ //login 
 export const login = (req, res) => {
   const { email, password } = req.body;
+
   findUserByEmail(email, (err, results) => {
+    if (err) {
+      console.error("Error fetching user:", err);
+      return res.status(500).json({ message: "Internal server error" });
+    }
+
     if (results.length === 0) {
       return res.status(404).json({ message: "User not found" });
     }
+
     const user = results[0];
     const isMatch = bcrypt.compareSync(password, user.password);
-    if (!isMatch) return res.status(401).json({ message: "Invalid credentials" });
+    if (!isMatch) {
+      return res.status(401).json({ message: "Invalid credentials" });
+    }
 
-    const token = jwt.sign({ id: user.id, isAdmin: user.isAdmin }, process.env.JWT_SECRET, { expiresIn: "1h" });
+    const token = jwt.sign(
+      { id: user.id, isAdmin: user.isAdmin },
+      process.env.JWT_SECRET,
+      { expiresIn: "1h" }
+    );
 
-    // Log the admin status to ensure it's being sent correctly
-    console.log('User is admin:', user.isAdmin); // Optional, for debugging
+    // Log the admin status and username for debugging
+    console.log("User is admin:", user.isAdmin);
+    console.log("Username:", user.username);
 
     res
       .cookie("auth_token", token, { httpOnly: true })
       .json({
         message: "Login successful",
         token,
-        isAdmin: user.isAdmin,  // <-- Add this line to include isAdmin
+        isAdmin: user.isAdmin, // Include admin status
+        username: user.username, // Add username to the response
       });
   });
 };
