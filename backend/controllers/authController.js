@@ -1,6 +1,7 @@
 import { createUser, findUserByEmail } from "../models/user.js";
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
+import passport from "../config/passport.js";
 
 export const register = (req, res) => {
   const { username, email, password } = req.body;

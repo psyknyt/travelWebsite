@@ -3,12 +3,18 @@ import dotenv from "dotenv";
 import cors from "cors";
 import cookieParser from "cookie-parser";
 import session from "express-session";
-import passport from "passport";
+import "./config/passport.js";  // Ensure this import is present
 import path from "path";
 import authRoutes from "./routes/authRoutes.js";
 import db from "./config/db.js";
 import multer from "multer"; // Added for handling file uploads
 import jwt from "jsonwebtoken";
+import passport from "passport";
+import bookingRoutes from "./routes/booking.js";
+
+
+
+
 
 dotenv.config();
 const app = express();
@@ -21,6 +27,9 @@ app.use(express.json());
 // Add these lines to increase the upload size limit
 app.use(express.json({ limit: "100mb" })); 
 app.use(express.urlencoded({ extended: true, limit: "100mb" }));
+
+// Add booking routes
+app.use("/api", bookingRoutes);
 
 // Add session middleware for Google OAuth
 app.use(
