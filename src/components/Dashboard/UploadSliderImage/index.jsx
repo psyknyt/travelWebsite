@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 
-const Dashboard = () => {
+const UploadSliderImages = () => {
   const [images, setImages] = useState([]);
   const [imageName, setImageName] = useState("");
   const [imageFile, setImageFile] = useState(null);
@@ -72,6 +72,13 @@ const Dashboard = () => {
       padding: "20px",
       fontFamily: "Arial, sans-serif",
     },
+    sideMenuAndPageContent: {
+      height: "100%",
+      justifyContent: "flex-start",
+      alignItems: "flex-start",
+      backgroundColor: "rgba(0, 0, 0, 0.05)",
+      display: "flex",
+    },
     header: {
       textAlign: "center",
       marginBottom: "20px",
@@ -136,12 +143,14 @@ const Dashboard = () => {
       border: "none",
       cursor: "pointer",
     },
+
   };
 
   return (
     <div style={styles.dashboard}>
-      <h1 style={styles.header}>Image Dashboard</h1>
-
+      <h1 style={styles.header}>Image UploadSliderImages</h1>
+    {console.log("images",images)}
+    //    
       {/* Upload Form */}
       <form onSubmit={handleUpload} style={styles.uploadForm}>
         <div style={styles.formGroup}>
@@ -175,10 +184,10 @@ const Dashboard = () => {
           Upload
         </button>
       </form>
-
+// 
       {/* Success/Error Messages */}
       {message && <p style={styles.message}>{message}</p>}
-
+// 
       {/* Uploaded Images */}
       <h2 style={styles.header}>Uploaded Images</h2>
       <ul style={styles.imageList}>
@@ -202,6 +211,5 @@ const Dashboard = () => {
       </ul>
     </div>
   );
-};
-
-export default Dashboard;
+}; 
+export default UploadSliderImages;

@@ -45,6 +45,7 @@ const LoginPage = () => {
         setErrorMessage(data.message || "Login failed. Please try again.");
       } else {
         localStorage.setItem("auth_token", data.token);
+        localStorage.setItem("name", data.username);
         const message = data.isAdmin
           ? "Login successful as Admin!"
           : "Login successful!";
