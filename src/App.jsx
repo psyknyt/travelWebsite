@@ -31,7 +31,7 @@ import YoutubeVideos from "./components/Home/YoutubeVideos";
 import Gallery from "./components/Gallery/Gallery";
 import LoginPage from "./components/utils/LoginPage";
 import SignUpPage from "./components/utils/SignUpPage";
-import Dashboard from "./components/utils/Dashboard"; // Import the Dashboard component
+import Dashboard from "./components/Dashboard/Dashboard"; // Import the Dashboard component
 import { useTrek } from "./Context/SelectedServiceContext";
 
 function App() {
@@ -45,6 +45,7 @@ function App() {
 
   let homeContent = (
     <div className="flex flex-col overflow-hidden">
+      <Nav /> 
       <HeroSection />
       <ChooseTrek />
       <TrendingTours />
@@ -57,23 +58,23 @@ function App() {
       <YoutubeVideos />
       <TestimonialSection />
       <BookForm />
+      <Footer />
     </div>
   );
 
   return (
     <div className="w-full">
-      <Nav />
       <Routes>
         <Route path="/" element={homeContent} />
-        <Route path="/contact" element={<ContactUs />} />
-        <Route path="/aboutus" element={<AboutUs />} />
-        <Route path="/services" element={<ServicePage />} />
-        <Route path="/gallery" element={<Gallery />} />
-        <Route path="/login" element={<LoginPage />} />
-        <Route path="/signup" element={<SignUpPage />} />
+        <Route path="/contact" element={<><Nav /> <ContactUs /><Footer /></>} />
+        <Route path="/aboutus" element={<><Nav /> <AboutUs /><Footer /></>} />
+        <Route path="/services" element={<><Nav /> <ServicePage /><Footer /></>} />
+        <Route path="/gallery" element={<><Nav /> <Gallery /><Footer /></>} />
+        <Route path="/login" element={<><Nav /> <LoginPage /><Footer /></>} />
+        <Route path="/signup" element={<><Nav /> <SignUpPage /><Footer /></>} />
         <Route path="/dashboard" element={<Dashboard />} /> {/* Added Dashboard Route */}
       </Routes>
-      <Footer />
+      
     </div>
   );
 }

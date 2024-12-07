@@ -285,6 +285,7 @@ export default function Nav() {
 
       if (response.ok) {
         localStorage.removeItem("auth_token");
+        localStorage.removeItem("name");
         console.log("Successfully logged out");
         navigate("/");
       } else {
@@ -344,7 +345,7 @@ export default function Nav() {
               </div>
             ) : (
               <>
-                <button onClick={handle_logout}>{"Firdosh  |"}</button>
+                <button >{`${localStorage.getItem("name")} |`}</button>
                 <button onClick={handle_logout}>Log Out</button>
                 <CiUser className="flex items-center justify-center w-4 h-4" />
               </>
