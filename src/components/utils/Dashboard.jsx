@@ -15,7 +15,7 @@ const Dashboard = () => {
   // Fetch images from the API
   const fetchImages = () => {
     axios
-      .get("http://localhost:5000/api/images")
+      .get("http://localhost:5000/api/slider_images")
       .then((response) => {
         setImages(response.data);
       })
@@ -39,7 +39,7 @@ const Dashboard = () => {
     formData.append("imageName", imageName);
 
     axios
-      .post("http://localhost:5000/api/upload", formData)
+      .post("http://localhost:5000/api/slider_upload", formData)
       .then((response) => {
         setMessage("Image uploaded successfully!");
         fetchImages(); // Refresh image list
@@ -55,7 +55,7 @@ const Dashboard = () => {
   // Handle image deletion
   const handleDelete = (id) => {
     axios
-      .delete(`http://localhost:5000/api/images/${id}`)
+      .delete(`http://localhost:5000/api/slider_images/${id}`)
       .then(() => {
         setMessage("Image deleted successfully!");
         fetchImages(); // Refresh image list

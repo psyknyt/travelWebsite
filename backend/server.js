@@ -67,7 +67,7 @@ app.get("/api/auth/logout", (req, res) => {
 const upload = multer({ storage: multer.memoryStorage() });
 
 // Image upload route with image_name support
-app.post("/api/upload", upload.single("image"), (req, res) => {
+app.post("/api/slider_upload", upload.single("image"), (req, res) => {
   //console.log("Upload endpoint hit");
   const { imageName } = req.body; // Expecting imageName from the frontend
 
@@ -97,7 +97,7 @@ app.post("/api/upload", upload.single("image"), (req, res) => {
 });
 
 
-app.get("/api/images", (req, res) => {
+app.get("/api/slider_images", (req, res) => {
   db.query("SELECT id, image_name, image_data FROM slider_images", (error, results) => {
     if (error) {
       console.error("Error fetching images:", error);
@@ -121,7 +121,7 @@ app.get("/api/images", (req, res) => {
 
 
 // delete image by ID route
-app.delete("/api/images/:id", (req, res) => {
+app.delete("/api/slider_images/:id", (req, res) => {
   const { id } = req.params;
   db.query("DELETE FROM slider_images WHERE id = ?", [id], (error) => {
     if (error) {
