@@ -68,24 +68,20 @@ const MenuToggleButton = ({ show, setShow }) => {
     >
       <div className="relative  w-full h-full flex flex-col gap-y-4 justify-center items-center">
         <div
-          className={`bg-black w-8 h-1 rounded-md ${
-            show ? "opacity-0 duration-300" : "opacity-100 duration-1000"
-          }`}
+          className={`bg-black w-8 h-1 rounded-md ${show ? "opacity-0 duration-300" : "opacity-100 duration-1000"
+            }`}
         ></div>
         <div
-          className={`bg-black w-8 h-1 rounded-md ${
-            show ? "opacity-0 duration-300" : "opacity-100 duration-1000"
-          }`}
+          className={`bg-black w-8 h-1 rounded-md ${show ? "opacity-0 duration-300" : "opacity-100 duration-1000"
+            }`}
         ></div>
         <div
-          className={`bg-black w-8 h-1 rounded-md transform absolute top-[47%] left-[25%] transition-transform duration-500 ${
-            show ? "rotate-45 " : "rotate-0"
-          }`}
+          className={`bg-black w-8 h-1 rounded-md transform absolute top-[47%] left-[25%] transition-transform duration-500 ${show ? "rotate-45 " : "rotate-0"
+            }`}
         ></div>
         <div
-          className={`bg-black w-8 h-1 rounded-md transform absolute top-[47%] left-[25%] transition-transform duration-500 ${
-            show ? "-rotate-45" : "rotate-0"
-          }`}
+          className={`bg-black w-8 h-1 rounded-md transform absolute top-[47%] left-[25%] transition-transform duration-500 ${show ? "-rotate-45" : "rotate-0"
+            }`}
         ></div>
       </div>
     </div>
@@ -165,19 +161,17 @@ const DropdownMenu = ({
     >
       {menuName}
       <div
-        className={`absolute top-2 rounded-lg right-[-100%] ${
-          activeDropdown === menuName
-            ? "flex flex-col h-fit w-full"
-            : "hidden h-0 w-0"
-        } transition-all duration-300 ease-in-out bg-white text-black`}
+        className={`absolute top-2 rounded-lg right-[-100%] ${activeDropdown === menuName
+          ? "flex flex-col h-fit w-full"
+          : "hidden h-0 w-0"
+          } transition-all duration-300 ease-in-out bg-white text-black`}
       >
         <ul className="type-none flex flex-col text-sm max-h-[400px] overflow-y-auto overflow-x-hidden">
           {items?.map((item, index) => (
             <li
               key={index}
-              className={`hover:bg-gray-200 px-4 py-2 border-b-[0.1px] border-gray-300 ${
-                index === 0 ? "rounded-t-lg" : ""
-              } ${index === items.length - 1 ? "rounded-b-lg" : ""}`}
+              className={`hover:bg-gray-200 px-4 py-2 border-b-[0.1px] border-gray-300 ${index === 0 ? "rounded-t-lg" : ""
+                } ${index === items.length - 1 ? "rounded-b-lg" : ""}`}
               onClick={() => {
                 setSelectedTrek(index);
               }}
@@ -199,9 +193,8 @@ function Icon({ id, open }) {
       viewBox="0 0 20 20"
       strokeWidth={1.5}
       stroke="currentColor"
-      className={`${
-        id === open ? "rotate-180" : ""
-      } h-5 w-5 transition-transform`}
+      className={`${id === open ? "rotate-180" : ""
+        } h-5 w-5 transition-transform`}
     >
       <path
         strokeLinecap="round"
@@ -239,9 +232,8 @@ export function SmallScreenAccordion() {
         >
           <AccordionHeader
             onClick={() => handleOpen(index + 1)}
-            className={`font-normal pb-0 ${
-              open === index + 1 ? "text-red-400 text-lg" : " text-sm  "
-            }`}
+            className={`font-normal pb-0 ${open === index + 1 ? "text-red-400 text-lg" : " text-sm  "
+              }`}
           >
             {menu.menuName}
           </AccordionHeader>
@@ -277,13 +269,30 @@ export default function Nav() {
 
   const navigate = useNavigate();
 
-  const toggleDropown = () => {
-    console.log("mouse-event");
-    setIsDropdownVisible(!isDropDownVisible);
-  };
-
   const handleDropdown = () => {
     setIsVisible(!isVisible);
+  };
+
+  const handle_logout = async () => {
+    try {
+      const response = await fetch("http://localhost:5000/api/auth/logout", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${localStorage.getItem("auth_token")}`,
+        },
+      });
+
+      if (response.ok) {
+        localStorage.removeItem("auth_token");
+        console.log("Successfully logged out");
+        navigate("/");
+      } else {
+        console.error("Failed to log out");
+      }
+    } catch (error) {
+      console.error("An error occurred during logout:", error);
+    }
   };
 
   const handleScroll = () => {
@@ -328,12 +337,18 @@ export default function Nav() {
           </div>
           <div className="text-gray-400">|</div>
           <div className="flex flex-row justify-center items-center">
-            {localStorage.getItem("auth_token")==null?<div className="transition-all duration-300 delay-150 ease-in-out">
-              <span onClick={() => navigate("/login")}>Sign in</span>/
-              <span onClick={() => navigate("/signup")}>Register</span>
-            </div>:<p>Pratik</p>}
-            
-            <CiUser className="flex items-center justify-center w-4 h-4" />
+            {localStorage.getItem("auth_token") == null ? (
+              <div className="transition-all duration-300 delay-150 ease-in-out">
+                <button onClick={() => navigate("/login")}>Sign In | </button>
+                <button onClick={() => navigate("/signup")}>  Register</button>
+              </div>
+            ) : (
+              <>
+                <button onClick={handle_logout}>{"Firdosh  |"}</button>
+                <button onClick={handle_logout}>Log Out</button>
+                <CiUser className="flex items-center justify-center w-4 h-4" />
+              </>
+            )}
           </div>
         </div>
       </div>
@@ -352,9 +367,8 @@ export default function Nav() {
           {/* for small devices DRAWER */}
           <div className="">
             <div
-              className={` bg-white top-0 z-50 w-[70%] sm:w-[50%] fixed xl:hidden  transition-all duration-700 delay-300 md:transform-none ${
-                show ? "left-0 h-full" : "h-0 left-[-2000px]"
-              }`}
+              className={` bg-white top-0 z-50 w-[70%] sm:w-[50%] fixed xl:hidden  transition-all duration-700 delay-300 md:transform-none ${show ? "left-0 h-full" : "h-0 left-[-2000px]"
+                }`}
             >
               <div className="relative flex justify-center items-center py-5 bg-blue-100">
                 <Logo />
@@ -366,9 +380,8 @@ export default function Nav() {
                 </button>
               </div>
               <ul
-                className={`font-inter flex flex-col w-[80%] mx-auto transition-all duration-500 md:transform-none md:delay-0 md:duration-0 ${
-                  show ? "h-screen " : "h-0 "
-                }  text-left font-normal text-[16px]`}
+                className={`font-inter flex flex-col w-[80%] mx-auto transition-all duration-500 md:transform-none md:delay-0 md:duration-0 ${show ? "h-screen " : "h-0 "
+                  }  text-left font-normal text-[16px]`}
               >
                 <li className="md:text-[#0A1D56] cursor-pointer pt-4 pb-1 transition-all duration-500 ease-in-out text-[16px]">
                   <div
@@ -376,9 +389,8 @@ export default function Nav() {
                     onClick={handleDropdown}
                   >
                     <div
-                      className={`flex justify-start items-center ${
-                        isVisible ? "text-blue-500" : ""
-                      } transition-colors duration-300 delay-150 ease-in-out`}
+                      className={`flex justify-start items-center ${isVisible ? "text-blue-500" : ""
+                        } transition-colors duration-300 delay-150 ease-in-out`}
                     >
                       Treks
                     </div>
@@ -388,9 +400,8 @@ export default function Nav() {
                       viewBox="0 0 24 24"
                       strokeWidth={1.5}
                       stroke="currentColor"
-                      className={`w-3 h-3  ${
-                        isVisible ? "rotate-180 " : "rotate-0 "
-                      } transition-transform duration-500 ease-in-out`}
+                      className={`w-3 h-3  ${isVisible ? "rotate-180 " : "rotate-0 "
+                        } transition-transform duration-500 ease-in-out`}
                     >
                       <path
                         strokeLinecap="round"
@@ -401,9 +412,8 @@ export default function Nav() {
                   </div>
                   <div className="w-full mx-auto border-[1px] bg-gray-400" />
                   <div
-                    className={`overflow-hidden transition-[max-height] duration-500 ease-in-out ${
-                      isVisible ? "max-h-96" : "max-h-0"
-                    }`}
+                    className={`overflow-hidden transition-[max-height] duration-500 ease-in-out ${isVisible ? "max-h-96" : "max-h-0"
+                      }`}
                     style={{ maxHeight: isVisible ? "400px" : "0" }}
                   >
                     <ul className="bg-pink overflow-hidden w-full mx-auto">
@@ -479,9 +489,8 @@ export default function Nav() {
               </ul>
             </div>
             <div
-              className={`fixed inset-0 bg-black bg-opacity-70 z-[45] ${
-                show ? "flex" : "hidden"
-              }`}
+              className={`fixed inset-0 bg-black bg-opacity-70 z-[45] ${show ? "flex" : "hidden"
+                }`}
               onClick={() => setShow(!show)}
             />
           </div>
@@ -534,9 +543,8 @@ export default function Nav() {
                   className={`absolute -z-[10] hover:z-[30] bg-white  shadow-md rounded-lg w-[200px] mx-auto text-sm font-light tracking-wide transition-all duration-500 delay-0 ease-in-out transform
                    group-hover:translate-y-0 group-hover:top-[110%] group-hover:opacity-100
                   -translate-y-4 opacity-0  top-[-5000%]
-               hidden sm:flex flex-col justify-between items-start ${
-                 chooseTrekDropdown ? "flex" : "hidden"
-               }`}
+               hidden sm:flex flex-col justify-between items-start ${chooseTrekDropdown ? "flex" : "hidden"
+                    }`}
                   style={{
                     transformOrigin: "top",
                   }}
@@ -616,9 +624,8 @@ export default function Nav() {
               className={`absolute -z-[10] hover:z-[30] bg-white  shadow-md rounded-lg w-[200px] mx-auto text-sm font-light tracking-wide transition-all duration-500 delay-0 ease-in-out transform
                    group-hover:translate-y-0 group-hover:top-[110%] group-hover:opacity-100
                   -translate-y-4 opacity-0  top-[-5000%]
-               hidden sm:flex flex-col justify-between items-start ${
-                 chooseTrekDropdown ? "flex" : "lg:hidden"
-               }`}
+               hidden sm:flex flex-col justify-between items-start ${chooseTrekDropdown ? "flex" : "lg:hidden"
+                }`}
               style={{
                 transformOrigin: "top",
               }}
@@ -646,9 +653,8 @@ export default function Nav() {
             className={` py-2 absolute z-[30] bg-white  shadow-md w-screen px-4 left-[-3%] right-0 mx-auto text-sm font-light tracking-wide transition-all duration-1000 delay-0 ease-in-out transform
                    group-hover:translate-y-0 top-[120%] group-hover:opacity-100
                   -translate-y-4 opacity-100
-            ${
-              chooseTrekDropdown ? "flex sm:hidden" : "hidden"
-            } flex-col justify-between items-start transition-all duration-500 ease-in-out`}
+            ${chooseTrekDropdown ? "flex sm:hidden" : "hidden"
+              } flex-col justify-between items-start transition-all duration-500 ease-in-out`}
             style={{
               transformOrigin: "top",
             }}

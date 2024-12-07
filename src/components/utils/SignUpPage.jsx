@@ -63,6 +63,10 @@ const SignUpPage = () => {
     }
   };
 
+  const handleGoogleLogin = () => {
+    window.location.href = "http://localhost:5000/api/auth/google";
+  };
+
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-100">
       <div className="w-full max-w-md bg-white rounded-lg shadow-md p-6">
@@ -146,6 +150,15 @@ const SignUpPage = () => {
           >
             {loading ? "Registering..." : "Sign Up"}
           </button>
+          {/* Google Login Button */}
+          <div className="mt-6 flex justify-center">
+            <button
+              onClick={handleGoogleLogin}
+              className="w-full py-2 bg-red-500 text-white font-semibold rounded-md hover:bg-red-600 transition"
+            >
+              Login with Google
+            </button>
+          </div>
         </form>
       </div>
     </div>
