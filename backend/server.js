@@ -68,7 +68,7 @@ const upload = multer({ storage: multer.memoryStorage() });
 
 // Image upload route with image_name support
 app.post("/api/upload", upload.single("image"), (req, res) => {
-  console.log("Upload endpoint hit");
+  //console.log("Upload endpoint hit");
   const { imageName } = req.body; // Expecting imageName from the frontend
 
   if (!req.file || !imageName) {
@@ -97,26 +97,41 @@ app.post("/api/upload", upload.single("image"), (req, res) => {
 });
 
 
-// Fetch image by ID route
-app.get("/api/images/:id", (req, res) => {
-  const { id } = req.params;
-  console.log("Fetching image with ID:", id);
-
-  db.query("SELECT image_data, mime_type FROM slider_images WHERE id = ?", [id], (error, results) => {
+app.get("/api/images", (req, res) => {
+  db.query("SELECT id, image_name, image_data FROM slider_images", (error, results) => {
     if (error) {
-      console.error("Error fetching image:", error);
-      return res.status(500).json({ message: "Failed to fetch image" });
+      console.error("Error fetching images:", error);
+      return res.status(500).json({ message: "Failed to fetch images" });
     }
 
-    if (results.length > 0) {
-      const { image_data, mime_type } = results[0];
-      res.writeHead(200, { "Content-Type": mime_type });
-      res.end(image_data); // Send the binary image data
-    } else {
-      res.status(404).json({ message: "Image not found" });
+    if (results.length === 0) {
+      return res.status(404).json({ message: "No images found" });
     }
+
+    // Convert binary image data to base64 for each image
+    const images = results.map((row) => ({
+      id: row.id,
+      image_name: row.image_name,
+      image_data: `data:image/jpeg;base64,${Buffer.from(row.image_data).toString("base64")}`,
+    }));
+
+    res.json(images); // Send images as JSON
   });
 });
+
+
+// delete image by ID route
+app.delete("/api/images/:id", (req, res) => {
+  const { id } = req.params;
+  db.query("DELETE FROM slider_images WHERE id = ?", [id], (error) => {
+    if (error) {
+      console.error("Error deleting image:", error);
+      return res.status(500).json({ message: "Failed to delete image" });
+    }
+    res.status(200).json({ message: "Image deleted successfully" });
+  });
+});
+
 
 // Start the server
 const PORT = process.env.PORT || 5000;
