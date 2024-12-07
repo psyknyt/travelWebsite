@@ -45,6 +45,7 @@ function App() {
 
   let homeContent = (
     <div className="flex flex-col overflow-hidden">
+      <Nav /> 
       <HeroSection />
       <ChooseTrek />
       <TrendingTours />
@@ -57,6 +58,7 @@ function App() {
       <YoutubeVideos />
       <TestimonialSection />
       <BookForm />
+      <Footer />
     </div>
   );
 
