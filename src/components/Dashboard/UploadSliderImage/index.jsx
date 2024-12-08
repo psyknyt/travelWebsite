@@ -1,19 +1,18 @@
 import React, { useState, useEffect } from "react";
-import { Typography, Table, Button, Upload, message, Space, Input } from "antd";
+import { Typography, Table, Button, Upload, message, Space } from "antd";
 import { UploadOutlined, DeleteOutlined } from "@ant-design/icons";
 import axios from "axios";
 
 const UploadSliderImages = () => {
   const [images, setImages] = useState([]);
   const [loading, setLoading] = useState(false);
-  const [imageName, setImageName] = useState("");
   const [file, setFile] = useState(null);
 
   // Fetch images
   const fetchImages = () => {
     setLoading(true);
     axios
-      .get("http://localhost:5000/api/slider_images")
+      .get("http://localhost:5000/api/hero_section")
       .then((response) => {
         setImages(response.data);
         setLoading(false);
@@ -31,22 +30,19 @@ const UploadSliderImages = () => {
 
   // Handle Upload
   const handleUpload = () => {
-    if (!file || !imageName) {
-      message.warning("Please provide both an image and a name.");
+    if (!file) {
+      message.warning("Please choose an image.");
       return;
     }
 
     const formData = new FormData();
     formData.append("image", file);
-    formData.append("imageName", imageName);
-
     setLoading(true);
     axios
-      .post("http://localhost:5000/api/slider_upload", formData)
+      .post("http://localhost:5000/api/hero_section/upload", formData)
       .then(() => {
         message.success("Image uploaded successfully!");
         fetchImages(); // Refresh the list
-        setImageName("");
         setFile(null);
       })
       .catch((error) => {
@@ -60,7 +56,7 @@ const UploadSliderImages = () => {
   const handleDelete = (id) => {
     setLoading(true);
     axios
-      .delete(`http://localhost:5000/api/slider_images/${id}`)
+      .delete(`http://localhost:5000/api/hero_section/${id}`)
       .then(() => {
         message.success("Image deleted successfully!");
         fetchImages(); // Refresh the list
@@ -78,11 +74,6 @@ const UploadSliderImages = () => {
       title: "ID",
       dataIndex: "id",
       key: "id",
-    },
-    {
-      title: "Image Name",
-      dataIndex: "image_name",
-      key: "image_name",
     },
     {
       title: "Preview",
@@ -125,12 +116,6 @@ const UploadSliderImages = () => {
 
       {/* Upload Form */}
       <Space style={{ marginBottom: "20px" }}>
-        <Input
-          placeholder="Enter image name"
-          value={imageName}
-          onChange={(e) => setImageName(e.target.value)}
-          style={{ width: "200px" }}
-        />
         <Upload
           beforeUpload={(file) => {
             setFile(file);
