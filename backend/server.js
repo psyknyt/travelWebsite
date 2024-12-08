@@ -13,6 +13,11 @@ import passport from "passport";
 import bookingRoutes from "./routes/booking.js";
 import reviewRoutes from "./routes/review.js";
 import blogRoutes from "./routes/blog.js";
+import popularTourRoutes from "./routes/most_popular_tour.js";
+import heroSectionRoutes from "./routes/Hero_section.js";
+
+
+
 
 
 
@@ -38,6 +43,14 @@ app.use("/api/reviews", reviewRoutes);
 
 // Routes for blogs
 app.use("/api", blogRoutes);
+
+//Routes for most_popular_tours
+app.use("/api/most_popular_tours", popularTourRoutes);
+
+//Routes for hero section
+app.use("/api/hero_section", heroSectionRoutes);
+
+
 
 
 // Add session middleware for Google OAuth
@@ -116,7 +129,7 @@ app.post("/api/slider_upload", upload.single("image"), (req, res) => {
 
 
 app.get("/api/slider_images", (req, res) => {
-  db.query("SELECT id, image_name, image_data FROM slider_images", (error, results) => {
+  db.query("SELECT id, image_name, image_data, location FROM slider_images", (error, results) => {
     if (error) {
       console.error("Error fetching images:", error);
       return res.status(500).json({ message: "Failed to fetch images" });
@@ -130,6 +143,7 @@ app.get("/api/slider_images", (req, res) => {
     const images = results.map((row) => ({
       id: row.id,
       image_name: row.image_name,
+      location: row.location,
       image_data: `data:image/jpeg;base64,${Buffer.from(row.image_data).toString("base64")}`,
     }));
 
