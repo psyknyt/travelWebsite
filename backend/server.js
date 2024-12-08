@@ -14,6 +14,9 @@ import bookingRoutes from "./routes/booking.js";
 import reviewRoutes from "./routes/review.js";
 import blogRoutes from "./routes/blog.js";
 import popularTourRoutes from "./routes/most_popular_tour.js";
+import heroSectionRoutes from "./routes/Hero_section.js";
+
+
 
 
 
@@ -43,6 +46,10 @@ app.use("/api", blogRoutes);
 
 //Routes for most_popular_tours
 app.use("/api/most_popular_tours", popularTourRoutes);
+
+//Routes for hero section
+app.use("/api/hero_section", heroSectionRoutes);
+
 
 
 
