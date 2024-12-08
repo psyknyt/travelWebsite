@@ -11,6 +11,7 @@ import multer from "multer"; // Added for handling file uploads
 import jwt from "jsonwebtoken";
 import passport from "passport";
 import bookingRoutes from "./routes/booking.js";
+import reviewRoutes from "./routes/review.js";
 
 
 
@@ -30,6 +31,9 @@ app.use(express.urlencoded({ extended: true, limit: "100mb" }));
 
 // Add booking routes
 app.use("/api", bookingRoutes);
+
+// Routes for review 
+app.use("/api/reviews", reviewRoutes);
 
 // Add session middleware for Google OAuth
 app.use(
