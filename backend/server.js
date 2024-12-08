@@ -12,6 +12,7 @@ import jwt from "jsonwebtoken";
 import passport from "passport";
 import bookingRoutes from "./routes/booking.js";
 import reviewRoutes from "./routes/review.js";
+import blogRoutes from "./routes/blog.js";
 
 
 
@@ -34,6 +35,10 @@ app.use("/api", bookingRoutes);
 
 // Routes for review 
 app.use("/api/reviews", reviewRoutes);
+
+// Routes for blogs
+app.use("/api", blogRoutes);
+
 
 // Add session middleware for Google OAuth
 app.use(
