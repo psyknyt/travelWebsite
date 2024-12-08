@@ -56,7 +56,7 @@ const ReviewForm = () => {
         {/* First Name */}
         <div className="flex flex-col gap-2 tracking-wider">
           <label htmlFor="firstName" className="block  font-normal">
-            First Name
+           Name
           </label>
           <input
             type="text"
@@ -68,23 +68,6 @@ const ReviewForm = () => {
             required
           />
         </div>
-
-        {/* Last Name */}
-        <div className="flex flex-col gap-2 tracking-wider">
-          <label htmlFor="lastName" className="block text-sm font-normal">
-            Last Name
-          </label>
-          <input
-            type="text"
-            id="lastName"
-            name="lastName"
-            value={formData.lastName}
-            onChange={handleChange}
-            className="w-full p-2 border rounded-xl focus:outline-none"
-            required
-          />
-        </div>
-
         {/* Email Address */}
         <div className="flex flex-col gap-2 tracking-wider">
           <label htmlFor="email" className="block text-sm font-normal">
