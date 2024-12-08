@@ -91,7 +91,7 @@ const TestimonialSection = () => {
 
   return (
     <div
-      className="pb-20 h-[90vh]"
+      className="pb-20 h-[80vh]"
       style={{
         backgroundImage: `url(${bgLineImage})`,
         backgroundSize: "cover",
@@ -154,50 +154,6 @@ const TestimonialSection = () => {
             </SwiperSlide>
           )}
         </Swiper>
-      </div>
-      <div>
-        <Form
-          form={form}
-          layout="inline"
-          onFinish={handleUpload}
-          style={{
-            marginBottom: "20px",
-            display: "flex",
-            justifyContent: "center",
-            gap: "10px",
-          }}
-        >
-          <Form.Item
-            name="name"
-            rules={[{ required: true, message: "Please input your name!" }]}
-          >
-            <Input placeholder="Name" />
-          </Form.Item>
-
-          <Form.Item
-            name="review"
-            rules={[{ required: true, message: "Please input your review!" }]}
-          >
-            <Input placeholder="Review" />
-          </Form.Item>
-          <Form.Item
-            name="stars"
-            rules={[{ required: true, message: "Please select stars!" }]}
-          >
-            <Select placeholder="Stars" style={{ width: "120px" }}>
-              <Option value={1}>1</Option>
-              <Option value={2}>2</Option>
-              <Option value={3}>3</Option>
-              <Option value={4}>4</Option>
-              <Option value={5}>5</Option>
-            </Select>
-          </Form.Item>
-          <Form.Item>
-            <Button type="primary" htmlType="submit" icon={<UploadOutlined />}>
-              Upload
-            </Button>
-          </Form.Item>
-        </Form>
       </div>
     </div>
   );

@@ -3,19 +3,22 @@ import { Typography, Table, Button, Upload, message, Space, Input } from "antd";
 import { UploadOutlined, DeleteOutlined } from "@ant-design/icons";
 import axios from "axios";
 
-const UploadWinterTracks = () => {
+const PopularTour = () => {
   const [images, setImages] = useState([]);
   const [loading, setLoading] = useState(false);
-  const [imageName, setImageName] = useState("");
-  const [location, setLocation] = useState(""); // State to store the location as a string
+  const [trekName, setTrekName] = useState(""); // State to store the trek name
+  const [location, setLocation] = useState(""); // State to store the location
+  const [price, setPrice] = useState(""); // State to store the price
+  const [duration, setDuration] = useState(""); // State to store trek duration
   const [file, setFile] = useState(null);
 
-  // Fetch images
+  // Fetch images (Trekking details)
   const fetchImages = () => {
     setLoading(true);
     axios
-      .get("http://localhost:5000/api/slider_images")
+      .get("http://localhost:5000/api/most_popular_tours/fetch")
       .then((response) => {
+        console.log("Fetched images:", response.data);
         setImages(response.data);
         setLoading(false);
       })
@@ -32,24 +35,28 @@ const UploadWinterTracks = () => {
 
   // Handle Upload
   const handleUpload = () => {
-    if (!file || !imageName || !location) {
-      message.warning("Please provide an image, name, and location.");
+    if (!file || !trekName || !location || !price || !duration) {
+      message.warning("Please provide all the required details.");
       return;
     }
 
     const formData = new FormData();
     formData.append("image", file);
-    formData.append("imageName", imageName);
-    formData.append("location", location); // Appending location as string
+    formData.append("trekName", trekName);
+    formData.append("location", location);
+    formData.append("price", price);
+    formData.append("duration", duration);
 
     setLoading(true);
     axios
-      .post("http://localhost:5000/api/slider_upload", formData)
+      .post("http://localhost:5000/api/most_popular_tours/upload", formData)
       .then(() => {
         message.success("Image uploaded successfully!");
         fetchImages(); // Refresh the list
-        setImageName("");
-        setLocation(""); // Reset location field
+        setTrekName("");
+        setLocation("");
+        setPrice("");
+        setDuration("");
         setFile(null);
       })
       .catch((error) => {
@@ -63,7 +70,7 @@ const UploadWinterTracks = () => {
   const handleDelete = (id) => {
     setLoading(true);
     axios
-      .delete(`http://localhost:5000/api/slider_images/${id}`)
+      .delete(`http://localhost:5000/api/most_popular_tours/${id}`)
       .then(() => {
         message.success("Image deleted successfully!");
         fetchImages(); // Refresh the list
@@ -78,22 +85,29 @@ const UploadWinterTracks = () => {
   // Columns for the Table
   const columns = [
     {
-      title: "ID",
-      dataIndex: "id",
-      key: "id",
-    },
-    {
-      title: "Image Name",
+      title: "Trek Name",
       dataIndex: "image_name",
-      key: "image_name",
+      key: "trek_name",
     },
     {
-      title: "Location",
-      dataIndex: "location",
-      key: "location",
-      render: (location) => (
-        <span>{location || "No location available"}</span> // Display location or a placeholder
+      title: "Rating",
+      dataIndex: "rating",
+      key: "rating",
+      render: (rating) => (
+        <span>{rating ? `${rating} ★` : "No rating available"}</span>
       ),
+    },
+    {
+      title: "Price",
+      dataIndex: "price",
+      key: "price",
+      render: (price) => <span>₹{price}/Person</span>,
+    },
+    {
+      title: "Duration",
+      dataIndex: "duration",
+      key: "duration",
+      render: (duration) => <span>{duration || "No duration available"}</span>,
     },
     {
       title: "Preview",
@@ -132,20 +146,32 @@ const UploadWinterTracks = () => {
       }}
     >
       {/* Header */}
-      <Typography.Title level={2}>Upcoming Winter Tracks</Typography.Title>
+      <Typography.Title level={2}>Upload Trekking Packages</Typography.Title>
 
       {/* Upload Form */}
       <Space style={{ marginBottom: "20px" }}>
         <Input
-          placeholder="Enter image name"
-          value={imageName}
-          onChange={(e) => setImageName(e.target.value)}
+          placeholder="Enter trek name"
+          value={trekName}
+          onChange={(e) => setTrekName(e.target.value)}
           style={{ width: "200px" }}
         />
         <Input
           placeholder="Enter location"
           value={location}
-          onChange={(e) => setLocation(e.target.value)} // Capture location input
+          onChange={(e) => setLocation(e.target.value)}
+          style={{ width: "200px" }}
+        />
+        <Input
+          placeholder="Enter price"
+          value={price}
+          onChange={(e) => setPrice(e.target.value)}
+          style={{ width: "200px" }}
+        />
+        <Input
+          placeholder="Enter duration"
+          value={duration}
+          onChange={(e) => setDuration(e.target.value)}
           style={{ width: "200px" }}
         />
         <Upload
@@ -175,4 +201,4 @@ const UploadWinterTracks = () => {
   );
 };
 
-export default UploadWinterTracks;
+export default PopularTour;

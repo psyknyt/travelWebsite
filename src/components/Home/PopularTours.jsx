@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 import bgLineImage from "../../assets/background/line-pattern2.png";
 
@@ -9,56 +9,30 @@ import "swiper/css/effect-coverflow";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 
-import {
-  Autoplay,
-  EffectCoverflow,
-  Pagination,
-  Navigation,
-} from "swiper/modules";
+import { Autoplay, Pagination } from "swiper/modules";
 import PopularLocation from "../utils/PopularLocation";
-import kedarkanthaTrek from "../../assets/Kedarkantha_Trek_thumb.jpg";
-import dyaraBuyalTrek from "../../assets/Dayara_Bugyal_Trek_thumb.jpg";
-import jammuKashmir from "../../assets/jammu-kashmir.jpg";
-import himachalPradesh from "../../assets/himachal-pradesh.jpg";
-import DeoriTalTrek from "../../assets/Deoria_Tal_Chopta_Chandrashila_Trek_thumb.jpg";
-import kedarnathTrek from "../../assets/Kedarnath_Yatra_thumb.jpg";
-import harKiDunTrek from "../../assets/Har_Ki_Dun_Trek_thumb.jpg";
-import gaumukhTapovanTrek from "../../assets/Gaumukh_Tapovan_thumb.jpg";
-
-const trekListings = [
-  {
-    name: "Kedarkantha Trek",
-    listing: 1,
-    img: kedarkanthaTrek,
-  },
-  {
-    name: "Har Ki Dun Trek",
-    listing: 2,
-    img: harKiDunTrek,
-  },
-  {
-    name: "Gaumukh Tapovan",
-    listing: 3,
-    img: gaumukhTapovanTrek,
-  },
-  {
-    name: "Dayara Bugyal Trek",
-    listing: 5,
-    img: dyaraBuyalTrek,
-  },
-  {
-    name: "Kedarnath Trek",
-    listing: 7,
-    img: kedarnathTrek,
-  },
-  {
-    name: "Deoria Tal Chopta Chandrashila Trek",
-    listing: 9,
-    img: DeoriTalTrek,
-  },
-];
 
 const PopularTours = () => {
+  const [trekListings, setTrekListings] = useState([]); // State to store fetched trek data
+
+  // Fetch trek data from API
+  useEffect(() => {
+    const fetchTrekListings = async () => {
+      try {
+        const response = await fetch("http://localhost:5000/api/most_popular_tours/fetch"); // Replace with your API endpoint
+        if (!response.ok) {
+          throw new Error("Failed to fetch trek listings");
+        }
+        const data = await response.json();
+        setTrekListings(data); // Set the fetched data to state
+      } catch (error) {
+        console.error("Error fetching trek listings:", error);
+      }
+    };
+
+    fetchTrekListings();
+  }, []);
+
   return (
     <div
       className="flex flex-col py-5"
@@ -68,6 +42,7 @@ const PopularTours = () => {
         backgroundPosition: "center",
       }}
     >
+      {/* Header Section */}
       <div className="flex flex-col items-center justify-center gap-2 py-4">
         <div className="font-montez text-4xl leading-6 pt-4">
           Best Place For You
@@ -76,9 +51,13 @@ const PopularTours = () => {
           Most Popular Tours
         </div>
       </div>
-      <div className="w-[90%]  flex py-2 justify-center items-center tracking-widest text-sm md:text-md text-center font-medium font-inter  md:w-[80%] mx-auto">
+
+      {/* Subtitle */}
+      <div className="w-[90%] flex py-2 justify-center items-center tracking-widest text-sm md:text-md text-center font-medium font-inter md:w-[80%] mx-auto">
         You don’t want to miss the nature, give yourself a break & Escape
       </div>
+
+      {/* Swiper for Tour Listings */}
       <div className="flex justify-center items-center py-5 w-full lg:w-[90%] mx-auto">
         <Swiper
           spaceBetween={10}
@@ -110,16 +89,16 @@ const PopularTours = () => {
           }}
           className="w-full mx-auto"
         >
-          {trekListings.map((el) => {
-            return (
-              <SwiperSlide
-                className="flex justify-center items-center z-10 my-10 mx-auto hover:-translate-y-2 transition-all duration-500 delay-100 ease-in-out"
-                style={{ display: "flex", justifyContent: "center" }}
-              >
-                <PopularLocation props={el} />
-              </SwiperSlide>
-            );
-          })}
+          {/* Dynamically Render Treks */}
+          {trekListings.map((el) => (
+            <SwiperSlide
+              key={el.listing} // Add unique key for React
+              className="flex justify-center items-center z-10 my-10 mx-auto hover:-translate-y-2 transition-all duration-500 delay-100 ease-in-out"
+              style={{ display: "flex", justifyContent: "center" }}
+            >
+              <PopularLocation props={el} />
+            </SwiperSlide>
+          ))}
         </Swiper>
       </div>
     </div>

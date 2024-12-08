@@ -117,51 +117,6 @@ function Reviews() {
         >
             <Typography.Title level={2}>Review List</Typography.Title>
 
-            {/* Upload Review Form */}
-            <Form
-                form={form}
-                layout="inline"
-                onFinish={handleUpload}
-                style={{
-                    marginBottom: "20px",
-                    display: "flex",
-                    justifyContent: "center",
-                    gap: "10px",
-                }}
-            >
-                <Form.Item
-                    name="name"
-                    rules={[{ required: true, message: "Please input your name!" }]}
-                >
-                    <Input placeholder="Name" />
-                </Form.Item>
-                
-                <Form.Item
-                    name="review"
-                    rules={[{ required: true, message: "Please input your review!" }]}
-                >
-                    <Input placeholder="Review" />
-                </Form.Item>
-                <Form.Item
-                    name="stars"
-                    rules={[{ required: true, message: "Please select stars!" }]}
-                >
-                    <Select placeholder="Stars" style={{ width: "120px" }}>
-                        <Option value={1}>1</Option>
-                        <Option value={2}>2</Option>
-                        <Option value={3}>3</Option>
-                        <Option value={4}>4</Option>
-                        <Option value={5}>5</Option>
-                    </Select>
-                </Form.Item>
-                <Form.Item>
-                    <Button type="primary" htmlType="submit" icon={<UploadOutlined />}>
-                        Upload
-                    </Button>
-                </Form.Item>
-                
-            </Form>
-
             {/* Table to Display Reviews */}
             <Table
                 style={{ width: "100%", maxWidth: "1000px" }}
