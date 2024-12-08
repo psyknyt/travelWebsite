@@ -29,7 +29,7 @@ const TrendingTourLocation = ({ props }) => {
           {props.image_name}
         </div>
         <div className="flex justify-between items-center w-full">
-          <div>Location Info</div>
+          <div> {props.location}</div>
           <div className="flex bg-transparent text-white group px-4 py-2 rounded-[32px] relative overflow-hidden hover:bg-opacity-80 cursor-pointer mr-1 z-40 group border-white border-[1.5px] group-hover:border-transparent group-hover:border-[0px] transition-all duration-700 delay-500 ease-in-out">
             <span className="relative group-hover:text-black z-10 flex items-center justify-center gap-2 transition-all duration-500 delay-300 ease-in-out">
               <div>View Details</div>
