@@ -1,5 +1,6 @@
 import { Routes, Route } from 'react-router-dom';
 import UploadSliderImage from '../UploadSliderImage';
+import Bookings from '../Bookings';
 // import UploadUpcomingWinterTrack from './UploadUpcomingWinterTrack';
 // import UploadMostPopularTour from './UploadMostPopularTour';
 // import UploadTopSpots from './UploadTopSpots';
@@ -8,10 +9,10 @@ import UploadSliderImage from '../UploadSliderImage';
 
 function App() {
   return (
-    <div className="PageContent">
-      <h1>Page Content</h1>
+    <div className="PageContent" style={{width:"100%"}}>
       <Routes>
-        <Route path="/" element={<UploadSliderImage />} />
+        <Route path="/" element={<Bookings/>} />
+        <Route path="/uploadsliderimage" element={<UploadSliderImage />} />
       </Routes>
       
     

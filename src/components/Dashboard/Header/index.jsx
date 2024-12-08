@@ -31,17 +31,34 @@ export default function Nav() {
 
   return (
     <div className="flex flex-col font-inter text-[16px] font-normal leading-[26px] fixed z-50 top-0 left-0 right-0 w-full bg-white">
+  <div
+    className="flex bg-lemonYellow"
+    style={{ position: "sticky", top: 0 }}
+  >
+    <div className="z-50 font-fredoka font-normal text-sm nav-wrapper w-[95%] mx-auto h-[85px] flex justify-between items-center py-2">
       <div
-        className="flex bg-lemonYellow "
-        style={{ position: "sticky", top: 0 }}
+        className="nav-logo flex items-center"
+        style={{
+          position: "absolute",
+          left: "1rem",
+        }}
       >
-        <div className="z-50 font-fredoka font-normal text-sm nav-wrapper w-[95%] lg:w-[] mx-auto h-[85px] flex justify-between items-center py-2 ">
-          <div className="nav-logo flex justify-center items-center px-2 font-bold text-xs ">
-            <Logo />
-            <h1 style={{fontSize:"40px",marginLeft:"24rem"}}>Dashboard</h1>
-          </div>
-        </div>
+        <Logo />
       </div>
+      <h1
+        className="font-bold"
+        style={{
+          fontSize: "40px",
+          textAlign: "center",
+          width: "100%",
+          position: "relative",
+        }}
+      >
+        Dashboard
+      </h1>
     </div>
+  </div>
+</div>
+
   );
 }

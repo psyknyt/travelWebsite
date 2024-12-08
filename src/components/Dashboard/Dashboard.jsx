@@ -6,16 +6,10 @@ import PageContent from "./PageContent";
 const Dashboard = () => {
 
   const styles = {
-    dashboard: {
-      padding: "20px",
-      fontFamily: "Arial, sans-serif",
-    },
     sideMenuAndPageContent: {
-      height: "100%",
-      justifyContent: "flex-start",
-      alignItems: "flex-start",
       backgroundColor: "rgba(0, 0, 0, 0.05)",
       display: "flex",
+      flex:"1",
       marginTop: "80px",
     },
     header: {
@@ -53,17 +47,23 @@ const Dashboard = () => {
     buttonHover: {
       backgroundColor: "#0056b3",
     },
+    dashboard: {
+      display: "flex",
+      flexdirection: "column",
+      width: "100vw",
+      height: "100vh",
+  }
   };
 
   return (
 
-    <>
+    <div style={styles.dashboard}>
       <Header />
       <div style={styles.sideMenuAndPageContent}>
         <SideMenu></SideMenu>
         <PageContent></PageContent>
       </div>
-    </>
+    </div>
   );
 };
 
