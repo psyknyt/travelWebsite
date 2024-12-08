@@ -3,6 +3,7 @@ import Header from "./Header";
 import Bookings from "./Bookings";
 import Reviews from "./Reviews";
 import UploadSliderImages from "./UploadSliderImage";
+import UploadWinterTracks from "./Wintertracks";
 import { Menu } from "antd";
 import {
   CloudDownloadOutlined,
@@ -63,7 +64,7 @@ const Dashboard = () => {
       case "2":
         return <UploadSliderImages />;
       case "3":
-        return <div>Upcoming Winter Track Content</div>;
+        return <UploadWinterTracks/>;
       case "4":
         return <div>Most Popular Tour Content</div>;
       case "5":
