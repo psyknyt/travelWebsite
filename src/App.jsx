@@ -31,7 +31,7 @@ import YoutubeVideos from "./components/Home/YoutubeVideos";
 import Gallery from "./components/Gallery/Gallery";
 import LoginPage from "./components/utils/LoginPage";
 import SignUpPage from "./components/utils/SignUpPage";
-import Dashboard from "./components/Dashboard/Dashboard"; // Import the Dashboard component
+import Dashboard from "./components/Dashboard/Dashboard";
 import { useTrek } from "./Context/SelectedServiceContext";
 
 function App() {
@@ -72,7 +72,7 @@ function App() {
         <Route path="/gallery" element={<><Nav /> <Gallery /><Footer /></>} />
         <Route path="/login" element={<><Nav /> <LoginPage /><Footer /></>} />
         <Route path="/signup" element={<><Nav /> <SignUpPage /><Footer /></>} />
-        <Route path="/dashboard" element={<Dashboard />} /> {/* Added Dashboard Route */}
+        <Route path="/dashboard" element={<Dashboard />} />
       </Routes>
       
     </div>

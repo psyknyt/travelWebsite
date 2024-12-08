@@ -286,6 +286,7 @@ export default function Nav() {
       if (response.ok) {
         localStorage.removeItem("auth_token");
         localStorage.removeItem("name");
+        localStorage.removeItem("admin");
         console.log("Successfully logged out");
         navigate("/");
       } else {

@@ -1,5 +1,5 @@
 import { Routes, Route } from 'react-router-dom';
-import UploadSliderImage from '../UploadSliderImage';
+import UploadSliderImages from '../UploadSliderImage';
 import Bookings from '../Bookings';
 // import UploadUpcomingWinterTrack from './UploadUpcomingWinterTrack';
 // import UploadMostPopularTour from './UploadMostPopularTour';
@@ -12,10 +12,8 @@ function App() {
     <div className="PageContent" style={{width:"100%"}}>
       <Routes>
         <Route path="/" element={<Bookings/>} />
-        <Route path="/uploadsliderimage" element={<UploadSliderImage />} />
+        <Route path="/uploadsliderimage" element={<UploadSliderImages />} />
       </Routes>
-      
-    
     </div >
   );
 }
