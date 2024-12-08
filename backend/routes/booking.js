@@ -35,4 +35,22 @@ router.get("/bookings", (req, res) => {
   });
 });
 
+// Route to delete a booking by ID
+router.delete("/bookings/:id", (req, res) => {
+  const { id } = req.params;
+
+  db.query("DELETE FROM bookings WHERE id = ?", [id], (error, results) => {
+    if (error) {
+      console.error("Error deleting booking:", error);
+      return res.status(500).json({ message: "Failed to delete booking" });
+    }
+
+    if (results.affectedRows === 0) {
+      return res.status(404).json({ message: "Booking not found" });
+    }
+
+    res.status(200).json({ message: "Booking deleted successfully" });
+  });
+});
+
 export default router;
