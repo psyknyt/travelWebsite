@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Header from "./Header";
 import Bookings from "./Bookings";
+import Reviews from "./Reviews";
 import UploadSliderImages from "./UploadSliderImage";
 import { Menu } from "antd";
 import {
@@ -11,6 +12,7 @@ import {
   EnvironmentOutlined,
   BookOutlined,
   FileTextOutlined,
+  UserOutlined
 } from "@ant-design/icons";
 import { useNavigate } from "react-router-dom";
 
@@ -68,6 +70,8 @@ const Dashboard = () => {
         return <div>Top Spots Content</div>;
       case "6":
         return <div>Blogs Content</div>;
+      case "7":
+        return <Reviews/>;
       default:
         return <div>Select an option from the sidebar</div>;
     }
@@ -106,6 +110,9 @@ const Dashboard = () => {
             </Menu.Item>
             <Menu.Item key="6" icon={<BookOutlined />}>
               Blogs
+            </Menu.Item>
+            <Menu.Item key="7" icon={<UserOutlined />}>
+              Reviews
             </Menu.Item>
           </Menu.SubMenu>
         </Menu>
