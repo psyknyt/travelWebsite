@@ -4,7 +4,7 @@ import { GoClock } from "react-icons/go";
 import starImg from "../../assets/starImg.png";
 
 const PopularLocation = ({ props }) => {
-  const { name, img, duration, rating, price } = props; // Destructure props
+  const { image_name, image, days, price, rating } = props;
 
   return (
     <div
@@ -14,7 +14,7 @@ const PopularLocation = ({ props }) => {
       {/* Image Section */}
       <div className="overflow-hidden rounded-t-lg h-[250px] min-h-[250px] object-cover object-center">
         <img
-          src={img}
+          src={image}
           alt={`${name} image`}
           className="w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-125"
         />
@@ -24,7 +24,7 @@ const PopularLocation = ({ props }) => {
       <div className="min-h-[200px] max-h-[200px] flex flex-col px-4 py-2 bg-gray-100">
         {/* Trek Name */}
         <p className="font-normal font-inter tracking-wider text-md py-2">
-          {name || "Trek Name"}
+          {image_name || "Trek Name"}
         </p>
 
         {/* Rating Section */}
@@ -53,10 +53,10 @@ const PopularLocation = ({ props }) => {
       {/* Footer Section */}
       <div className="w-full flex flex-row text-md justify-between items-center absolute bottom-4">
         {/* Duration */}
-        {duration && (
+        {days && (
           <div className="rounded-full px-4 py-2 flex items-center justify-center gap-2 font-light font-inter">
             <GoClock className="w-5 h-5" />
-            <div className="font-light">{duration}</div>
+            <div className="font-light">{days}</div>
           </div>
         )}
 

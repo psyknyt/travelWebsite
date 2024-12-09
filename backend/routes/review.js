@@ -25,7 +25,7 @@ router.post("/add", (req, res) => {
 
 // 2. API to Fetch All Reviews
 router.get("/all", (req, res) => {
-  const query = "SELECT id, name, email, review, stars, created_at FROM reviews ORDER BY created_at DESC";
+  const query = "SELECT id, name,review, stars, created_at FROM reviews ORDER BY created_at DESC";
   db.query(query, (err, results) => {
     if (err) {
       console.error("Error fetching reviews:", err);

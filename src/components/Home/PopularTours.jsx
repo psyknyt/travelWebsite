@@ -24,6 +24,7 @@ const PopularTours = () => {
           throw new Error("Failed to fetch trek listings");
         }
         const data = await response.json();
+        console.log("Fetched trek listings:", data);
         setTrekListings(data); // Set the fetched data to state
       } catch (error) {
         console.error("Error fetching trek listings:", error);
