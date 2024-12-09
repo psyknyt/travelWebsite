@@ -1,6 +1,18 @@
-import { Table, Typography, Button, Popconfirm, Space, Upload, Input, Select, message } from "antd";
+import {
+    Table,
+    Typography,
+    Button,
+    Popconfirm,
+    Space,
+    Upload,
+    Input,
+    Select,
+    message,
+    Modal,
+    Form,
+} from "antd";
 import { useEffect, useState } from "react";
-import { DeleteOutlined, UploadOutlined } from "@ant-design/icons";
+import { DeleteOutlined, UploadOutlined, EditOutlined } from "@ant-design/icons";
 
 const { Option } = Select;
 
@@ -14,6 +26,9 @@ function Reviews() {
         stars: null,
     });
     const [imageFile, setImageFile] = useState(null);
+    const [editModalVisible, setEditModalVisible] = useState(false);
+    const [currentEditId, setCurrentEditId] = useState(null);
+    const [editForm] = Form.useForm();
 
     // Fetch Reviews Data
     const fetchReviews = () => {
@@ -72,6 +87,42 @@ function Reviews() {
             .catch(() => message.error("Failed to delete the review."));
     };
 
+    // Handle Edit
+    const handleEdit = (record) => {
+        setCurrentEditId(record.id);
+        setEditModalVisible(true);
+        // Populate modal form with current record data
+        editForm.setFieldsValue({
+            name: record.name,
+            email: record.email,
+            review: record.review,
+            stars: record.stars,
+        });
+    };
+
+    const handleEditSubmit = () => {
+        editForm.validateFields().then((values) => {
+            const updateData = new FormData();
+            updateData.append("name", values.name);
+            updateData.append("email", values.email);
+            updateData.append("review", values.review);
+            updateData.append("stars", values.stars);
+            if (imageFile) updateData.append("image", imageFile);
+
+            fetch(`http://localhost:5000/api/reviews/update/${currentEditId}`, {
+                method: "PUT",
+                body: updateData,
+            })
+                .then(() => {
+                    message.success("Review updated successfully!");
+                    setEditModalVisible(false);
+                    setImageFile(null);
+                    fetchReviews();
+                })
+                .catch(() => message.error("Failed to update the review."));
+        });
+    };
+
     // Table Columns
     const columns = [
         {
@@ -119,16 +170,25 @@ function Reviews() {
             title: "Action",
             key: "action",
             render: (_, record) => (
-                <Popconfirm
-                    title="Are you sure to delete this review?"
-                    onConfirm={() => handleDelete(record.id)}
-                    okText="Yes"
-                    cancelText="No"
-                >
-                    <Button danger icon={<DeleteOutlined />}>
-                        Delete
+                <Space>
+                    <Button
+                        type="primary"
+                        icon={<EditOutlined />}
+                        onClick={() => handleEdit(record)}
+                    >
+                        Edit
                     </Button>
-                </Popconfirm>
+                    <Popconfirm
+                        title="Are you sure to delete this review?"
+                        onConfirm={() => handleDelete(record.id)}
+                        okText="Yes"
+                        cancelText="No"
+                    >
+                        <Button danger icon={<DeleteOutlined />}>
+                            Delete
+                        </Button>
+                    </Popconfirm>
+                </Space>
             ),
         },
     ];
@@ -143,8 +203,7 @@ function Reviews() {
                 padding: "20px",
             }}
         >
-            {/* Header */}
-            <Typography.Title level={2}>Upload Reviews</Typography.Title>
+            <Typography.Title level={2}>Manage Reviews</Typography.Title>
 
             {/* Upload Form */}
             <Space style={{ marginBottom: "20px", display: "flex", flexWrap: "wrap", gap: "10px" }}>
@@ -186,17 +245,9 @@ function Reviews() {
                     maxCount={1}
                     accept="image/*"
                 >
-                    <Button size="small" icon={<UploadOutlined />}>
-                        Choose Image
-                    </Button>
+                    <Button icon={<UploadOutlined />}>Choose Image</Button>
                 </Upload>
-                <Button
-                    type="primary"
-                    size="small"
-                    onClick={handleUpload}
-                    icon={<UploadOutlined />}
-                    loading={loading}
-                >
+                <Button type="primary" onClick={handleUpload} loading={loading}>
                     Upload Review
                 </Button>
             </Space>
@@ -210,6 +261,35 @@ function Reviews() {
                 pagination={{ pageSize: 5 }}
                 rowKey="id"
             />
+
+            {/* Edit Modal */}
+            <Modal
+                title="Edit Review"
+                visible={editModalVisible}
+                onCancel={() => setEditModalVisible(false)}
+                onOk={handleEditSubmit}
+            >
+                <Form form={editForm} layout="vertical">
+                    <Form.Item name="name" label="Name" rules={[{ required: true }]}>
+                        <Input placeholder="Name" />
+                    </Form.Item>
+                    <Form.Item name="email" label="Email" rules={[{ required: true }]}>
+                        <Input placeholder="Email" />
+                    </Form.Item>
+                    <Form.Item name="review" label="Review" rules={[{ required: true }]}>
+                        <Input.TextArea placeholder="Review" rows={3} />
+                    </Form.Item>
+                    <Form.Item name="stars" label="Rating" rules={[{ required: true }]}>
+                        <Select placeholder="Select Rating">
+                            <Option value={1}>1 ★</Option>
+                            <Option value={2}>2 ★</Option>
+                            <Option value={3}>3 ★</Option>
+                            <Option value={4}>4 ★</Option>
+                            <Option value={5}>5 ★</Option>
+                        </Select>
+                    </Form.Item>
+                </Form>
+            </Modal>
         </div>
     );
 }
