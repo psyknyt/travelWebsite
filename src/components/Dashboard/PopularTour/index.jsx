@@ -7,9 +7,9 @@ const PopularTour = () => {
   const [images, setImages] = useState([]);
   const [loading, setLoading] = useState(false);
   const [trekName, setTrekName] = useState(""); // State to store the trek name
-  const [location, setLocation] = useState(""); // State to store the location
   const [price, setPrice] = useState(""); // State to store the price
   const [duration, setDuration] = useState(""); // State to store trek duration
+  const [rating, setRating] = useState(""); // State to store rating
   const [file, setFile] = useState(null);
 
   // Fetch images (Trekking details)
@@ -20,13 +20,12 @@ const PopularTour = () => {
       .then((response) => {
         console.log("Fetched images:", response.data);
         setImages(response.data);
-        setLoading(false);
       })
       .catch((error) => {
         console.error("Error fetching images:", error);
-        message.error("Failed to fetch images.");
-        setLoading(false);
-      });
+        message.error("Failed to fetch trekking details.");
+      })
+      .finally(() => setLoading(false));
   };
 
   useEffect(() => {
@@ -35,33 +34,33 @@ const PopularTour = () => {
 
   // Handle Upload
   const handleUpload = () => {
-    if (!file || !trekName || !location || !price || !duration) {
+    if (!file || !trekName || !price || !duration || !rating) {
       message.warning("Please provide all the required details.");
       return;
     }
 
     const formData = new FormData();
     formData.append("image", file);
-    formData.append("trekName", trekName);
-    formData.append("location", location);
+    formData.append("image_name", trekName);
     formData.append("price", price);
-    formData.append("duration", duration);
+    formData.append("days", duration);
+    formData.append("rating", rating);
 
     setLoading(true);
     axios
       .post("http://localhost:5000/api/most_popular_tours/upload", formData)
       .then(() => {
-        message.success("Image uploaded successfully!");
+        message.success("Trek uploaded successfully!");
         fetchImages(); // Refresh the list
         setTrekName("");
-        setLocation("");
         setPrice("");
         setDuration("");
+        setRating("");
         setFile(null);
       })
       .catch((error) => {
         console.error("Upload failed:", error);
-        message.error("Failed to upload image.");
+        message.error("Failed to upload trek details.");
       })
       .finally(() => setLoading(false));
   };
@@ -72,12 +71,12 @@ const PopularTour = () => {
     axios
       .delete(`http://localhost:5000/api/most_popular_tours/${id}`)
       .then(() => {
-        message.success("Image deleted successfully!");
-        fetchImages(); // Refresh the list
+        message.success("Trek deleted successfully!");
+        fetchImages();
       })
       .catch((error) => {
         console.error("Delete failed:", error);
-        message.error("Failed to delete image.");
+        message.error("Failed to delete trek.");
       })
       .finally(() => setLoading(false));
   };
@@ -87,7 +86,7 @@ const PopularTour = () => {
     {
       title: "Trek Name",
       dataIndex: "image_name",
-      key: "trek_name",
+      key: "image_name",
     },
     {
       title: "Rating",
@@ -105,16 +104,20 @@ const PopularTour = () => {
     },
     {
       title: "Duration",
-      dataIndex: "duration",
-      key: "duration",
-      render: (duration) => <span>{duration || "No duration available"}</span>,
+      dataIndex: "days",
+      key: "days",
+      render: (days) => <span>{days} Days</span>,
     },
     {
       title: "Preview",
-      dataIndex: "image_data",
-      key: "image_data",
-      render: (imageData) => (
-        <img src={imageData} alt="Uploaded" style={{ width: "80px", borderRadius: "5px" }} />
+      dataIndex: "image",
+      key: "image",
+      render: (image) => (
+        <img
+          src={image}
+          alt="Uploaded Trek"
+          style={{ width: "80px", borderRadius: "5px" }}
+        />
       ),
     },
     {
@@ -157,21 +160,21 @@ const PopularTour = () => {
           style={{ width: "200px" }}
         />
         <Input
-          placeholder="Enter location"
-          value={location}
-          onChange={(e) => setLocation(e.target.value)}
-          style={{ width: "200px" }}
-        />
-        <Input
           placeholder="Enter price"
           value={price}
           onChange={(e) => setPrice(e.target.value)}
           style={{ width: "200px" }}
         />
         <Input
-          placeholder="Enter duration"
+          placeholder="Enter duration (in days)"
           value={duration}
           onChange={(e) => setDuration(e.target.value)}
+          style={{ width: "200px" }}
+        />
+        <Input
+          placeholder="Enter rating"
+          value={rating}
+          onChange={(e) => setRating(e.target.value)}
           style={{ width: "200px" }}
         />
         <Upload
@@ -189,7 +192,7 @@ const PopularTour = () => {
         </Button>
       </Space>
 
-      {/* Table for Uploaded Images */}
+      {/* Table for Uploaded Treks */}
       <Table
         style={{ width: "100%", maxWidth: "1000px" }}
         loading={loading}
