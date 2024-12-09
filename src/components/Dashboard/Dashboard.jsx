@@ -5,6 +5,7 @@ import Reviews from "./Reviews";
 import UploadSliderImages from "./UploadSliderImage";
 import UploadWinterTracks from "./Wintertracks";
 import UploadPopularTour from "./PopularTour";
+import UploadTopSpots from "./TopSpots";
 import { Menu } from "antd";
 import {
   CloudDownloadOutlined,
@@ -69,7 +70,7 @@ const Dashboard = () => {
       case "4":
         return <UploadPopularTour/>;
       case "5":
-        return <div>Top Spots Content</div>;
+        return <UploadTopSpots/>;
       case "6":
         return <div>Blogs Content</div>;
       case "7":

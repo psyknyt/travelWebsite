@@ -12,8 +12,9 @@ const UploadTopSpots = () => {
   const fetchImages = () => {
     setLoading(true);
     axios
-      .get("http://localhost:5000/api/hero_section")
+      .get("http://localhost:5000/api/top_spots/fetch")
       .then((response) => {
+        console.log("Fetched images:", response.data);
         setImages(response.data);
         setLoading(false);
       })
@@ -38,8 +39,9 @@ const UploadTopSpots = () => {
     const formData = new FormData();
     formData.append("image", file);
     setLoading(true);
+
     axios
-      .post("http://localhost:5000/api/hero_section/upload", formData)
+      .post("http://localhost:5000/api/top_spots/upload", formData)
       .then(() => {
         message.success("Image uploaded successfully!");
         fetchImages(); // Refresh the list
@@ -56,7 +58,7 @@ const UploadTopSpots = () => {
   const handleDelete = (id) => {
     setLoading(true);
     axios
-      .delete(`http://localhost:5000/api/hero_section/${id}`)
+      .delete(`http://localhost:5000/api/top_spots/${id}`)
       .then(() => {
         message.success("Image deleted successfully!");
         fetchImages(); // Refresh the list
@@ -76,9 +78,19 @@ const UploadTopSpots = () => {
       key: "id",
     },
     {
+      title: "Image Name",
+      dataIndex: "image_name",
+      key: "image_name",
+    },
+    {
+      title: "Listing",
+      dataIndex: "listing",
+      key: "listing",
+    },
+    {
       title: "Preview",
-      dataIndex: "image_data",
-      key: "image_data",
+      dataIndex: "image",
+      key: "image",
       render: (imageData) => (
         <img src={imageData} alt="Uploaded" style={{ width: "80px", borderRadius: "5px" }} />
       ),
@@ -112,7 +124,7 @@ const UploadTopSpots = () => {
       }}
     >
       {/* Header */}
-      <Typography.Title level={2}>Upload Slider Images</Typography.Title>
+      <Typography.Title level={2}>Upload Top Spots</Typography.Title>
 
       {/* Upload Form */}
       <Space style={{ marginBottom: "20px" }}>
