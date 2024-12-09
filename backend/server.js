@@ -15,6 +15,8 @@ import reviewRoutes from "./routes/review.js";
 import blogRoutes from "./routes/blog.js";
 import popularTourRoutes from "./routes/most_popular_tour.js";
 import heroSectionRoutes from "./routes/Hero_section.js";
+import topSpotsRoutes from "./routes/topspots.js";
+
 
 
 
@@ -49,6 +51,9 @@ app.use("/api/most_popular_tours", popularTourRoutes);
 
 //Routes for hero section
 app.use("/api/hero_section", heroSectionRoutes);
+
+//Routes for topspots
+app.use("/api/top_spots", topSpotsRoutes);
 
 
 
