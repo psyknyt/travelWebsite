@@ -3,43 +3,48 @@ import db from "../config/db.js";
 
 const router = express.Router();
 
-// Route to handle booking data submission
+// 1. API to Upload a Booking
 router.post("/book", (req, res) => {
-  const { name, email, tourType, message } = req.body;
+  const { name, email, phoneNumber, countryCode, age, trekDate } = req.body;
 
-  if (!name || !email || !tourType) {
-    return res.status(400).json({ message: "Name, email, and tour type are required" });
+  // Validate input
+  if (!name || !email || !phoneNumber || !countryCode || !age || !trekDate) {
+    return res
+      .status(400)
+      .json({ message: "All fields (name, email, phone number, country code, age, trek date) are required." });
   }
 
-  db.query(
-    "INSERT INTO bookings (name, email, tour_type, message, created_at) VALUES (?, ?, ?, ?, NOW())",
-    [name, email, tourType, message],
-    (error, results) => {
-      if (error) {
-        console.error("Error saving booking:", error);
-        return res.status(500).json({ message: "Failed to save booking" });
-      }
-      res.status(201).json({ message: "Booking saved successfully", bookingId: results.insertId });
+  const query = `
+    INSERT INTO bookings2 (name, email, phone_number, country_code, age, trek_date) 
+    VALUES (?, ?, ?, ?, ?, ?)
+  `;
+  db.query(query, [name, email, phoneNumber, countryCode, age, trekDate], (error, results) => {
+    if (error) {
+      console.error("Error saving booking:", error);
+      return res.status(500).json({ message: "Failed to save booking" });
     }
-  );
+    res.status(201).json({ message: "Booking saved successfully", bookingId: results.insertId });
+  });
 });
 
-// Route to fetch all bookings
+// 2. API to Fetch All Bookings
 router.get("/bookings", (req, res) => {
-  db.query("SELECT * FROM bookings", (error, results) => {
+  const query = "SELECT * FROM bookings2 ORDER BY booking_date DESC";
+  db.query(query, (error, results) => {
     if (error) {
       console.error("Error fetching bookings:", error);
       return res.status(500).json({ message: "Failed to fetch bookings" });
     }
-    res.json(results);
+    res.status(200).json(results);
   });
 });
 
-// Route to delete a booking by ID
+// 3. API to Delete a Booking by ID
 router.delete("/bookings/:id", (req, res) => {
   const { id } = req.params;
 
-  db.query("DELETE FROM bookings WHERE id = ?", [id], (error, results) => {
+  const query = "DELETE FROM bookings2 WHERE id = ?";
+  db.query(query, [id], (error, results) => {
     if (error) {
       console.error("Error deleting booking:", error);
       return res.status(500).json({ message: "Failed to delete booking" });
