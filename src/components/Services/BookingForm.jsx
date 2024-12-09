@@ -3,21 +3,77 @@ import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 
 const BookingForm = () => {
-  const [startDate, setStartDate] = useState(new Date("2025-03-05T00:00:00")); // Default Date
-  const [time, setTime] = useState("12:00 AM");
-  const [children, setChildren] = useState(0);
-  const [male, setMale] = useState(0);
-  const [female, setFemale] = useState(0);
+  const [name, setName] = useState("");
+  const [phone, setPhone] = useState("");
+  const [countryCode, setCountryCode] = useState("+91"); // Default to +91
+  const [email, setEmail] = useState("");
+  const [age, setAge] = useState(0); // Initial value as integer 0
+  const [trekDate, setTrekDate] = useState(new Date()); // Default to current date
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // You can handle the form submission logic here
-    alert(
-      `Booking Date: ${startDate}, Time: ${time}, Children: ${children}, Male: ${maleGuests}, Female: ${femaleGuests}`
-    );
+  
+    // Validate required fields
+    if (!name || !phone || !email || !age || !trekDate) {
+      setError("Please fill all the required fields.");
+      return;
+    }
+  
+    // Format trek_date to YYYY-MM-DD
+    const formattedTrekDate = trekDate.toISOString().split("T")[0];  // "YYYY-MM-DD"
+  
+    // Prepare data to be sent to the API
+    const bookingData = {
+      name,
+      email,
+      phoneNumber: `${countryCode} ${phone}`,
+      countryCode: countryCode,
+      age: parseInt(age), // Ensure age is an integer
+      trekDate: formattedTrekDate,
+    };
+  
+    setLoading(true);
+    setError(""); // Reset any previous error
+    // Send data to API
+    fetch("http://localhost:5000/api/book", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(bookingData),
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        setLoading(false);
+        console.log(data); 
+        if (data.message === "Booking saved successfully") {
+          alert("Booking successful!");
+          // Reset form after successful booking
+          setName("");
+          setPhone("");
+          setEmail("");
+          setAge(0);
+          setCountryCode("+91");
+          setTrekDate(new Date());
+        } else {
+          setError("Booking failed. Please try again.");
+        }
+      })
+      .catch((err) => {
+        setLoading(false);
+        setError("An error occurred. Please try again.");
+      });
   };
-  const cardShadow = {
-    boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08)",
+  
+  
+  // Ensure that the age input is an integer
+  const handleAgeChange = (e) => {
+    const value = e.target.value;
+    if (value === "" || /^[0-9\b]+$/.test(value)) {
+      setAge(value);
+    }
   };
 
   return (
@@ -26,125 +82,102 @@ const BookingForm = () => {
     >
       <h2 className="text-2xl font-semibold text-center mb-4">Booking Form</h2>
       <form onSubmit={handleSubmit} className="space-y-6">
-        {/* Date Picker */}
+        {error && <p className="text-red-500 text-sm">{error}</p>}
+
+        {/* Name */}
         <div className="flex flex-col">
-          <label htmlFor="date" className="text-sm font-semibold mb-1">
-            Date
+          <label htmlFor="name" className="text-sm font-semibold mb-1">
+            Name
+          </label>
+          <input
+            id="name"
+            type="text"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+            className="border-gray-300 border-[1px] rounded-lg px-3 py-2 w-full"
+            required
+          />
+        </div>
+
+        {/* Phone Number with Country Code */}
+        <div className="flex flex-col">
+          <label htmlFor="phone" className="text-sm font-semibold mb-1">
+            Phone Number
+          </label>
+          <div className="flex items-center">
+            <select
+              className="border-gray-300 border-[1px] rounded-lg px-3 py-2 w-[100px]"
+              value={countryCode}
+              onChange={(e) => setCountryCode(e.target.value)}
+            >
+              <option value="+91">+91</option>
+              <option value="+1">+1</option>
+              <option value="+44">+44</option>
+              <option value="+61">+61</option>
+              <option value="+33">+33</option>
+              {/* Add more country codes as needed */}
+            </select>
+            <input
+              id="phone"
+              type="text"
+              value={phone}
+              onChange={(e) => setPhone(e.target.value)}
+              className="border-gray-300 border-[1px] rounded-lg px-3 py-2 w-full ml-2"
+              required
+            />
+          </div>
+        </div>
+
+        {/* Email */}
+        <div className="flex flex-col">
+          <label htmlFor="email" className="text-sm font-semibold mb-1">
+            Email ID
+          </label>
+          <input
+            id="email"
+            type="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            className="border-gray-300 border-[1px] rounded-lg px-3 py-2 w-full"
+            required
+          />
+        </div>
+
+        {/* Age */}
+        <div className="flex flex-col">
+          <label htmlFor="age" className="text-sm font-semibold mb-1">
+            Age
+          </label>
+          <input
+            id="age"
+            type="number"
+            value={age}
+            onChange={handleAgeChange}
+            className="border-gray-300 border-[1px] rounded-lg px-3 py-2 w-full"
+            required
+          />
+        </div>
+
+        {/* Trek Date */}
+        <div className="flex flex-col">
+          <label htmlFor="trekDate" className="text-sm font-semibold mb-1">
+            Trek Date
           </label>
           <DatePicker
-            id="date"
-            selected={startDate}
-            onChange={(date) => setStartDate(date)}
+            id="trekDate"
+            selected={trekDate}
+            onChange={(date) => setTrekDate(date)}
             className="border-gray-300 border-[1px] rounded-lg px-3 py-2 w-full"
             dateFormat="dd/MM/yyyy"
           />
         </div>
 
-        {/* Time */}
-        <div className="flex flex-col">
-          <label htmlFor="time" className="text-sm font-semibold mb-1">
-            Time
-          </label>
-          <select
-            id="time"
-            value={time}
-            onChange={(e) => setTime(e.target.value)}
-            className="border-gray-300 border-[1px] rounded-lg px-3 py-2 w-full"
-          >
-            <option value="12:00 AM">12:00 AM</option>
-          </select>
-        </div>
-
-        {/* Guests */}
-        <div className="space-y-4">
-          <div className="flex flex-col justify-start items-start font-inter py-2">
-            Guests:
-          </div>
-          <div className="flex justify-between items-center mb-4">
-            <label className="text-xs font-normal w-[50%]">
-              Children (0-12 years) ₹6246.61
-            </label>
-            <select
-              value={children}
-              onChange={(e) => setChildren(e.target.value)}
-              className="border-gray-300 focus:outline-none border-[1px] rounded-lg px-2 py-1 w-[100px]  flex justify-start items-start"
-            >
-              <option value="0" className="text-center">
-                0
-              </option>
-              <option value="1" className="text-center">
-                1
-              </option>
-              <option value="2" className="text-center">
-                2
-              </option>
-              <option value="3" className="text-center">
-                3
-              </option>
-              <option value="4" className="text-center">
-                4
-              </option>
-            </select>
-          </div>
-
-          <div className="flex justify-between items-center mb-4">
-            <label className="text-xs font-normal w-[50%]">Male ₹8924.11</label>
-            <select
-              value={male}
-              onChange={(e) => setMale(e.target.value)}
-              className="border-gray-300 focus:outline-none border-[1px] rounded-lg px-2 py-1 w-[100px] flex justify-start items-start"
-            >
-              <option value="0" className="text-center">
-                0
-              </option>
-              <option value="1" className="text-center">
-                1
-              </option>
-              <option value="2" className="text-center">
-                2
-              </option>
-              <option value="3" className="text-center">
-                3
-              </option>
-              <option value="4" className="text-center">
-                4
-              </option>
-            </select>
-          </div>
-
-          <div className="flex justify-between items-center mb-4">
-            <label className="text-xs font-normal w-[50%]">
-              Female ₹8924.11
-            </label>
-            <select
-              value={female}
-              onChange={(e) => setFemale(e.target.value)}
-              className="border-gray-300 focus:outline-none border-[1px] rounded-lg px-2 py-1 w-[100px]  flex justify-start items-start"
-            >
-              <option value="0" className="text-center">
-                0
-              </option>
-              <option value="1" className="text-center">
-                1
-              </option>
-              <option value="2" className="text-center">
-                2
-              </option>
-              <option value="3" className="text-center">
-                3
-              </option>
-              <option value="4" className="text-center">
-                4
-              </option>
-            </select>
-          </div>
-        </div>
-
         <button
           type="submit"
           className="w-full bg-lemonYellow hover:bg-yellow-500 text-black hover:text-white font-semibold py-2 rounded-lg transition-colors"
+          disabled={loading}
         >
-          Book Now
+          {loading ? "Booking..." : "Book Now"}
         </button>
       </form>
     </div>
