@@ -28,7 +28,6 @@ function Reviews() {
 
     // Upload Review
     const handleUpload = (values) => {
-        console.log(values);
         fetch("http://localhost:5000/api/reviews/add", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
@@ -47,7 +46,6 @@ function Reviews() {
         setLoading(true);
         getReviewsData()
             .then((res) => {
-                console.log(res);
                 setDataSource(res);
                 setLoading(false);
             })
@@ -68,7 +66,11 @@ function Reviews() {
             dataIndex: "name",
             key: "name",
         },
-
+        {
+            title: "Email",
+            dataIndex: "email",
+            key: "email",
+        },
         {
             title: "Review",
             dataIndex: "review",
@@ -85,7 +87,7 @@ function Reviews() {
             title: "Rating",
             dataIndex: "stars",
             key: "stars",
-            render: (rating) => <span>{rating}</span>, // Directly showing the count
+            render: (rating) => <span>{rating} ★</span>, // Display stars
         },
         {
             title: "Action",
@@ -116,6 +118,50 @@ function Reviews() {
             }}
         >
             <Typography.Title level={2}>Review List</Typography.Title>
+
+            {/* Upload Form */}
+            <Form
+                form={form}
+                layout="inline"
+                onFinish={handleUpload}
+                style={{ marginBottom: "20px" }}
+            >
+                <Form.Item
+                    name="name"
+                    rules={[{ required: true, message: "Please input the name!" }]}
+                >
+                    <Input placeholder="Name" />
+                </Form.Item>
+                <Form.Item
+                    name="email"
+                    rules={[{ required: true, message: "Please input the email!" }]}
+                >
+                    <Input placeholder="Email" />
+                </Form.Item>
+                <Form.Item
+                    name="review"
+                    rules={[{ required: true, message: "Please input the review!" }]}
+                >
+                    <Input placeholder="Review" />
+                </Form.Item>
+                <Form.Item
+                    name="stars"
+                    rules={[{ required: true, message: "Please input the rating!" }]}
+                >
+                    <Select placeholder="Rating" style={{ width: 120 }}>
+                        <Option value={1}>1 ★</Option>
+                        <Option value={2}>2 ★</Option>
+                        <Option value={3}>3 ★</Option>
+                        <Option value={4}>4 ★</Option>
+                        <Option value={5}>5 ★</Option>
+                    </Select>
+                </Form.Item>
+                <Form.Item>
+                    <Button type="primary" htmlType="submit" icon={<UploadOutlined />}>
+                        Upload Review
+                    </Button>
+                </Form.Item>
+            </Form>
 
             {/* Table to Display Reviews */}
             <Table
