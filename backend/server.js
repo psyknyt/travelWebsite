@@ -14,7 +14,7 @@ import bookingRoutes from "./routes/booking.js";
 import reviewRoutes from "./routes/review.js";
 import blogRoutes from "./routes/blog.js";
 import popularTourRoutes from "./routes/most_popular_tour.js";
-import heroSectionRoutes from "./routes/Hero_section.js";
+import heroSectionRoutes from "./routes/hero_section.js";
 import topSpotsRoutes from "./routes/topspots.js";
 
 
@@ -171,7 +171,7 @@ app.delete("/api/slider_images/:id", (req, res) => {
 
 
 // Start the server
-const PORT = process.env.PORT || 5000;
+const PORT = 5000;
 app.listen(PORT, () => {
   console.log(`Server running on http://localhost:${PORT}`);
 });

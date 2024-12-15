@@ -8,7 +8,7 @@ const router = express.Router();
 const storage = multer.memoryStorage();
 const upload = multer({ storage });
 
-// API to upload an image to the `Hero_section` table
+// API to upload an image to the `hero_section` table
 router.post("/upload", upload.single("image"), (req, res) => {
   const { originalname } = req.file;
   const imageData = req.file.buffer;
@@ -18,7 +18,7 @@ router.post("/upload", upload.single("image"), (req, res) => {
   }
 
   db.query(
-    "INSERT INTO Hero_section (image_data, image_name) VALUES (?, ?)",
+    "INSERT INTO hero_section (image_data, image_name) VALUES (?, ?)",
     [imageData, originalname],
     (error, results) => {
       if (error) {
@@ -30,9 +30,9 @@ router.post("/upload", upload.single("image"), (req, res) => {
   );
 });
 
-// API to fetch all images from the `Hero_section` table
+// API to fetch all images from the `hero_section` table
 router.get("/", (req, res) => {
-  db.query("SELECT id, image_name, image_data, created_at FROM Hero_section", (error, results) => {
+  db.query("SELECT id, image_name, image_data, created_at FROM hero_section", (error, results) => {
     if (error) {
       console.error("Error fetching images:", error);
       return res.status(500).json({ message: "Failed to fetch images" });
@@ -54,11 +54,11 @@ router.get("/", (req, res) => {
   });
 });
 
-// API to delete an image from the `Hero_section` table by ID
+// API to delete an image from the `hero_section` table by ID
 router.delete("/:id", (req, res) => {
   const { id } = req.params;
 
-  db.query("DELETE FROM Hero_section WHERE id = ?", [id], (error, results) => {
+  db.query("DELETE FROM hero_section WHERE id = ?", [id], (error, results) => {
     if (error) {
       console.error("Error deleting image:", error);
       return res.status(500).json({ message: "Failed to delete image" });
