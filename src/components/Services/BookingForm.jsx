@@ -1,8 +1,8 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 
-const BookingForm = () => {
+const BookingForm = ({ Trekname, price }) => {
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
   const [countryCode, setCountryCode] = useState("+91"); // Default to +91
@@ -10,8 +10,16 @@ const BookingForm = () => {
   const [age, setAge] = useState(0); // Initial value as integer 0
   const [trekDate, setTrekDate] = useState(new Date()); // Default to current date
   const [numberOfPeople, setNumberOfPeople] = useState(1); // Default 1 person
+  const numericPrice = parseFloat(price.replace(/[^0-9.]/g, "")); // Remove non-numeric characters
+  const [totalPrice, setTotalPrice] = useState(numericPrice);
+
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
+  // Update total price whenever number of people changes
+  useEffect(() => {
+    setTotalPrice(numberOfPeople * numericPrice);
+  }, [numberOfPeople, numericPrice]);
+  
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -34,10 +42,14 @@ const BookingForm = () => {
       age: parseInt(age), // Ensure age is an integer
       trekDate: formattedTrekDate,
       numberOfPeople: parseInt(numberOfPeople), // Ensure numberOfPeople is an integer
+      Trekname,
+      totalPrice,
     };
+    console.log(bookingData);
 
     setLoading(true);
     setError(""); // Reset any previous error
+
     // Send data to API
     fetch("http://localhost:5000/api/book", {
       method: "POST",
@@ -85,6 +97,20 @@ const BookingForm = () => {
       <h2 className="text-2xl font-semibold text-center mb-4">Booking Form</h2>
       <form onSubmit={handleSubmit} className="space-y-6">
         {error && <p className="text-red-500 text-sm">{error}</p>}
+
+        {/* Trek Name (Read-Only) */}
+        <div className="flex flex-col">
+          <label htmlFor="trekname" className="text-sm font-semibold mb-1">
+            Trek Name
+          </label>
+          <input
+            id="trekname"
+            type="text"
+            value={Trekname}
+            readOnly
+            className="border-gray-300 border-[1px] rounded-lg px-3 py-2 w-full bg-gray-200 cursor-not-allowed"
+          />
+        </div>
 
         {/* Name */}
         <div className="flex flex-col">
@@ -186,6 +212,20 @@ const BookingForm = () => {
             onChange={(date) => setTrekDate(date)}
             className="border-gray-300 border-[1px] rounded-lg px-3 py-2 w-full"
             dateFormat="dd/MM/yyyy"
+          />
+        </div>
+
+        {/* Total Price (Read-Only) */}
+        <div className="flex flex-col">
+          <label htmlFor="totalPrice" className="text-sm font-semibold mb-1">
+            Total Price
+          </label>
+          <input
+            id="totalPrice"
+            type="text"
+            value={`₹${totalPrice}`}
+            readOnly
+            className="border-gray-300 border-[1px] rounded-lg px-3 py-2 w-full bg-gray-200 cursor-not-allowed"
           />
         </div>
 

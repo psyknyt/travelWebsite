@@ -152,7 +152,7 @@ const ServicePage = () => {
 
         {/* Booking form */}
         <div className="sticky top-16 w-[90%] md:w-[50%] lg:w-[30%] flex items-start justify-start  my-2">
-          <BookingForm />
+          <BookingForm Trekname={el.name} price={el.price} />
         </div>
       </div>
     </div>

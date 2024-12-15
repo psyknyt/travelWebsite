@@ -101,15 +101,26 @@ function Orders() {
             key: "age",
           },
           {
+            title: "Trek Name",
+            dataIndex: "trekname",
+            key: "trekname",
+          },
+          {
+            title: "Number of People",
+            dataIndex: "number_of_people",
+            key: "number_of_people",
+          },
+          {
             title: "Trek Date",
             dataIndex: "trek_date",
             key: "trek_date",
             render: (value) => <span>{new Date(value).toLocaleDateString()}</span>,
           },
           {
-            title: "Number of People",
-            dataIndex: "number_of_people",
-            key: "number_of_people",
+            title: "Total Price",
+            dataIndex: "price",
+            key: "price",
+            render: (value) => <span>₹{value}</span>,
           },
           {
             title: "Booking Date",

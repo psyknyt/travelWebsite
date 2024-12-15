@@ -5,20 +5,30 @@ const router = express.Router();
 
 // 1. API to Upload a Booking
 router.post("/book", (req, res) => {
-  const { name, email, phoneNumber, countryCode, age, trekDate, numberOfPeople } = req.body;
-
+  const { 
+    name, 
+    email, 
+    phoneNumber, 
+    countryCode, 
+    age, 
+    trekDate, 
+    numberOfPeople, 
+    Trekname, 
+    totalPrice 
+  } = req.body;
+  console.log(req.body);
   // Validate input
-  if (!name || !email || !phoneNumber || !countryCode || !age || !trekDate || !numberOfPeople) {
+  if (!name || !email || !phoneNumber || !countryCode || !age || !trekDate || !numberOfPeople || !Trekname || !totalPrice) {
     return res
       .status(400)
-      .json({ message: "All fields (name, email, phone number, country code, age, trek date, number of people) are required." });
+      .json({ message: "All fields are required, including name, email, phone number, country code, age, trek date, number of people, Trekname, and totalPrice." });
   }
 
   const query = `
-    INSERT INTO bookings2 (name, email, phone_number, country_code, age, trek_date, number_of_people) 
-    VALUES (?, ?, ?, ?, ?, ?, ?)
+    INSERT INTO bookings2 (name, email, phone_number, country_code, age, trek_date, number_of_people, trekname, price) 
+    VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
   `;
-  db.query(query, [name, email, phoneNumber, countryCode, age, trekDate, numberOfPeople], (error, results) => {
+  db.query(query, [name, email, phoneNumber, countryCode, age, trekDate, numberOfPeople, Trekname, totalPrice], (error, results) => {
     if (error) {
       console.error("Error saving booking:", error);
       return res.status(500).json({ message: "Failed to save booking" });
