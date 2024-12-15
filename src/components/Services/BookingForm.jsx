@@ -9,21 +9,22 @@ const BookingForm = () => {
   const [email, setEmail] = useState("");
   const [age, setAge] = useState(0); // Initial value as integer 0
   const [trekDate, setTrekDate] = useState(new Date()); // Default to current date
+  const [numberOfPeople, setNumberOfPeople] = useState(1); // Default 1 person
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
-  
+
     // Validate required fields
-    if (!name || !phone || !email || !age || !trekDate) {
+    if (!name || !phone || !email || !age || !trekDate || !numberOfPeople) {
       setError("Please fill all the required fields.");
       return;
     }
-  
+
     // Format trek_date to YYYY-MM-DD
-    const formattedTrekDate = trekDate.toISOString().split("T")[0];  // "YYYY-MM-DD"
-  
+    const formattedTrekDate = trekDate.toISOString().split("T")[0]; // "YYYY-MM-DD"
+
     // Prepare data to be sent to the API
     const bookingData = {
       name,
@@ -32,8 +33,9 @@ const BookingForm = () => {
       countryCode: countryCode,
       age: parseInt(age), // Ensure age is an integer
       trekDate: formattedTrekDate,
+      numberOfPeople: parseInt(numberOfPeople), // Ensure numberOfPeople is an integer
     };
-  
+
     setLoading(true);
     setError(""); // Reset any previous error
     // Send data to API
@@ -47,7 +49,7 @@ const BookingForm = () => {
       .then((response) => response.json())
       .then((data) => {
         setLoading(false);
-        console.log(data); 
+        console.log(data);
         if (data.message === "Booking saved successfully") {
           alert("Booking successful!");
           // Reset form after successful booking
@@ -57,6 +59,7 @@ const BookingForm = () => {
           setAge(0);
           setCountryCode("+91");
           setTrekDate(new Date());
+          setNumberOfPeople(1);
         } else {
           setError("Booking failed. Please try again.");
         }
@@ -66,13 +69,12 @@ const BookingForm = () => {
         setError("An error occurred. Please try again.");
       });
   };
-  
-  
-  // Ensure that the age input is an integer
-  const handleAgeChange = (e) => {
+
+  // Ensure that the age and numberOfPeople inputs are integers
+  const handleNumberChange = (setter) => (e) => {
     const value = e.target.value;
     if (value === "" || /^[0-9\b]+$/.test(value)) {
-      setAge(value);
+      setter(value);
     }
   };
 
@@ -152,7 +154,22 @@ const BookingForm = () => {
             id="age"
             type="number"
             value={age}
-            onChange={handleAgeChange}
+            onChange={handleNumberChange(setAge)}
+            className="border-gray-300 border-[1px] rounded-lg px-3 py-2 w-full"
+            required
+          />
+        </div>
+
+        {/* Number of People */}
+        <div className="flex flex-col">
+          <label htmlFor="numberOfPeople" className="text-sm font-semibold mb-1">
+            Number of People
+          </label>
+          <input
+            id="numberOfPeople"
+            type="number"
+            value={numberOfPeople}
+            onChange={handleNumberChange(setNumberOfPeople)}
             className="border-gray-300 border-[1px] rounded-lg px-3 py-2 w-full"
             required
           />

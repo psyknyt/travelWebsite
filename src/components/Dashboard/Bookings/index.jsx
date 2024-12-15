@@ -107,6 +107,11 @@ function Orders() {
             render: (value) => <span>{new Date(value).toLocaleDateString()}</span>,
           },
           {
+            title: "Number of People",
+            dataIndex: "number_of_people",
+            key: "number_of_people",
+          },
+          {
             title: "Booking Date",
             dataIndex: "booking_date",
             key: "booking_date",
